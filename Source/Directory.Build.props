@@ -8,8 +8,8 @@
       code. This has to live in a Directory.Build.props: NuGet restore reads the property before
       the csproj.
     -->
-    <BaseIntermediateOutputPath>$(MSBuildThisFileDirectory)..\..\.build\obj\FoldingSkateboardRenew\</BaseIntermediateOutputPath>
-    <BaseOutputPath>$(MSBuildThisFileDirectory)..\..\.build\bin\FoldingSkateboardRenew\</BaseOutputPath>
+    <BaseIntermediateOutputPath>$(MSBuildThisFileDirectory)..\.build\obj\FoldingSkateboardRenew\</BaseIntermediateOutputPath>
+    <BaseOutputPath>$(MSBuildThisFileDirectory)..\.build\bin\FoldingSkateboardRenew\</BaseOutputPath>
   </PropertyGroup>
 
 </Project>

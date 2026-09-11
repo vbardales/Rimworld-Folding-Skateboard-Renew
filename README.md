@@ -17,7 +17,6 @@ along the way.
 FoldingSkateboardRenew/
   Mod/          the published folder - this is what the NTFS junction into RimWorld/Mods points at
   Source/       C#, never published
-  Art/          image sources, never published
 ```
 
 Steam publishes the junction's target directory as it stands, with no filtering
