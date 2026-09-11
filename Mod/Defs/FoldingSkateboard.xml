@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!--
+    defName kept as SilkCircuit wrote it. "Paddleboard" is a leftover from the raft this mod grew
+    out of - the textures were still named CityLiving_Raft - but renaming it would take the board
+    out of the inventory of every pawn in a save carried over from the 1.5 mod, and buy nothing.
+    Checked for collisions before keeping it: see ATTRIBUTION.md.
+  -->
+  <ThingDef ParentName="ResourceBase">
+    <defName>Paddleboard</defName>
+    <label>folding skateboard</label>
+    <description>A folding skateboard that boosts pawn movement speed and conveniently straps onto their back when not in use. While skating, pawns gain the "Shredder" trait, ripping around at +2.0 movement speed. Shredding the gnar is only allowed on outdoor hard surfaces.</description>
+    <possessionCount Inherit="False">1</possessionCount>
+    <techLevel>Neolithic</techLevel>
+    <graphicData>
+      <texPath>Things/Item/FoldingSkateboard/Skateboard</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(1,1)</drawSize>
+      <onGroundRandomRotateAngle>35</onGroundRandomRotateAngle>
+    </graphicData>
+    <size>(1,1)</size>
+    <tickerType>Rare</tickerType>
+    <stackLimit>1</stackLimit>
+    <healthAffectsPrice>false</healthAffectsPrice>
+    <thingCategories Inherit="False">
+      <li>Manufactured</li>
+    </thingCategories>
+    <statBases Inherit="False">
+      <MarketValue>18</MarketValue>
+      <Mass>0.50</Mass>
+      <Flammability>0.7</Flammability>
+      <WorkToMake>700</WorkToMake>
+    </statBases>
+    <!-- Both the fixed cost and the stuff cost apply: the generated recipe takes the costList
+         ingredients AND costStuffCount of stuff. Left as SilkCircuit priced it. -->
+    <costList Inherit="False">
+      <WoodLog>10</WoodLog>
+      <Steel>10</Steel>
+    </costList>
+    <stuffCategories>
+      <li>Metallic</li>
+      <li>Woody</li>
+      <li>Stony</li>
+    </stuffCategories>
+    <costStuffCount>30</costStuffCount>
+    <recipeMaker>
+      <workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
+      <workSkill>Intellectual</workSkill>
+      <recipeUsers>
+        <li>CraftingSpot</li>
+        <li>FueledSmithy</li>
+        <li>ElectricSmithy</li>
+      </recipeUsers>
+      <researchPrerequisite>Smithing</researchPrerequisite>
+      <skillRequirements>
+        <Crafting>4</Crafting>
+      </skillRequirements>
+      <displayPriority>2000</displayPriority>
+    </recipeMaker>
+    <allowedArchonexusCount>1</allowedArchonexusCount>
+  </ThingDef>
+
+  <JobDef>
+    <defName>AddPaddleboardToInventory</defName>
+    <driverClass>FoldingSkateboard.JobDriver_TakeSkateboardToInventory</driverClass>
+    <reportString>Picking up a folding skateboard.</reportString>
+    <playerInterruptible>true</playerInterruptible>
+    <alwaysShowWeapon>false</alwaysShowWeapon>
+    <checkOverrideOnDamage>Always</checkOverrideOnDamage>
+  </JobDef>
+
+  <!--
+    Granted and removed by Patch_Pawn_Tick while the pawn is standing on a skateable surface.
+    commonality 0 keeps it out of pawn generation: nobody is born a Shredder.
+  -->
+  <TraitDef>
+    <defName>Shredder</defName>
+    <commonality>0.0</commonality>
+    <degreeDatas>
+      <li>
+        <label>Shredder</label>
+        <description>[PAWN_nameDef] is always shredding the gnar whenever [PAWN_pronoun] goes anywhere.</description>
+        <statOffsets>
+          <MoveSpeed>2.0</MoveSpeed>
+        </statOffsets>
+      </li>
+    </degreeDatas>
+  </TraitDef>
+
+</Defs>

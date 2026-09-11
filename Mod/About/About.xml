@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+  <name>Folding Skateboard Renew</name>
+  <author>SilkCircuit - 1.6 port: nelim</author>
+  <packageId>nelim.foldingskateboard</packageId>
+  <supportedVersions>
+    <li>1.6</li>
+  </supportedVersions>
+  <url>https://github.com/vbardales/Rimworld-Folding-Skateboard-Renew</url>
+  <description>A skateboard that boosts pawn movement speed while in use and conveniently folds up and straps to their back when they aren't shredding the gnar.
+
+I am not the author of this mod. The idea, the artwork, the trait and the balance are SilkCircuit's; all I did was bring it forward to 1.6, fix what the port turned up, and write the French. Credit goes to them; mistakes in the port are mine.
+
+Original mod: https://steamcommunity.com/sharedfiles/filedetails/?id=3414678101 - declares 1.5 and nothing further.
+
+HOW IT WORKS
+
+Craft a folding skateboard at a crafting spot or a smithy - it needs Smithing research and Crafting 4 - then right-click it with a colonist selected and pick "Pick up folding skateboard". It goes into their inventory, not their hands, and stays there.
+
+From then on the board rides itself. Step onto an outdoor hard surface and the board unfolds under them: the colonist gains the Shredder trait and moves at +2 speed. Step indoors, or onto soil, sand or grass, and the board folds back onto their back. Hard surface means a built floor - concrete, paving, wood plank, tiles, flagstone - a mined rock floor, or a bridge. Roofed counts as indoors, so a covered courtyard is not a skate park.
+
+While Shredder is on, vanilla's fast walker / slowpoke trait is set aside so the two bonuses do not stack, and given back the moment the board folds up.
+
+The board is made from stuff and takes the colour of what it was made from.
+
+WHAT CHANGED IN THE PORT
+
+One thing was actually broken by 1.6, and it was fatal rather than quiet. Right-click menus were rebuilt in 1.6 around FloatMenuOptionProvider, and the method the 1.5 mod patched to add its "pick up" option no longer exists. Harmony would have thrown on startup, before the main menu - so the port would not have loaded at all. The option is now a provider, which is what 1.6 wants and needs no patching.
+
+Three things were broken before 1.6 and are fixed here:
+
+- Every patch was applied twice. The mod ran Harmony's PatchAll from two places under two ids, so the board was drawn twice every frame and the terrain check ran twice per tick.
+- On floors from LTS Systems' mods, a colonist was drawn riding the board AND wearing it on their back at the same time. The mod carried its terrain list three times over and one of the copies had not been kept up to date.
+- A colonist who left the map mid-ride - packed into a caravan, sent off in a shuttle - kept the +2 speed and had their fast walker trait held hostage until they were next put on a map.
+
+And the cost came down. The 1.5 version allocated a 170-entry list and searched it with string comparisons on every tick of every pawn on the map, animals included. Same rules, same list, resolved once at load.
+
+Nothing else moved. The item, the trait, the recipe, the speed bonus, the artwork and the defNames are as SilkCircuit made them, so a save carried over from the 1.5 mod keeps its boards. The two cannot run together: the original is declared incompatible. Run one or the other.
+
+CREDIT AND REMOVAL
+
+SilkCircuit declared no licence: no file in the mod, nothing in its About.xml, no linked repository, and nothing in the body of the description on its Steam page. It is republished here under the usual convention for abandoned mods - full credit, a link to the original, and removal on request. If SilkCircuit would rather this port did not exist, say so and it comes down: no argument, no delay.
+
+IF I GO QUIET
+
+If I do not answer within a reasonable time after being contacted, anyone may freely update this or any other of my mods, including publishing a continuation of it. All credit must be preserved.
+
+AI-GENERATED
+
+The port work was done with Claude Code (Anthropic), under human direction, review and in-game testing. Stated openly: designing with these tools is my job.
+
+THANKS
+
+SilkCircuit for the mod. Andreas Pardeike for Harmony.
+
+Source, changelog and attribution: https://github.com/vbardales/Rimworld-Folding-Skateboard-Renew</description>
+  <modDependencies>
+    <li>
+      <packageId>brrainz.harmony</packageId>
+      <displayName>Harmony</displayName>
+      <steamWorkshopUrl>steam://url/CommunityFilePage/2009463077</steamWorkshopUrl>
+      <downloadUrl>https://github.com/pardeike/HarmonyRimWorld/releases/latest</downloadUrl>
+    </li>
+  </modDependencies>
+  <incompatibleWith>
+    <li>silkcircuit.foldableskateboardmod</li>
+  </incompatibleWith>
+  <loadAfter>
+    <li>brrainz.harmony</li>
+    <li>Ludeon.RimWorld</li>
+  </loadAfter>
+</ModMetaData>

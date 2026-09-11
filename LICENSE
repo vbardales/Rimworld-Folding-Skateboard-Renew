@@ -1,0 +1,59 @@
+MIT License
+
+Copyright (c) 2026 nelim
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+
+---------------------------------------------------------------------------
+SCOPE OF THE ABOVE
+
+The MIT licence above covers only what the 1.6 port added, which is the whole
+of the C# in Source/ as it now stands:
+
+  - the one thing 1.6 broke: FloatMenuOptionProvider_TakeSkateboard, replacing
+    a Harmony patch on FloatMenuMakerMap.ChoicesAtFor, a method 1.6 deleted
+  - the four fixes to defects that predate 1.6: the doubled PatchAll, the
+    terrain list that existed in three copies of which one had fallen behind,
+    the Shredder trait left on a pawn who leaves the map, and the removal of a
+    caravan patch that never ran and leaked a Thing reference per arrival
+  - the rewriting around them: one renderer postfix instead of two, the terrain
+    list resolved to TerrainDef once at load instead of a string array rebuilt
+    and searched on every tick of every pawn, and a publicised field instead of
+    a Traverse lookup per pawn per frame
+  - the English keyed strings and the French translation
+  - the packaging and the documentation
+
+IT DOES NOT COVER THE ORIGINAL MOD. The folding skateboard, the Shredder trait,
+the recipe, the research and skill gates, the movement bonus, the contents of
+the list of surfaces you can ride on, the draw offsets, and the four textures
+are SilkCircuit's work, reused here:
+
+  https://steamcommunity.com/sharedfiles/filedetails/?id=3414678101
+
+SilkCircuit never declared a licence for them, so none is granted here and none
+can be. They are redistributed under the usual practice for abandoned mods -
+explicit credit, a link to the original, and removal on request.
+About/Preview.png is theirs as it stands, and the four textures are theirs byte
+for byte; only their file names changed.
+
+If SilkCircuit asks for this to be taken down, it comes down. Immediately, and
+without discussion.
+
+ATTRIBUTION.md records what was taken and what was changed.
