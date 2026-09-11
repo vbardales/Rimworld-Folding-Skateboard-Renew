@@ -19,7 +19,7 @@ namespace FoldingSkateboard
     {
         public FoldingSkateboardMod(ModContentPack content) : base(content)
         {
-            new Harmony("nelim.foldingskateboard").PatchAll();
+            new Harmony("nelim.foldingskateboardrenew").PatchAll();
         }
     }
 
