@@ -12,8 +12,8 @@ showcase:     complete
 tested_on:
 workshop:
 remaining:
-  - unverified: never loaded by RimWorld; the functional tests settle what can be settled without it, and nothing about what a colony does
-  - feature: no TESTING.md, so a first run in game has no protocol to follow
+  - unverified: never loaded by RimWorld; TESTING.md is the protocol, seventeen scenarios, none run
+  - unverified: whether removing the mod mid-ride costs a colonist their fast walker trait for good, which is scenario 15
 session:      local_40bd9ed8-65bc-4776-8224-f7aa71edee50
 updated:      2026-09-12, showcase shipped, by the session that holds the mod
 ---
@@ -32,8 +32,8 @@ this mod. They are answered now, and this is what they rest on.
 - **`tested_on`** — the date of the last run in game. **Empty, and it means never.** The mod has
   never been loaded by RimWorld, here or anywhere: it was ported by reading the 1.6 assembly, not
   by running it. `_tools/Run-Functional-Tests.ps1` asks the installed game the questions that can
-  be settled without launching it, and passes; it says nothing about what a colony does. There is
-  no `TESTING.md`, so a first run would have to start by deciding what to look at.
+  be settled without launching it, and passes; it says nothing about what a colony does, which is
+  what `TESTING.md` is for.
 - **`dependencies`** — **`declared`**, and it is the whole answer. Harmony is the only mod this one
   needs, and the About names it in `modDependencies`. The 1.6 assembly and Harmony are the only
   things the C# references. The ~170 terrain names in `SkateableTerrain` include floors from LTS

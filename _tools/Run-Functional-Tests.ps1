@@ -3,6 +3,9 @@
   Asks the installed game whether it still does what this mod hooks into. No RimWorld launched.
 
 .DESCRIPTION
+  TESTING.md at the repository root lists what to watch for in a running colony. This asks the
+  questions that can be settled without one.
+
   This mod has never been run. It was ported by reading the 1.6 assembly, and every claim the port
   rests on was settled by reflection rather than by play. Those claims are written in the CHANGELOG
   as prose, where nothing ever rechecks them. This file rechecks them, against the game that is
