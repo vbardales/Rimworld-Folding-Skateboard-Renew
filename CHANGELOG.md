@@ -40,13 +40,20 @@ verified by reflection against the shipped 1.6 assembly before anything was comp
   `stackLimit` is 1; and a "Force equip" filter matching English label text on an item that is not
   equipment.
 
-### Removed
+### Images
 
-- `About/ModIcon.png`, the mod's own item texture cropped square and scaled to 128 px, added
-  earlier in this same unreleased version. An icon cut from the source mod's art makes the
-  upstream author's work carry the port's identity, and the icon is the one file of a port that is
-  supposed to speak for the port rather than for the mod it carries. The mod ships without one;
-  RimWorld does not require it.
+Both were made on 2026-09-12 for this port, with an image model under direction, and neither is
+cut from SilkCircuit's art. Full-resolution renders are kept in `Art/`, outside the published
+folder.
+
+- `About/Preview.png`, a scene rather than a title card: a folded board lit by a standing lamp on
+  paved ground, a colonist rolling away behind it, and the paving giving way to bare soil at one
+  corner. 896×504, with the name engraved at that size. It replaces SilkCircuit's own 800×451
+  title card, which this repository shipped until then and which carried his own lettering.
+- `About/ModIcon.png`, the mascot this repository gives all its mods, with a folded board beside
+  it, 128×128. An earlier icon, added and removed earlier in this same unreleased version, had
+  been the mod's own item texture cropped square: an icon cut from the source mod's art makes the
+  upstream author's work carry the port's identity, which a mascot does not.
 
 ### Unchanged
 

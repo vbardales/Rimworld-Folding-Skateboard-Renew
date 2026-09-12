@@ -4,19 +4,18 @@ packageId:    nelim.foldingskateboardrenew
 repo:         Rimworld-Folding-Skateboard-Renew
 visibility:   public
 detached:     yes
-stage:        showcase
+stage:        preTest
 licence:      silent
 licence_at:   four places, the About and the Steam page among them
 dependencies: declared
-showcase:     icon
+showcase:     complete
 tested_on:
 workshop:
 remaining:
-  - unverified: never seen running, and no TESTING.md written to run from
-  - defect: the icon is 1254 x 1254 and 1.2 MB for a slot that shows 32 px, and git does not track it yet
-  - feature: no showcase image at all; PROMPT_FOLDINGSKATEBOARDRENEW.md, one folder up, holds the brief for it
+  - unverified: never loaded by RimWorld; the functional tests settle what can be settled without it, and nothing about what a colony does
+  - feature: no TESTING.md, so a first run in game has no protocol to follow
 session:      local_40bd9ed8-65bc-4776-8224-f7aa71edee50
-updated:      2026-09-12, by the session that holds the mod
+updated:      2026-09-12, showcase shipped, by the session that holds the mod
 ---
 
 # Folding Skateboard Renew — status
@@ -32,8 +31,9 @@ this mod. They are answered now, and this is what they rest on.
   says the same thing.
 - **`tested_on`** — the date of the last run in game. **Empty, and it means never.** The mod has
   never been loaded by RimWorld, here or anywhere: it was ported by reading the 1.6 assembly, not
-  by running it. There is no `TESTING.md` either, so a first run would have to start by deciding
-  what to look at.
+  by running it. `_tools/Run-Functional-Tests.ps1` asks the installed game the questions that can
+  be settled without launching it, and passes; it says nothing about what a colony does. There is
+  no `TESTING.md`, so a first run would have to start by deciding what to look at.
 - **`dependencies`** — **`declared`**, and it is the whole answer. Harmony is the only mod this one
   needs, and the About names it in `modDependencies`. The 1.6 assembly and Harmony are the only
   things the C# references. The ~170 terrain names in `SkateableTerrain` include floors from LTS
@@ -52,8 +52,9 @@ but a living source, `forbidden` a written refusal, `original` owing nothing to 
 name, not an idea traceable to one mod, not a value derived from its assets.
 
 `showcase`, read off the disk: `none` neither image, `icon` or `preview` one of the two,
-`complete` both. It says which files exist, never whether they are any good — this mod's icon
-counts towards `icon` while being four times too wide and forty times too heavy.
+`complete` both. It says which files exist, never whether they are any good: this mod counted as
+`icon` on 2026-09-12 while that icon was four times too wide and forty times too heavy for the
+32 px it is shown at.
 
 ## What this file is for, and the one way it goes wrong
 

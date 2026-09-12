@@ -38,6 +38,7 @@ of the C# in Source/ as it now stands:
     and searched on every tick of every pawn, and a publicised field instead of
     a Traverse lookup per pawn per frame
   - the English keyed strings and the French translation
+  - the showcase image and the mod icon in About/, and their sources in Art/
   - the packaging and the documentation
 
 IT DOES NOT COVER THE ORIGINAL MOD. The folding skateboard, the Shredder trait,
@@ -50,8 +51,10 @@ are SilkCircuit's work, reused here:
 SilkCircuit never declared a licence for them, so none is granted here and none
 can be. They are redistributed under the usual practice for abandoned mods -
 explicit credit, a link to the original, and removal on request.
-About/Preview.png is theirs as it stands, and the four textures are theirs byte
-for byte; only their file names changed.
+The four textures are theirs byte for byte; only their file names changed.
+About/Preview.png was theirs until 2026-09-12 and is no longer used: the
+showcase and the mod icon shipped today were made for this port and fall under
+the grant above.
 
 If SilkCircuit asks for this to be taken down, it comes down. Immediately, and
 without discussion.

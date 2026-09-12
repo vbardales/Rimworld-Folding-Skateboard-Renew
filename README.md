@@ -17,6 +17,7 @@ along the way.
 FoldingSkateboardRenew/
   Mod/          the published folder - this is what the NTFS junction into RimWorld/Mods points at
   Source/       C#, never published
+  Art/          full-resolution image sources, never published
   _tools/       the showcase page and the functional tests, never published
 ```
 

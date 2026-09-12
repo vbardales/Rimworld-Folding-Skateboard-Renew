@@ -1,0 +1,85 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>Folding Skateboard Renew — showcase</title>
+<!--
+  Engraves the mod name and its summary line onto the showcase, to the repository
+  standard in STYLE_RIMWORLD.md: 896x504, title over the calm upper-left third,
+  58x3 rule, 21 px summary on 430 px, and the veil rule of 2026-09-12 - a colour
+  taken from the picture rather than the same near-black on every mod.
+
+  Rendered by Chrome headless at the final size, so the glyphs are never
+  resampled. The background is Art/Preview-source.png, the full-resolution
+  render, never the reduced Preview.png.
+
+    chrome --headless --disable-gpu --hide-scrollbars \
+      --window-size=896,504 --force-device-scale-factor=1 \
+      --screenshot=../Mod/About/Preview.png preview.html
+
+  The source is 1374x1145, so reaching 16:9 costs a third of its height, taken
+  at 34% from the top. That figure is not a taste: below it the board loses the
+  fold and the wheels at the bottom of the frame, above it the sky comes back
+  and the board goes. The dark wall and the strip of dusk sky are what that
+  choice spends.
+
+  THE RIDER SITS UNDER THE TITLE, and no crop of this render avoids it. He is
+  at 31-38% of the width, the board is at 79-90%, and the title block reaches
+  54%: any window holding the board holds him in the left half, and mirroring
+  the image moves the lamp and the board under the text instead, which is
+  worse. So he stays, veiled, readable as a figure walking away and no longer
+  as a figure on a board. The lit board in the lamp pool carries the
+  identification alone, which is what the prompt sheet said would happen if the
+  distant rider had to be given up.
+
+  THE VEIL. Sampled at #443C3B, the mean of the paving the title lands on -
+  warm dark grey, not the blue-grey the prompt sheet predicted, because the
+  lamp warms the whole yard and not only its pool. Relative luminance 0.048,
+  well under the 0.18 threshold, so the ink is the pale one and the drop
+  shadows stay. Measured on the rendered PNG with the text hidden, eight
+  patches at the corners of the two text blocks: 9.3:1 at worst under the
+  title, 6.7:1 at worst under the summary, against a floor of 4.5:1.
+-->
+<style>
+  html, body { margin: 0; padding: 0; }
+  body { width: 896px; height: 504px; position: relative; overflow: hidden; }
+
+  .scene {
+    position: absolute; inset: 0;
+    background: url('../Art/Preview-source.png') 50% 34% / cover no-repeat;
+  }
+
+  .veil {
+    position: absolute; inset: 0;
+    background: radial-gradient(circle at 0% 0%,
+                rgba(68, 60, 59, .88) 0%, rgba(68, 60, 59, 0) 74%);
+  }
+
+  .plate {
+    position: absolute; left: 50px; top: 46px;
+    font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  }
+
+  .name {
+    margin: 0; font-size: 46px; font-weight: 700; line-height: 1.04;
+    color: #F2ECE1; letter-spacing: -1px;
+    text-shadow: 0 2px 18px rgba(0, 0, 0, .55);
+  }
+
+  .rule {
+    width: 58px; height: 3px; margin: 18px 0 0; background: #D68F2C;
+  }
+
+  .line {
+    margin: 13px 0 0; width: 430px;
+    font-size: 21px; line-height: 29px; font-weight: 400;
+    color: #D8CFC0;
+    text-shadow: 0 1px 12px rgba(0, 0, 0, .6);
+  }
+</style>
+
+<div class="scene"></div>
+<div class="veil"></div>
+<div class="plate">
+  <p class="name">Folding<br>Skateboard Renew</p>
+  <div class="rule"></div>
+  <p class="line">Unfolds on hard ground outdoors, folds onto their back indoors.</p>
+</div>

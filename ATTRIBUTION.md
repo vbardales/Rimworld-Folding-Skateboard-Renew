@@ -166,12 +166,25 @@ behaviour was lost with it: nothing observable ever depended on it.
 ## Textures and images
 
 The four textures are SilkCircuit's, byte for byte; only their file names and the folder they sit
-in changed. `About/Preview.png` is SilkCircuit's own showcase, unchanged and unrecut — 800×451 and
-852 KB, inside Steam's hard limit.
+in changed.
 
-**The mod ships no `About/ModIcon.png`.** One existed for a few days: the mod's own item texture,
-cropped to its opaque bounds, padded back to a square and scaled to 128 px.
+**`About/Preview.png` and `About/ModIcon.png` are ours, and neither is cut from anything of his.**
+Both were made on 2026-09-12 with an image model under direction, and the full-resolution renders
+are kept in `Art/`, outside the published folder.
 
-It was removed on 2026-09-11. An icon cut from the source mod's art makes the upstream author's
-work carry the port's identity, and the icon is the one file of a port that is supposed to speak
-for the port rather than for the mod it carries. RimWorld loads a mod that has none.
+The showcase is a scene rather than a title card: a folded board lit by a standing lamp on paved
+ground, a colonist rolling away behind it, the paving giving way to bare soil at one corner —
+which is the rule of the mod drawn rather than written. Cropped to 896×504, and the name engraved
+over it at that size so the glyphs are never resampled. `_tools/preview.html` is how, and says why
+it is cropped where it is.
+
+It replaces SilkCircuit's own 800×451 title card, which this repository shipped until 2026-09-12.
+That card carried his lettering and his title, and publishing it as the store image of a port
+meant exhibiting his work under another author line. It stays in this repository's history, at the
+import commit, and is used nowhere.
+
+The icon is the mascot this repository gives all its mods, drawn for the occasion with a folded
+board beside it. An earlier one, removed on 2026-09-11, had been the mod's own item texture
+cropped square: an icon cut from the source mod's art makes the upstream author's work carry the
+port's identity, and the icon is the one file of a port that is supposed to speak for the port
+rather than for the mod it carries. That objection does not apply to a mascot.
