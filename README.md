@@ -17,6 +17,7 @@ along the way.
 FoldingSkateboardRenew/
   Mod/          the published folder - this is what the NTFS junction into RimWorld/Mods points at
   Source/       C#, never published
+  _tools/       the showcase page and the functional tests, never published
 ```
 
 Steam publishes the junction's target directory as it stands, with no filtering
@@ -31,6 +32,18 @@ dotnet build Source/FoldingSkateboard.csproj
 
 The output goes straight to `Mod/Assemblies/FoldingSkateboard.dll`. Reference assemblies come from
 NuGet (`Krafs.Rimworld.Ref`), so no RimWorld installation is needed to compile.
+
+## Checks
+
+```
+powershell -NoProfile -ExecutionPolicy Bypass -File _tools/Run-Functional-Tests.ps1
+```
+
+Asks the installed game whether it still does what this mod hooks into, without launching it. Most
+of what this port rests on fails silently when the game moves underneath it - a draw phase that
+stops calling the method this mod postfixes, a float-menu sweep that stops finding providers, a
+floor that gets renamed - and none of those throws anything a log would carry. It reads the
+installed game's assembly, not the NuGet reference copy.
 
 ## Requirements
 
