@@ -5,6 +5,10 @@ Feature: What a person has to look at: the board drawn
   # written, not that the board is under the rider, that its colour follows its stuff or that it is folded on a
   # back. Each scenario asserts the STATE first (the trait is on, or off), takes the capture, and a person opens it.
   # The camera is as close as the game allows: a board is one cell, and at the default zoom it is a few pixels.
+  # A drafted, idle colonist tracks the mouse cursor to aim (RimWorlds own idle-facing behaviour), which
+  # overrode the facing set here and made west and north captures show Ada facing the camera instead (first run,
+  # 2026-09-28). Undrafting after the Shredder assertion and before the photo removes that: the trait check runs
+  # off the Tick patch, not the drafted state, so undrafting here changes nothing the scenario is testing.
 
   Background:
     Given the save "test-colony" is loaded
@@ -29,6 +33,7 @@ Feature: What a person has to look at: the board drawn
     And I draft "Ada"
     When I wait 90 ticks
     Then "Ada" has trait "Shredder"
+    And I undraft "Ada"
     When Folding Skateboard Renew: "Ada" faces south
     And Folding Skateboard Renew: the camera looks at (3, 3) of the yard
     And I zoom all the way in
@@ -43,6 +48,7 @@ Feature: What a person has to look at: the board drawn
     And I draft "Ada"
     When I wait 90 ticks
     Then "Ada" has trait "Shredder"
+    And I undraft "Ada"
     When Folding Skateboard Renew: "Ada" faces west
     And Folding Skateboard Renew: the camera looks at (3, 3) of the yard
     And I zoom all the way in
@@ -57,6 +63,7 @@ Feature: What a person has to look at: the board drawn
     And I draft "Ada"
     When I wait 90 ticks
     Then Folding Skateboard Renew: "Ada" does not have the trait "Shredder"
+    And I undraft "Ada"
     When Folding Skateboard Renew: "Ada" faces north
     And Folding Skateboard Renew: the camera looks at (0, 0) of the yard
     And I zoom all the way in
@@ -72,6 +79,7 @@ Feature: What a person has to look at: the board drawn
     And I draft "Ada"
     When I wait 90 ticks
     Then "Ada" has trait "Shredder"
+    And I undraft "Ada"
     When Folding Skateboard Renew: "Ada" faces south
     And Folding Skateboard Renew: the camera looks at (3, 3) of the yard
     And I zoom all the way in
