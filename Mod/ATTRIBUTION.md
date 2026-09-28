@@ -5,16 +5,41 @@ A 1.6 port of **Folding Skateboard**, by **SilkCircuit**
 
 ## Status: public
 
-The source mod is **dead** — it declares 1.5 and nothing further — and **no licence is declared
-anywhere**, checked at the four places one could be: no `LICENSE` file in the mod, no mention in
-its `About.xml`, no linked repository (`<url>` points at a Steam profile, not a source repo), and
-nothing in the body of the description on its Steam page. That last check is the one that matters:
+The source mod is **dead** — its `About.xml` declares 1.5 only, its Steam page says "RimWorld 1.5+",
+and neither names 1.6 — and **no licence is declared anywhere**, checked at the four places one
+could be: no `LICENSE` file in the mod, no mention in its `About.xml`, no linked repository
+(`<url>` points at a Steam profile, not a source repo), and nothing in the body of the description
+on its Steam page. That last check is the one that matters:
 it is the one that was skipped once on たたら製鉄, whose ban on redistribution turned out to be a
 sentence in its description and nowhere else.
 
+The page was read again on 2026-09-28. It was posted on 25 January 2025 and last updated on
+29 January 2025; the only mention of 1.6 is a reader's comment asking for it. "1.5+" is a lower
+bound and does not declare 1.6, so the source counts as abandoned under the workflow's operational
+definition (a source that does not declare RimWorld 1.6 support), which makes it `silent`. That
+classification is not the author's consent and lifts no explicit prohibition; there is none.
+
 This is the usual convention for ports on the RimWorld Workshop: republished with **credit by
 name** and **removal on request, without argument**. The `<author>` field reads
-`SilkCircuit - 1.6 adapted by Nelim`, and the removal clause is in the description.
+`SilkCircuit - 1.6 adapted by Nelim`, the name carries ` (unofficial)`, and the removal clause is
+the first paragraph of the description.
+
+## Where the port started
+
+**The original has no repository, so there is nothing to fork and no pull request to send.**
+Checked on 2026-09-28:
+
+- its `About.xml` `<url>` is a Steam profile, and neither that profile nor the Workshop page links a
+  GitHub or GitLab repository;
+- a GitHub search finds no repository for the mod, its name or its packageId;
+- a GitHub organisation called `silkcircuit` exists with no public repository. Nothing shows it is the
+  same person, so it is not used as evidence of anything.
+
+The port started from what the item itself ships: the Workshop payload carries a `Source/` folder
+beside `Assemblies/`, `Defs/` and `Textures/`. That is the only source there is, and it is the
+provenance of everything listed under "What was carried over". A correction therefore cannot be
+proposed upstream. The one way to reach the author is a comment on the item's Steam page, which is
+also where the thank-you message will go (see `PUBLICATION.md`).
 
 ## What was carried over
 
@@ -169,7 +194,7 @@ The four textures are SilkCircuit's, byte for byte; only their file names and th
 in changed.
 
 **`About/Preview.png` and `About/ModIcon.png` are ours, and neither is cut from anything of his.**
-Both were made on 2026-09-12 with an image model under direction, and the full-resolution renders
+Both were generated with OpenAI's gpt-image, under direction: the C2PA manifest embedded in each source render names it as the software agent, dated 2026-09-11 for the icon and 2026-09-12 for the showcase. The full-resolution renders
 are kept in `Art/`, outside the published folder.
 
 The showcase is a scene rather than a title card: a folded board lit by a standing lamp on paved

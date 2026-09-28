@@ -2,8 +2,8 @@
 
 ## [1.0.0] — unreleased
 
-First release: a 1.6 port of SilkCircuit's Folding Skateboard, which declared 1.5 and nothing
-further.
+First release: a 1.6 port of SilkCircuit's Folding Skateboard, whose `About.xml` declares 1.5 only
+and whose page says "RimWorld 1.5+", neither naming 1.6.
 
 ### Localization follow-up — 2026-09-13
 
@@ -48,7 +48,7 @@ verified by reflection against the shipped 1.6 assembly before anything was comp
 
 ### Images
 
-Both were made on 2026-09-12 for this port, with an image model under direction, and neither is
+Both were generated for this port with OpenAI's gpt-image, under direction (2026-09-11 for the icon, 2026-09-12 for the showcase), and neither is
 cut from SilkCircuit's art. Full-resolution renders are kept in `Art/`, outside the published
 folder.
 
@@ -60,6 +60,17 @@ folder.
   it, 128×128. An earlier icon, added and removed earlier in this same unreleased version, had
   been the mod's own item texture cropped square: an icon cut from the source mod's art makes the
   upstream author's work carry the port's identity, which a mascot does not.
+
+### Description
+
+- The Steam description is written once, in `PUBLICATION.md`, and `Mod/About/About.xml` gets its
+  plain text from that block, so the two cannot drift.
+- It no longer says the port was made under "in-game testing": the mod has not been run in game.
+  The line comes back when `tested_on` is set.
+- It names the tools by what they did: Claude Code for the code, tests, documentation and
+  translation, OpenAI's gpt-image for the showcase and icon renders.
+- It links the Workshop pages of the original mod and of Harmony wherever it names them, and ends on
+  `Source code on GitHub` instead of a bare URL.
 
 ### Unchanged
 
