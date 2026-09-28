@@ -11,7 +11,7 @@ const qa = path.join(root, '.build/preview-qa');
  const server = http.createServer(async (req,res) => {
   try {
    const name = path.basename(new URL(req.url,'http://localhost').pathname);
-   if (!['preview.html','preview-palette.json','Preview-source.png'].includes(name)) { res.writeHead(404).end(); return; }
+   if (!['preview.html','preview-palette.json','Preview.png'].includes(name)) { res.writeHead(404).end(); return; }
    res.setHeader('Content-Type', name.endsWith('.json')?'application/json':name.endsWith('.png')?'image/png':'text/html');
    res.end(await fs.readFile(path.join(root,'Art',name)));
   } catch { res.writeHead(500).end(); }

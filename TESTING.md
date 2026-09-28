@@ -12,6 +12,106 @@ provider sweep, the floor names, the translation keys. A red line there explains
 that would have failed anyway. It proves nothing about what appears on screen, which is why the
 seventeen below stand unchanged.
 
+## What plays each scenario, and what `tested` asks
+
+The seventeen scenarios below are the acceptance list. None of them is played by hand at the end:
+`AUDIT.md` (step `done -> tested`) wants every one either automated and green, or listed here as not
+applicable with its reason. This table says which, and it is also the justification of the Pickle
+suite's scope: only what a running game alone can show is written in Gherkin, and what a test outside
+the game can prove stays outside it.
+
+| # | Scenario | Played by | Why |
+|---|---|---|---|
+| 1 | The mod loads, the patches apply | Any Pickle run, plus the load audit | A patch that throws at startup kills the game before the runner exists; the load audit reads the log for the rest |
+| 2 | The recipe, its gates, its cost | **Offline**, `_tools/Run-Functional-Tests.ps1` (definitions test) | Static facts of the def. That the game refuses a bill below Crafting 4 is the game's own logic, not the mod's, and is not tested |
+| 3 | The board takes its material's colour | Pickle, `@review` capture | Only a person can look at a colour |
+| 4 | Picking one up | Pickle | The provider and the job run through the game's own callbacks |
+| 5 | The three refusals, worded | Pickle | Conditions read game state; the wording is the four keys, in each language |
+| 6 | The three silent gates | Pickle | Drafted, several selected, no manipulation: all game state |
+| 7 | Riding | Pickle, with a `@review` capture | The trait and the speed are asserted; the drawn board is looked at |
+| 8 | Folding, indoors and off the hard ground | Pickle, with a `@review` capture | Same |
+| 9 | The roof decides | Pickle | A roof placed over the cell |
+| 10 | Mined rock, bridges, smooth stone | Pickle, one outline | Five terrains, one expectation each |
+| 11 | Fast walker and slowpoke set aside and given back | Pickle | Trait swap, and the parked trait in the mod's game component |
+| 12 | A wall directly south hides the board | Pickle, `@review` capture only | Nothing but the drawing changes, so nothing can be asserted, only looked at |
+| 13 | Leaving the map mid-ride | Pickle, by despawning the pawn | The mod answers for its `DeSpawn` hook; forming a caravan is the game's own mechanism and is not tested |
+| 14 | Save and reload mid-ride | Pickle, `I save and reload` | A real save, a real load, and the component comes back from the file |
+| 15 | Removing the mod mid-ride | Pickle, restart chain with the mod removed | The only scenario that needs two launches; see the pass list |
+| 16 | French | The same suite, played with `-Language French` | The language is fixed at launch, never switched inside a run |
+| 17 | A full colony's tick cost | Pickle, a tick-budget guard | Guards against the per-tick allocation of the 1.5 mod; not a benchmark |
+
+Not applicable, with the reason: forming a real caravan or sending a shuttle (scenario 13, the
+engine's mechanism); the game's refusal of a bill below Crafting 4 (scenario 2, the engine's rule);
+switching language inside a session (scenario 16, a restart of the game, done by a pass per language).
+
+## Passes
+
+A mod is not validated by one run, and a `TESTING.md` that does not say how many is not a plan.
+
+| Pass | What it establishes | Language |
+|---|---|---|
+| `sans-facultatifs` | The mod and Harmony alone: Core, the DLC, Harmony, RimLogging, Pickle and the mod. Every scenario except the ones that need something else | English, then French: two requests |
+| `avec-lts` | The board rides on a floor from one of LTS Systems' mods, and does not on a floor it does not name. Scenarios tagged `@requires:` for that mod skip anywhere else | English |
+| `incompat-original` | SilkCircuit's original mounted beside this mod, to see whether the declared incompatibility is still true. The documented symptom is asserted, so green means "behaves as declared" | English |
+| `removal` | Scenario 15: two launches under one lock, the second without the mod | English |
+
+Not needed, and why: a pass without a DLC (no DLC is used, named or branched on); a separate
+restart chain for scenario 14 (`I save and reload` restores the component from a real save file, and
+nothing this mod keeps lives outside that file).
+
+The pass `avec-lts` cannot be written until the Workshop mod that defines `LTS_PlankFloor` and its
+141 siblings is identified: it is not known from this repository, and it is unverified whether one
+mod or several supply them. That mod is also then thanked, since a tested integration is credited.
+
+## What has to be true before `tested`
+
+The rules of `AUDIT.md` for `done -> tested`, applied to this mod. None of it is true today.
+
+- **No scenario is left `@wip`.** A scenario put aside is either repaired and replayed, or deleted with
+  its reason written here. A remaining `@wip` is a scenario waiting, not a scenario passed.
+- **Every conditional scenario has run.** Each `@requires:<packageId>` had its pass, on a map that
+  mounts that mod, and its report was read: the suite name and the scenario names checked before it is
+  cited, because the report folder is shared by the whole machine. A scenario skipped for want of its
+  condition is not a scenario passed.
+- **No manual test is left to tick.** Everything in the seventeen is automated and green, or is listed
+  above as not applicable with its reason. The `@review` captures are still looked at, but that is
+  reading an image a scenario has already proved to be in the intended state, not one more manual test.
+- `exitReason` is read before any count; scenarios played are compared with features discovered; a
+  green capture scenario is not read as a correct picture; a rerun that passes only on a retry counts
+  as flaky, not as green.
+- The log is read from the start of the game, not only the scenarios' own `no errors were logged`.
+- English and French were each a pass of their own, and the raw-key check found no accented
+  fallback text (developer mode turns a missing key into accented gibberish, which is how it shows).
+- Every scenario that ever failed was replayed green on a build that contains its fix.
+
+## Evidence to keep, and what to delete
+
+Reports and captures stay **on disk** under `Tests/Pickle/Evidence/`, which git ignores. Launch each
+request with `-EvidenceDir Tests/Pickle/Evidence/<date>-<pass>-<language>` so that the report is copied
+out of the shared, rolling folder before another mod's run overwrites it, and give the request the
+SHA in its label: a request carries none, and the tree is staged when its turn comes.
+
+| Keep, per pass | Why |
+|---|---|
+| `summary.json` and `summary.md` | The verdict. Read `exitReason` first |
+| `junit.xml` and `messages.ndjson` | The step outcomes and the failure messages |
+| `Player.log` | Startup, load order, dropped mods, errors outside the scenarios |
+| `evidence-complete.txt` or `no-report.txt` | Says the copy is whole, or that the launcher left no report: infrastructure, not a result |
+| The `@review` captures and films the pass exists to produce, **as JPEG** | The human review. Never the PNGs: 2.4 to 5.5 MB each |
+| One line per run in `docs/runs/` | The history, kept in git as text. Write it **before** deleting the folder |
+
+| Delete | When |
+|---|---|
+| `screenshots/` copied whole from the shared folder | Never keep it: it holds other mods' captures |
+| `report.html` | Once the verdict is recorded; it is the largest file of a text-only run |
+| A report of a failed or infrastructure attempt | Once its line is in `docs/runs/` and its cause is in `STATUS.md` |
+| A report superseded for the same scenario and the same revision | When the newer one exists, unless the older one is the only proof of a check the newer did not repeat (a language, a pass) |
+| Any report on a superseded build | After the pass is repeated on the current one: it proves nothing about the current build |
+
+**Never delete a report that a `STATUS.md` field or a tracked file points to**: repoint it to its line
+in `docs/runs/` first. List what goes and what stays before deleting. The launcher's archive folder is a
+reprieve of five runs, not storage; a session takes what it needs from the archive of its own run
+and deletes that archive afterwards, and leaves every other one alone.
 ## Before starting
 
 - RimWorld 1.6, Harmony active, Folding Skateboard Renew active, SilkCircuit's original **not**

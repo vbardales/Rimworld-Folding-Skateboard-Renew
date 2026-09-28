@@ -5,7 +5,7 @@
 html,body { margin:0; padding:0; }
 body { width:896px; height:504px; position:relative; overflow:hidden; font-family:"Segoe UI",system-ui,sans-serif; }
 .scene,.veil { position:absolute; inset:0; }
-.scene { background:url('Preview-source.png') 50% 34% / cover no-repeat; }
+.scene { background:url('Preview.png') 50% 34% / cover no-repeat; }
 .veil { background:radial-gradient(circle at 0% 0%,rgb(var(--veilRGB) / .88) 0%,rgb(var(--veilRGB) / 0) 74%); }
 .plate { position:absolute; left:50px; top:54px; }
 p { margin:0; }
@@ -29,6 +29,6 @@ window.previewReady=(async()=>{
  for(const [key,value] of Object.entries(palette)) document.documentElement.style.setProperty('--'+key,value);
  document.documentElement.style.setProperty('--veilRGB',palette.veil.match(/[a-f0-9]{2}/gi).map(x=>parseInt(x,16)).join(' '));
  await document.fonts.ready;
- const picture=new Image(); picture.src='Preview-source.png'; await picture.decode();
+ const picture=new Image(); picture.src='Preview.png'; await picture.decode();
 })();
 </script></html>

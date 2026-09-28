@@ -38,7 +38,7 @@
   grant, working in a real game. RimWorld runs on Mono; everything measured here runs under
   PowerShell on the desktop CLR.
 
-  SEVEN OF THESE THIRTEEN HAVE BEEN SEEN TO FAIL, one fault at a time in a copy of the mod, never
+  EIGHT OF THESE FOURTEEN HAVE BEEN SEEN TO FAIL, one fault at a time in a copy of the mod, never
   in the real files, the first three rebuilt so the fault reached the assembly:
 
     Source/AccessChecks.cs deleted          -> the grant invariant, AND the token scan, which names
@@ -48,6 +48,9 @@
     a second PatchAll call added            -> the single-registration test
     a terrain name misspelt                 -> the floor list
     a French key dropped                    -> the translation test
+    a def value changed (stuff count, the      -> the definitions test, once per fault
+      Crafting requirement, Shredder's
+      commonality)
 
   That third one is the 1.5 mod's own bug, and it is the reason the class-attribute test does not
   look for [HarmonyPostfix] alone. This mod names its bodies Prefix and Postfix and marks them with
@@ -540,6 +543,45 @@ It 'every vanilla floor the mod names still exists, and the generated stone ones
     Note ("$($names.Count) vanilla names: $($names.Count - $generated) declared floors, $generated generated from rock")
 }
 
+# =============================================================================================
+Section 'The definitions the description promises'
+# =============================================================================================
+
+# Static facts of the XML, the ones TESTING.md scenario 2 would otherwise have a person read off a
+# bill list. That the game refuses a bill below Crafting 4 is the game's rule and is not tested here;
+# that the def ASKS for Crafting 4, and for Smithing, is the mod's, and is.
+It 'the board, its recipe and its trait say what the description says' {
+    $x = New-Object System.Xml.XmlDocument
+    $x.Load((Join-Path $ModRoot 'Mod\Defs\FoldingSkateboard.xml'))
+    $thing = $x.SelectSingleNode("/Defs/ThingDef[defName='Paddleboard']")
+    $trait = $x.SelectSingleNode("/Defs/TraitDef[defName='Shredder']")
+    $job   = $x.SelectSingleNode("/Defs/JobDef[defName='AddPaddleboardToInventory']")
+    if (-not $thing) { 'there is no ThingDef Paddleboard'; return }
+    if (-not $trait) { 'there is no TraitDef Shredder'; return }
+    if (-not $job)   { 'there is no JobDef AddPaddleboardToInventory'; return }
+
+    $text = { param($node, $path) $n = $node.SelectSingleNode($path); if ($n) { $n.InnerText.Trim() } else { '(absent)' } }
+    $list = { param($node, $path) (@($node.SelectNodes($path) | ForEach-Object { $_.InnerText.Trim() } | Sort-Object)) -join ',' }
+    $want = [ordered]@{
+        'label'                = @((& $text $thing 'label'), 'folding skateboard')
+        'research prerequisite' = @((& $text $thing 'recipeMaker/researchPrerequisite'), 'Smithing')
+        'Crafting requirement'  = @((& $text $thing 'recipeMaker/skillRequirements/Crafting'), '4')
+        'fixed wood'           = @((& $text $thing 'costList/WoodLog'), '10')
+        'fixed steel'          = @((& $text $thing 'costList/Steel'), '10')
+        'stuff count'          = @((& $text $thing 'costStuffCount'), '30')
+        'recipe users'         = @((& $list $thing 'recipeMaker/recipeUsers/li'), 'CraftingSpot,ElectricSmithy,FueledSmithy')
+        'stuff categories'     = @((& $list $thing 'stuffCategories/li'), 'Metallic,Stony,Woody')
+        'stack limit'          = @((& $text $thing 'stackLimit'), '1')
+        'Shredder move speed'  = @((& $text $trait 'degreeDatas/li/statOffsets/MoveSpeed'), '2.0')
+        # A Shredder that could be rolled at pawn generation would put the trait on colonists who own no board.
+        'Shredder commonality' = @((& $text $trait 'commonality'), '0.0')
+    }
+    foreach ($k in $want.Keys) {
+        if ($want[$k][0] -ne $want[$k][1]) { "$k is '$($want[$k][0])', and the description and TESTING.md say '$($want[$k][1])'" }
+    }
+    $driver = & $text $job 'driverClass'
+    if (-not ($modTypes | Where-Object { $_.FullName -eq $driver })) { "the job's driverClass '$driver' is not a type of the mod assembly" }
+}
 # =============================================================================================
 Section 'The interface'
 # =============================================================================================
