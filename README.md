@@ -1,4 +1,6 @@
-# Folding Skateboard Renew
+# Folding Skateboard Renew (unofficial)
+
+UNOFFICIAL. This mod is published without the original author's explicit consent. If the original author contacts me to request its removal, I undertake to take it down promptly.
 
 A 1.6 port of **Folding Skateboard** by **SilkCircuit**
 ([Workshop 3414678101](https://steamcommunity.com/sharedfiles/filedetails/?id=3414678101)).

@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ModMetaData>
-  <name>Folding Skateboard Renew</name>
+  <name>Folding Skateboard Renew (unofficial)</name>
   <author>SilkCircuit - 1.6 adapted by Nelim</author>
   <packageId>nelim.foldingskateboardrenew</packageId>
   <supportedVersions>
     <li>1.6</li>
   </supportedVersions>
   <url>https://github.com/vbardales/Rimworld-Folding-Skateboard-Renew</url>
-  <description>A skateboard that boosts pawn movement speed while in use and conveniently folds up and straps to their back when they aren't shredding the gnar.
+  <description>UNOFFICIAL. This mod is published without the original author's explicit consent. If the original author contacts me to request its removal, I undertake to take it down promptly.
+
+A skateboard that boosts pawn movement speed while in use and conveniently folds up and straps to their back when they aren't shredding the gnar.
 
 I am not the author of this mod. The idea, the artwork, the trait and the balance are SilkCircuit's; all I did was bring it forward to 1.6, fix what the port turned up, and write the French. Credit goes to them; mistakes in the port are mine.
 
