@@ -56,6 +56,22 @@ DLC.
 
 Incompatible with SilkCircuit's original mod: both define the same defNames. Run one or the other.
 
+## Known limitations
+
+Two of these come from the original and were kept on purpose, one is a consequence of how the trait swap
+is stored. None has been seen in a running game yet: the mod has not been run.
+
+- **Removing the mod while a colonist is riding can cost them their fast walker or slowpoke trait for
+  good.** While Shredder is on, the vanilla speed trait is taken off and parked in the mod's own game
+  component, and handed back when the board folds. Remove the mod at that moment and the component goes
+  with it. Step every rider off the board, or wait until it has folded, before removing the mod. This is
+  read from the code, not observed.
+- **A wall directly south of a rider hides the board.** The riding graphic is drawn up to half a cell
+  south and would be painted across the wall, so the original suppressed it entirely. The rider keeps the
+  trait and the speed; only the drawing goes.
+- **The list of floors is the original's.** Constructed floors, mined rough and rough-hewn rock, bridges
+  and 141 floors from LTS Systems' mods; smooth stone is not on it. A roofed cell counts as indoors even
+  outdoors, so a covered courtyard is not a skate park.
 ## Licence
 
 The port work in this repository is MIT ([LICENSE](LICENSE)). SilkCircuit's original mod declared

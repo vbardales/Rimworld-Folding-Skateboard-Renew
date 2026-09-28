@@ -27,7 +27,7 @@ the game can prove stays outside it.
 | 3 | The board takes its material's colour | Pickle, `@review` capture | Only a person can look at a colour |
 | 4 | Picking one up | Pickle | The provider and the job run through the game's own callbacks |
 | 5 | The three refusals, worded | Pickle | Conditions read game state; the wording is the four keys, in each language |
-| 6 | The three silent gates | Pickle | Drafted, several selected, no manipulation: all game state |
+| 6 | The three silent gates | **Offline**, `_tools/Run-Functional-Tests.ps1` (provider-gates test) | The mod declares four flags: undrafted only, one pawn, manipulation required. That the game's menu builder honours them is the game's business and is not tested; the declaration is the mod's, and is read from the built class |
 | 7 | Riding | Pickle, with a `@review` capture | The trait and the speed are asserted; the drawn board is looked at |
 | 8 | Folding, indoors and off the hard ground | Pickle, with a `@review` capture | Same |
 | 9 | The roof decides | Pickle | A roof placed over the cell |
@@ -36,13 +36,16 @@ the game can prove stays outside it.
 | 12 | A wall directly south hides the board | Pickle, `@review` capture only | Nothing but the drawing changes, so nothing can be asserted, only looked at |
 | 13 | Leaving the map mid-ride | Pickle, by despawning the pawn | The mod answers for its `DeSpawn` hook; forming a caravan is the game's own mechanism and is not tested |
 | 14 | Save and reload mid-ride | Pickle, `I save and reload` | A real save, a real load, and the component comes back from the file |
-| 15 | Removing the mod mid-ride | Pickle, restart chain with the mod removed | The only scenario that needs two launches; see the pass list |
+| 15 | Removing the mod mid-ride | **Not applicable**, documented as a known limitation | What the game does with a trait whose mod is gone, and with a game component whose class is gone, is the engine's handling of a removed mod, which `AUDIT.md` says is not tested. The consequence is stated to players in the README instead |
 | 16 | French | The same suite, played with `-Language French` | The language is fixed at launch, never switched inside a run |
 | 17 | A full colony's tick cost | Pickle, a tick-budget guard | Guards against the per-tick allocation of the 1.5 mod; not a benchmark |
 
 Not applicable, with the reason: forming a real caravan or sending a shuttle (scenario 13, the
 engine's mechanism); the game's refusal of a bill below Crafting 4 (scenario 2, the engine's rule);
-switching language inside a session (scenario 16, a restart of the game, done by a pass per language).
+the game's honouring of the provider's four flags (scenario 6, the engine's menu builder); removing the
+mod from a running colony (scenario 15, the engine's handling of a removed mod, and a limitation the
+README now states); switching language inside a session (scenario 16, a restart of the game, done by a
+pass per language).
 
 ## Passes
 
@@ -53,7 +56,6 @@ A mod is not validated by one run, and a `TESTING.md` that does not say how many
 | `sans-facultatifs` | The mod and Harmony alone: Core, the DLC, Harmony, RimLogging, Pickle and the mod. Every scenario except the ones that need something else | English, then French: two requests |
 | `avec-lts` | The board rides on a floor from one of LTS Systems' mods, and does not on a floor it does not name. Scenarios tagged `@requires:` for that mod skip anywhere else | English |
 | `incompat-original` | SilkCircuit's original mounted beside this mod, to see whether the declared incompatibility is still true. The documented symptom is asserted, so green means "behaves as declared" | English |
-| `removal` | Scenario 15: two launches under one lock, the second without the mod | English |
 
 Not needed, and why: a pass without a DLC (no DLC is used, named or branched on); a separate
 restart chain for scenario 14 (`I save and reload` restores the component from a real save file, and
@@ -288,6 +290,9 @@ colonist is short a trait with nothing to say so.
 
 ## 15. Removing the mod, which is where a trait can be lost
 
+**Not a test to play.** It is kept because it describes a real consequence of the design, and it is
+stated to players in the README ("Known limitations"). What follows is what would be seen, not a step
+of the plan.
 Run this one on a **copy** of the save, and never on a colony that matters.
 
 1. While a colonist with fast walker is riding, save.

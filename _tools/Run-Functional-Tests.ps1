@@ -38,7 +38,7 @@
   grant, working in a real game. RimWorld runs on Mono; everything measured here runs under
   PowerShell on the desktop CLR.
 
-  EIGHT OF THESE FOURTEEN HAVE BEEN SEEN TO FAIL, one fault at a time in a copy of the mod, never
+  NINE OF THESE FIFTEEN HAVE BEEN SEEN TO FAIL, one fault at a time in a copy of the mod, never
   in the real files, the first three rebuilt so the fault reached the assembly:
 
     Source/AccessChecks.cs deleted          -> the grant invariant, AND the token scan, which names
@@ -51,6 +51,7 @@
     a def value changed (stuff count, the      -> the definitions test, once per fault
       Crafting requirement, Shredder's
       commonality)
+    the provider's Drafted flag set to true   -> the provider-gates test
 
   That third one is the 1.5 mod's own bug, and it is the reason the class-attribute test does not
   look for [HarmonyPostfix] alone. This mod names its bodies Prefix and Postfix and marks them with
@@ -486,6 +487,24 @@ It 'the provider still derives from the game class, and overrides members the ga
     }
 }
 
+# What the provider ANSWERS for, as opposed to what the game does with the answer. The mod declares
+# four flags and the game's menu builder honours them: that the builder does is the game's business
+# and is not tested; that the mod declares undrafted-only, one pawn, manipulation required is the
+# mod's, and it is what TESTING.md scenario 6 describes. The class is built with its own constructor
+# and the protected getters are read, which needs no game running.
+It 'the provider declares the gates the description states' {
+    $p = @($modTypes | Where-Object { $_.BaseType -and $_.BaseType.Name -eq 'FloatMenuOptionProvider' })
+    if ($p.Count -ne 1) { "the mod declares $($p.Count) providers, and it should declare one"; return }
+    $inst = [Activator]::CreateInstance($p[0])
+    $BFp = [System.Reflection.BindingFlags]'Public,NonPublic,Instance'
+    $want = [ordered]@{ Drafted = $false; Undrafted = $true; Multiselect = $false; RequiresManipulation = $true }
+    foreach ($k in $want.Keys) {
+        $prop = $p[0].GetProperty($k, $BFp)
+        if (-not $prop) { "the provider no longer exposes $k"; continue }
+        $got = $prop.GetValue($inst)
+        if ($got -ne $want[$k]) { "$k is $got, and the description says it is $($want[$k]): a drafted colonist, several at once or one who cannot use their hands would be offered the pick-up" }
+    }
+}
 It 'the game still discovers providers by sweeping subclasses' {
     $t = $byName['FloatMenuMakerMap']
     $found = $false
