@@ -49,13 +49,13 @@ last commit *plus* changes that were on disk that day: the hash is what identifi
 | `PickleTools/README.md` | `c771bef` 2026-09-25, `93986d5c45` | clean | The table of companion tools. Read again with the catalogue |
 | `PickleTools/TESTING.md` | `650adce` 2026-09-25, `f88f15c373` | clean | Only "What to keep after a test, and what to delete" was needed; it is applied in this mod's `TESTING.md` |
 | `Rimworld-Release-Admin/docs/OPERATIONS.md` | `3c03f51` 2026-09-26, `347a0d63b9` | clean | The item exists, so the "first publication" part is behind this mod. The workflow generation, dry-run and `publish` are for `prepublished`. Its scripts `about-description.mjs` and `changenote.mjs` (code, not prose) were read and used to produce `About.xml` from `PUBLICATION.md` |
+| `scripts/SEARCHING.md` | `50de695` 2026-09-28, `45f0fa13cc` | clean | The corpus search, bounded roots and filters, the `-s` resumable mode, and the ban on unbounded walks. Still needed for the `avec-lts` pass: the Workshop mod that defines the 141 `LTS_...` floors is not identified. Re-read 2026-09-28 for `upstream_mod_remotes` in `STATUS.md`: content unchanged since the earlier reading (same hash), no search run needed — the original's repository was already established absent by the audit (finding 5), so `upstream_mod_remotes: N/A`. **Applied badly once, on 2026-09-28**: a recursive `grep -rl` over the whole monorepo was started to look for the packageId, ran two minutes and was stopped. The bounded form is a fixed list of `About.xml` globs |
 
 ## Not useful
 
 | Document | Version read | Working copy | Why, and the trigger that makes it useful |
 | --- | --- | --- | --- |
 | `WORKSHOP_COMMENTS.md` | `dea856b` 2026-09-28, `77588f7429` | clean | Thank-you comments for public items; nothing is public. Trigger: `tested -> prepublished`, when the message for the original's page (3414678101, a first contact since the source is `silent`) is drafted and Harmony's `Covers` cell is extended |
-| `scripts/SEARCHING.md` | `372c447` 2026-09-23, `45f0fa13cc` | modified, not committed | The corpus search. Trigger: identifying the Workshop mod that defines the 141 `LTS_...` floors, for the `avec-lts` pass. **Applied badly once, on 2026-09-28**: a recursive `grep -rl` over the whole monorepo was started to look for the packageId, ran two minutes and was stopped. The bounded form is a fixed list of `About.xml` globs |
 
 ## Not read
 

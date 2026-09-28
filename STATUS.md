@@ -16,6 +16,7 @@ audit_revision: 6364ed8fd10beb0f38eaee8e2270faa11eae72ae
 audit_date:   2026-09-28
 licence:      silent
 licence_at:   four places, the About and the Steam page among them; the page read again 2026-09-28
+upstream_mod_remotes: N/A
 dependencies: declared
 showcase:     complete
 tested_on:
