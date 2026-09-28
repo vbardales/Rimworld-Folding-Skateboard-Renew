@@ -26,7 +26,21 @@ PROMPT_*.md
 *.suo
 *.csproj.user
 
+# Texture caches. The game writes a .dds beside every PNG it loads for a mod it can write to: four
+# appeared next to this mod's textures on 2026-09-23, two hours before the 0.1.0 upload. They are
+# regenerated on demand, they are not the mod's content, and a checkout must not carry them.
+*.dds
+
+# Windows folder icons. The root and Mod/ carry a desktop.ini pointing at Art/ModIcon.ico and
+# Art/Preview.ico. Steam sends Mod/ untouched, so neither may be tracked or reach a checkout of it.
+desktop.ini
+*.ico
+
+# Test evidence stays on disk and out of git: captures and Player.log grow without a limit. What is
+# kept in git is one line per run in docs/runs/, and STATUS.md points at that, never at these folders.
+Tests/Pickle/Evidence/
+evidence/
+
 # System.
 Thumbs.db
-desktop.ini
 .DS_Store
