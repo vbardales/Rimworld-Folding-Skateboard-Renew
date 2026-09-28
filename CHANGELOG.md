@@ -72,6 +72,10 @@ folder.
 - It links the Workshop pages of the original mod and of Harmony wherever it names them, and ends on
   `Source code on GitHub` instead of a bare URL.
 
+### packageId
+
+- `nelim.foldingskateboardrenew` becomes `nelim.foldingskateboard`. PUBLISHING.md (2026-09-27) keeps `renew` out of the packageId of a mod that is not yet public: the prefix already says who made it, and the name, the folder and the repository say it is a continuation. The Workshop item is still private and nobody has the mod enabled, so nothing is disabled by the change; after publication it would disable the mod for every subscriber. The Harmony instance id follows. The 0.1.0 item carries the earlier id until 1.0.0 replaces it.
+
 ### Unchanged
 
 The item, the trait, the recipe, the research and skill gates, the speed bonus, the surfaces you

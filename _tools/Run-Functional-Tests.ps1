@@ -456,7 +456,7 @@ It 'PatchAll is called from exactly one place, under one id' {
     if ($calls.Count -ne 1) { "PatchAll is called $($calls.Count) times in the source; two calls means every patch applied twice" }
     $ids = @([regex]::Matches($src, 'new\s+Harmony\s*\(\s*"([^"]+)"') | ForEach-Object { $_.Groups[1].Value } | Sort-Object -Unique)
     if ($ids.Count -ne 1) { "the source builds $($ids.Count) Harmony instances: $($ids -join ', ')" }
-    elseif ($ids[0] -ne 'nelim.foldingskateboardrenew') { "the Harmony id is $($ids[0]), which is no longer the packageId" }
+    elseif ($ids[0] -ne 'nelim.foldingskateboard') { "the Harmony id is $($ids[0]), which is no longer the packageId" }
 }
 
 # =============================================================================================
