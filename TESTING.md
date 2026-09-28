@@ -38,7 +38,7 @@ the game can prove stays outside it.
 | 14 | Save and reload mid-ride | Pickle, `I save and reload` | A real save, a real load, and the component comes back from the file |
 | 15 | Removing the mod mid-ride | **Not applicable**, documented as a known limitation | What the game does with a trait whose mod is gone, and with a game component whose class is gone, is the engine's handling of a removed mod, which `AUDIT.md` says is not tested. The consequence is stated to players in the README instead |
 | 16 | French | The same suite, played with `-Language French` | The language is fixed at launch, never switched inside a run |
-| 17 | A full colony's tick cost | Pickle, a tick-budget guard | Guards against the per-tick allocation of the 1.5 mod; not a benchmark |
+| 17 | A full colony's tick cost | **Not applicable** as a test | A mean tick cost on a shared headless machine measures the vanilla colony far more than this mod: a threshold would never fail, or fail for a reason that is not ours. The claim is structural (the 1.5 mod allocated a list per pawn per tick; this one resolves the terrain names once and returns early for a pawn without a trait set) and is read in the code, not measured |
 
 Not applicable, with the reason: forming a real caravan or sending a shuttle (scenario 13, the
 engine's mechanism); the game's refusal of a bill below Crafting 4 (scenario 2, the engine's rule);
@@ -46,6 +46,19 @@ the game's honouring of the provider's four flags (scenario 6, the engine's menu
 mod from a running colony (scenario 15, the engine's handling of a removed mod, and a limitation the
 README now states); switching language inside a session (scenario 16, a restart of the game, done by a
 pass per language).
+
+Where the Pickle scenarios live, in `Tests/Pickle/Mod/Pickle/Features/` (the suite is written and has never
+run; its README lists what its first run has to confirm):
+
+| Scenario | Feature |
+| --- | --- |
+| 1 | `01-load-and-patches` |
+| 3, and the pictures of 7, 8 and 12 | `05-captures` (`@review`) |
+| 4, 5 | `02-pickup` |
+| 7, 8, 9, 10 | `03-riding` |
+| 11, 13, 14 | `04-speed-trait` |
+| 16 | every feature, played once per language |
+| the declared incompatibility | `06-incompatible-original` (`@requires:silkcircuit.foldableskateboardmod`) |
 
 ## Passes
 
@@ -318,6 +331,8 @@ borrowed ones; anything else in English means a DefInjected path is wrong, and o
 case-sensitive filesystem such as the Steam Deck's it would be silently wrong there and right here.
 
 ## 17. A full colony, and the cost of the check
+
+**Not a test to play.** See the table at the top: a tick cost measured here would say more about the vanilla colony than about this mod. It stays as the thing to have in mind on the first real run, to look at the frame rate and the log by eye, and to report if something is plainly wrong; nothing decides pass or fail.
 
 1. Load a colony of fifteen or more colonists with a herd of animals, none of them carrying a board.
 2. Watch the frame rate and the log for a few in-game hours at three-times speed.

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+  <name>Folding Skateboard Renew - Pickle tests</name>
+  <author>Nelim</author>
+  <packageId>nelim.foldingskateboard.pickletests</packageId>
+  <supportedVersions>
+    <li>1.6</li>
+  </supportedVersions>
+  <description>In-game functional tests for Folding Skateboard Renew, run by Pickle. Development only: never published.
+
+The scenarios prepare a clear yard on the Pickle fixture, give a colonist a folding skateboard, put the colonist on floors that are and are not skateable, and read what the mod does: the pick-up entry of the right-click menu and its three refusals, the Shredder trait and the speed it gives, the fast walker trait put away and given back across a save and a reload, and what happens when a rider leaves the map. The pictures the mod exists to produce, the board drawn under a rider and folded on a back, are captures a person looks at.
+
+The mod under test needs no DLC and this companion declares none: the fixture is Pickle's own test-colony.</description>
+  <modDependencies>
+    <li>
+      <packageId>nelim.foldingskateboard</packageId>
+      <displayName>Folding Skateboard Renew (unofficial)</displayName>
+      <downloadUrl>https://github.com/vbardales/Rimworld-Folding-Skateboard-Renew</downloadUrl>
+    </li>
+    <li>
+      <packageId>rimworks.pickle</packageId>
+      <displayName>Pickle</displayName>
+      <steamWorkshopUrl>steam://url/CommunityFilePage/3791648678</steamWorkshopUrl>
+    </li>
+  </modDependencies>
+  <loadAfter>
+    <li>nelim.foldingskateboard</li>
+    <li>rimworks.pickle</li>
+  </loadAfter>
+</ModMetaData>

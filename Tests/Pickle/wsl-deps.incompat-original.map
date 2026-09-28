@@ -1,0 +1,3 @@
+# SilkCircuit's original, mounted beside this mod to see whether the declared incompatibility is still true.
+# It loads before the mod under test, which the staging adds last.
+silkcircuit.foldableskateboardmod 3414678101

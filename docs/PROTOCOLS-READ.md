@@ -42,10 +42,10 @@ last commit *plus* changes that were on disk that day: the hash is what identifi
 
 | Document | Version read | Working copy | Why only partly, and when to read it again |
 | --- | --- | --- | --- |
-| `PickleTools/Authoring/README.md` | `8d3ca6d` 2026-09-26, `a6e3e2eac0` | clean | Not in the list of documents to read, read anyway: it says what belongs in Gherkin and what does not, which is the scope argument of `TESTING.md`. Read again before the first `.feature` is written |
+| `PickleTools/Authoring/README.md` | `8d3ca6d` 2026-09-26, `a6e3e2eac0` | clean | Not in the list of documents to read, read anyway: it says what belongs in Gherkin and what does not, which is the scope argument of `TESTING.md`. Applied on 2026-09-28 to write the suite. Read again when a feature or a step changes |
 | `PickleTools/Headless/README.md` | `ed4e73a` 2026-09-26, `b64e7beefc` | clean | Filters, passes, `-DepMap`, `-Then`/`-ThenWithout`, exit codes, evidence. Needed at the first request |
 | `Rimworld-Ticket-Dispatcher/docs/SUBMIT.md` | `d07b2b8` 2026-09-26, `7ab5e437d4` | clean | Options of `Submit-PickleRun.ps1`. Read again at the first request |
-| `PickleTools/docs/steps.md` | `cba3ca1` 2026-09-25, `ada122c30f` | clean | The companion tools' steps. Nothing to write today. Pickle's own built-in steps were read from a local checkout, `Documents/pickle-local/stands-still/Docs/steps.md` (Pickle commit `a1293b0`, 2026-09-21): **not established as the installed version's**, so a step used from it is checked against the running build |
+| `PickleTools/docs/steps.md` | `cba3ca1` 2026-09-25, `ada122c30f` | clean | The companion tools' steps. Used on 2026-09-28: the load-audit step. Nothing else was needed from it. Pickle's own built-in steps were read from a local checkout, `Documents/pickle-local/stands-still/Docs/steps.md` (Pickle commit `a1293b0`, 2026-09-21): **not established as the installed version's**, so a step used from it is checked against the running build |
 | `PickleTools/README.md` | `c771bef` 2026-09-25, `93986d5c45` | clean | The table of companion tools. Read again with the catalogue |
 | `PickleTools/TESTING.md` | `650adce` 2026-09-25, `f88f15c373` | clean | Only "What to keep after a test, and what to delete" was needed; it is applied in this mod's `TESTING.md` |
 | `Rimworld-Release-Admin/docs/OPERATIONS.md` | `3c03f51` 2026-09-26, `347a0d63b9` | clean | The item exists, so the "first publication" part is behind this mod. The workflow generation, dry-run and `publish` are for `prepublished`. Its scripts `about-description.mjs` and `changenote.mjs` (code, not prose) were read and used to produce `About.xml` from `PUBLICATION.md` |
@@ -67,12 +67,13 @@ Read: `STATUS.md`, `README.md`, `CHANGELOG.md`, `ATTRIBUTION.md`, `LICENSE`, `TE
 `Mod/About/About.xml`, `AUDIT-2026-09-13.md` (the previous audit, kept as history).
 
 Created on 2026-09-28: `PUBLICATION.md` (the Steam description, once), `docs/PROTOCOLS-READ.md` (this
-file), `docs/runs/README.md` (the format of the run history; no run yet), `docs/AUDIT-2026-09-28.md`.
+file), `docs/runs/README.md` (the format of the run history; no run yet), `docs/AUDIT-2026-09-28.md`, and
+the whole of `Tests/Pickle/`.
 
 Absent, and what that means:
 
-- `Tests/Pickle/`: no Pickle suite yet. `TESTING.md` justifies its scope; it is the work that stands
-  between `preTest` and `done`.
+- Nothing else of the mod's own is absent that it needs. `Tests/Pickle/` was absent in the morning and was
+  written in the afternoon: see `docs/AUDIT-2026-09-28.md`, addendum.
 - `BACKLOG.md`, `NOTES.md`, `BUGS.md`: nothing that `STATUS.md`'s `remaining` list does not already
   hold. Trigger for `BUGS.md`: the first defect a run reports. Trigger for `BACKLOG.md`: an idea that
   is wanted and not scheduled.
