@@ -38,7 +38,7 @@ Tests/Pickle/
   Check-Steps.ps1                    the offline check of every step line; see below
   wsl-deps.sans-facultatifs.map      the mod, Harmony and the load-audit companion
   wsl-deps.incompat-original.map     SilkCircuit's original beside the mod
-  Source/                            the C# of the steps (23 patterns) and its project
+  Source/                            the C# of the steps (24 patterns) and its project
   Mod/                               the companion mod the staging copies
     About/About.xml                  nelim.foldingskateboard.pickletests
     Pickle/Features/*.feature        six features
@@ -115,7 +115,7 @@ expression engine, refuses a pattern declared twice, and resolves every step lin
 exactly one expression among this suite's, Pickle's installed vocabulary and the steps of every other suite
 of the collection (all steps share one namespace). A Scenario Outline is expanded with every row of its
 Examples tables before its lines are resolved. Its first run found two lines it wrongly called unresolved,
-both `{int}` placeholders of an outline; it was made to expand outlines, and it now reports 167 step lines
+both `{int}` placeholders of an outline; it was made to expand outlines, and it now reports 175 step lines
 in six files as resolved. Twenty scenario blocks, twenty-six scenarios once the outlines are expanded.
 
 It was **seen to fail** on four faults injected one at a time in a copy: a step line that matches nothing,

@@ -11,7 +11,7 @@ stage:        done
 settings_audit: not_applicable
 automated_tests: 15 of 15 passed on 2026-09-28, nine of them seen to fail on injected faults; delivered DLL SHA-256 E829298B8F3A298380B4E0942D2534DE9C8760F7D342FB2F465234DDBA27551D
 xml_tests:    passed on 2026-09-28 (Check-XmlFields, Check-DefRefs, Check-TypeRefs, Check-DefInjected); Check-XmlClasses not applicable
-pickle_scenarios: 20 blocks written in 6 features, 26 scenarios once outlines are expanded; every feature parses as Gherkin and every step line resolves to exactly one step (Check-Steps.ps1, 167 lines, seen to fail on four injected faults); none has been played
+pickle_scenarios: 20 blocks in 6 features, 26 scenarios; first run 2026-09-28 (request 5877, English, sans-facultatifs, tree 6bc7657, exitReason passed): 25 passed, 0 failed, 1 skipped by requirement (feature 06); two of the five @review captures do not show the facing they are named for, so 05 is being replayed; French pass and incompat-original not run
 audit_revision: 6364ed8fd10beb0f38eaee8e2270faa11eae72ae
 audit_date:   2026-09-28
 licence:      silent
@@ -21,8 +21,9 @@ showcase:     complete
 tested_on:
 workshop:     "3806761118 (0.1.0, prepublished 2026-09-23; the item is private, visibility and subscription test not done)"
 remaining:
-  - unverified: no scenario has been played; the Pickle suite in Tests/Pickle/ is written, compiled and step-checked, and rests on eleven assumptions listed at the end of its README that the first run confirms or breaks. The game wrote four .dds beside the textures on 2026-09-23, so it saw the mod once, and no log of that was read
-  - filed 2026-09-28 10:48, not run: request 20260928-104830-059-5877, the complete English initial pass (sans-facultatifs, no filter), on the tree of 6bc7657 with Mod/ and Tests/Pickle/ frozen until its RUN_DONE; it joined a queue of 53. Evidence goes to Tests/Pickle/Evidence/2026-09-28-sans-facultatifs-en; its line goes to docs/runs/ before that folder is touched. The French pass and incompat-original are not filed: a first run of a suite that has never played is read before a second is spent
+  - unverified: the first run (docs/runs/) confirmed assumptions 1 to 4 and 6 to 10 of Tests/Pickle/README.md by passing; 5 (the collision in the log queue) is untested because feature 06 was skipped by requirement, and 11 (Pickle build) is not established. Nothing has been played in French
+  - done 2026-09-28: request 20260928-104830-059-5877 ran, exitReason passed, 25 of 26, feature 06 skipped by requirement; line in docs/runs/. Evidence kept in Tests/Pickle/Evidence/2026-09-28-sans-facultatifs-en (summary, junit, messages.ndjson, Player.log, 5 JPEG); report.html and PNGs deleted. Player.log shows two "did not load any content" errors, both for code-only companion mods (load audit, this suite), not the mod
+  - defect: captures rider-facing-west and board-on-back-facing-north show the rider facing the camera and no board on the back; boards-by-stuff, rider-facing-south and wall-south-no-board read as expected. Cause not established; 05-captures.feature now re-faces before the picture and asserts the facing after it (step `is facing`, commit pending). Also the zoom step did not visibly zoom (pawn about 20 px). Replay 05 to see it
   - unverified: to reach tested, the passes sans-facultatifs (English, then French) and incompat-original must run green, no scenario may be @wip, the conditional feature 06 must be played and not skipped, and every @review capture of feature 05 must be opened (AUDIT.md, done to tested); nothing has run
   - feature: the avec-lts pass is not written. The Workshop mod that defines the 141 LTS floors is not identified (one bounded read of About.xml files found nothing before its time limit, which proves no absence), so there is no map, and that integration cannot yet be credited
   - unverified: the collision of the two mods' defNames is asserted by reading the game's log queue for an error mentioning Paddleboard (feature 06); which mod survives is not documented and not asserted
@@ -35,7 +36,7 @@ remaining:
   - unverified: not yet written for prepublished, namely the gallery and its order, the mature-content answer, the thank-you message for the original's page and Harmony's Covers cell, the Steam change note, the publish workflow and its dry-run
   - resolved 2026-09-28 (preTest to done): the Pickle suite is written in Tests/Pickle/ (6 features, 23 step patterns, a README that justifies the scope, two pass maps), and Check-Steps.ps1 resolves every step line to exactly one step. Written, not run: done does not ask for a run
 session:      local_40bd9ed8-65bc-4776-8224-f7aa71edee50
-updated:      2026-09-28, Pickle suite written, done re-established by the session that holds the mod
+updated:      2026-09-28, first Pickle run read, captures 05 to be replayed
 ---
 # Folding Skateboard Renew — status
 

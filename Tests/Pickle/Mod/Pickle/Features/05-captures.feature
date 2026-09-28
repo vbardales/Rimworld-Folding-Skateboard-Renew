@@ -29,10 +29,12 @@ Feature: What a person has to look at: the board drawn
     And I draft "Ada"
     When I wait 90 ticks
     Then "Ada" has trait "Shredder"
-    When Folding Skateboard Renew: the camera looks at (3, 3) of the yard
+    When Folding Skateboard Renew: "Ada" faces south
+    And Folding Skateboard Renew: the camera looks at (3, 3) of the yard
     And I zoom all the way in
     And I take a screenshot "rider-facing-south"
-    Then no errors were logged
+    Then Folding Skateboard Renew: "Ada" is facing south
+    And no errors were logged
 
   Scenario: a rider facing west has the board drawn under her, side on
     Given Folding Skateboard Renew: "Ada" carries a folding skateboard made of "Steel"
@@ -41,10 +43,12 @@ Feature: What a person has to look at: the board drawn
     And I draft "Ada"
     When I wait 90 ticks
     Then "Ada" has trait "Shredder"
-    When Folding Skateboard Renew: the camera looks at (3, 3) of the yard
+    When Folding Skateboard Renew: "Ada" faces west
+    And Folding Skateboard Renew: the camera looks at (3, 3) of the yard
     And I zoom all the way in
     And I take a screenshot "rider-facing-west"
-    Then no errors were logged
+    Then Folding Skateboard Renew: "Ada" is facing west
+    And no errors were logged
 
   Scenario: off the hard ground the board is strapped to the back, and only seen from behind
     Given Folding Skateboard Renew: "Ada" carries a folding skateboard made of "Steel"
@@ -53,10 +57,12 @@ Feature: What a person has to look at: the board drawn
     And I draft "Ada"
     When I wait 90 ticks
     Then Folding Skateboard Renew: "Ada" does not have the trait "Shredder"
-    When Folding Skateboard Renew: the camera looks at (0, 0) of the yard
+    When Folding Skateboard Renew: "Ada" faces north
+    And Folding Skateboard Renew: the camera looks at (0, 0) of the yard
     And I zoom all the way in
     And I take a screenshot "board-on-back-facing-north"
-    Then no errors were logged
+    Then Folding Skateboard Renew: "Ada" is facing north
+    And no errors were logged
 
   Scenario: a wall directly south hides the board, and the rider keeps the trait and the speed
     Given Folding Skateboard Renew: "Ada" carries a folding skateboard made of "Steel"
@@ -66,7 +72,9 @@ Feature: What a person has to look at: the board drawn
     And I draft "Ada"
     When I wait 90 ticks
     Then "Ada" has trait "Shredder"
-    When Folding Skateboard Renew: the camera looks at (3, 3) of the yard
+    When Folding Skateboard Renew: "Ada" faces south
+    And Folding Skateboard Renew: the camera looks at (3, 3) of the yard
     And I zoom all the way in
     And I take a screenshot "wall-south-no-board"
-    Then no errors were logged
+    Then Folding Skateboard Renew: "Ada" is facing south
+    And no errors were logged

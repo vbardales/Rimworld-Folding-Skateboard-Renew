@@ -386,20 +386,35 @@ namespace FoldingSkateboard.PickleSteps
         public void Faces(PickleContext ctx, string nickname, string direction)
         {
             Pawn pawn = Colonist(ctx, nickname);
-            Rot4 rot;
-            switch (direction.ToLowerInvariant())
-            {
-                case "north": rot = Rot4.North; break;
-                case "south": rot = Rot4.South; break;
-                case "east": rot = Rot4.East; break;
-                case "west": rot = Rot4.West; break;
-                default:
-                    ctx.Require(false, $"\"{direction}\" is not a direction: it is north, south, east or west");
-                    return;
-            }
-
+            Rot4 rot = ParseDirection(ctx, direction);
             pawn.Rotation = rot;
         }
+
+        // The first run showed a rider drawn facing the camera in the west and north captures although the
+        // scenario had set otherwise (cause not established: something turned the pawn during the wait). The capture is only evidence
+        // of a facing if the facing is still the one asked for after the picture is taken.
+        [Then("Folding Skateboard Renew: {string} is facing {word}")]
+        public void IsFacing(PickleContext ctx, string nickname, string direction)
+        {
+            Pawn pawn = Colonist(ctx, nickname);
+            Rot4 rot = ParseDirection(ctx, direction);
+            ctx.Assert(pawn.Rotation == rot, $"{nickname} is facing {pawn.Rotation}, not {rot}, so the capture does not show the facing it is named for");
+        }
+
+        private static Rot4 ParseDirection(PickleContext ctx, string direction)
+        {
+            switch (direction.ToLowerInvariant())
+            {
+                case "north": return Rot4.North;
+                case "south": return Rot4.South;
+                case "east": return Rot4.East;
+                case "west": return Rot4.West;
+                default:
+                    ctx.Require(false, $"\"{direction}\" is not a direction: it is north, south, east or west");
+                    return Rot4.South;
+            }
+        }
+
         // ------------------------------------------------------------------ the trait, the speed
 
         [Then("Folding Skateboard Renew: {string} does not have the trait {string}")]
