@@ -5,6 +5,12 @@
 First release: a 1.6 port of SilkCircuit's Folding Skateboard, which declared 1.5 and nothing
 further.
 
+### Localization follow-up — 2026-09-13
+
+- Pickup refusals now use complete English/French message templates with the item
+  label as an argument, allowing translators to control the whole sentence.
+- Resource checks validate nonempty, unique keys and item format arguments.
+
 ### Fixed for 1.6
 
 - The right-click "pick up" option. `FloatMenuMakerMap.ChoicesAtFor`, which the 1.5 mod patched,

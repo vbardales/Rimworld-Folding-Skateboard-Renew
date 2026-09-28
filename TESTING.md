@@ -79,13 +79,14 @@ precisely so it stays there while they work.
 
 Each of these must give a **greyed entry that says why**, not a missing entry.
 
-1. A colonist already carrying a board, right-clicking another → *Pick up folding skateboard:
-   already carrying one.*
-2. A board marked forbidden → the entry says **forbidden**, in the game's own wording.
-3. A board walled off with no route → the entry says **no path**, again in the game's wording.
+1. A colonist already carrying a board, right-clicking another → *Cannot pick up folding skateboard: already carrying one.*
+2. A board marked forbidden → *Cannot pick up folding skateboard: forbidden.*
+3. A board walled off with no route → *Cannot pick up folding skateboard: no path.*
 
-Those last two strings are borrowed from the game rather than shipped, so they must appear in the
-game's language, not in English inside a French game.
+Repeat all three in French: each refusal must use its complete French sentence from
+Languages/French/Keyed/FoldingSkateboard.xml and include the localized item label.
+No raw key or {0} placeholder should appear. These are now owned translations,
+not fragments borrowed from vanilla.
 
 ## 6. The three gates, in silence
 
@@ -204,10 +205,10 @@ board before saving avoids it entirely, which is the honest advice to give.
 1. Restart in French, with the mod active.
 
 **Pass:** the item, the trait and its description, and the job line are in French. The right-click
-entry is in French, and so are the two borrowed refusals — *interdit* and *aucun chemin* — since
+entry is in French, and so are the two other refusals — *interdit* and *aucun chemin* — since
 those come from the game's own strings.
 
-**Watch for:** an English word left in a French sentence. There are exactly two mod keys and two
+**Watch for:** an English word left in a French sentence. There are exactly four mod keys and no
 borrowed ones; anything else in English means a DefInjected path is wrong, and on a
 case-sensitive filesystem such as the Steam Deck's it would be silently wrong there and right here.
 

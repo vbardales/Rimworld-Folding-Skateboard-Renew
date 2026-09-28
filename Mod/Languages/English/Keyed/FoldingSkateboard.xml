@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
   <FoldingSkateboard.TakeToInventory>Pick up {0}</FoldingSkateboard.TakeToInventory>
-  <FoldingSkateboard.AlreadyCarrying>already carrying one</FoldingSkateboard.AlreadyCarrying>
+  <FoldingSkateboard.TakeAlreadyCarrying>Cannot pick up {0}: already carrying one.</FoldingSkateboard.TakeAlreadyCarrying>
+  <FoldingSkateboard.TakeForbidden>Cannot pick up {0}: forbidden.</FoldingSkateboard.TakeForbidden>
+  <FoldingSkateboard.TakeNoPath>Cannot pick up {0}: no path.</FoldingSkateboard.TakeNoPath>
 </LanguageData>

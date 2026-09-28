@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
   <FoldingSkateboard.TakeToInventory>Ramasser {0}</FoldingSkateboard.TakeToInventory>
-  <FoldingSkateboard.AlreadyCarrying>en porte déjà une</FoldingSkateboard.AlreadyCarrying>
+  <FoldingSkateboard.TakeAlreadyCarrying>Impossible de ramasser {0} : le colon porte déjà une planche.</FoldingSkateboard.TakeAlreadyCarrying>
+  <FoldingSkateboard.TakeForbidden>Impossible de ramasser {0} : objet interdit.</FoldingSkateboard.TakeForbidden>
+  <FoldingSkateboard.TakeNoPath>Impossible de ramasser {0} : aucun chemin d'accès.</FoldingSkateboard.TakeNoPath>
 </LanguageData>

@@ -283,7 +283,10 @@ It 'the mod reaches for nothing in the game it is not allowed to reach for' {
 # assertion is WHICH member it needs: exactly one, the renderer's own pawn. A second name here is
 # a new reach into the game's private parts and should be a decision, not a diff nobody read.
 It 'the source needs exactly the one non-public member it is known to need' {
-    if (-not (Get-Command dotnet -ErrorAction SilentlyContinue)) { Note 'dotnet not on PATH, skipped'; return }
+    if (-not (Get-Command dotnet -ErrorAction SilentlyContinue)) {
+        'UNVERIFIED: compile probe unavailable because dotnet is not on PATH; no conclusion about access requirements.'
+        return
+    }
     # A short path on purpose: NuGet writes PublicizedAssemblies\<32 hex> under obj, and a session
     # scratchpad prefix pushes that past MAX_PATH - the build fails, and the cleanup fails after it.
     $probe = Join-Path $env:LOCALAPPDATA ('Temp\fsk-' + [guid]::NewGuid().ToString('N').Substring(0, 6))
@@ -309,7 +312,16 @@ It 'the source needs exactly the one non-public member it is known to need' {
 </Project>
 "@ | Set-Content (Join-Path $probe 'Probe.csproj') -Encoding UTF8
         $out = & dotnet build (Join-Path $probe 'Probe.csproj') -c Release -v q --nologo 2>&1 | Out-String
+        $buildExitCode = $LASTEXITCODE
         $errs = @([regex]::Matches($out, '(?m)error CS\d+:.*$') | ForEach-Object { $_.Value } | Sort-Object -Unique)
+        $infrastructureErrors = @([regex]::Matches($out, '(?im)^.*\b(?:MSB|NETSDK|NU)\d+\b.*$') |
+            ForEach-Object { $_.Value.Trim() } | Sort-Object -Unique)
+        if ($buildExitCode -ne 0 -and ($errs.Count -eq 0 -or $infrastructureErrors.Count -gt 0)) {
+            "UNVERIFIED: compile probe failed before access requirements could be established (dotnet exit $buildExitCode). Check SDK, restore and filesystem access; this is not evidence that the mod no longer needs the publiciser."
+            if ($infrastructureErrors.Count) { $infrastructureErrors | Select-Object -First 3 }
+            else { ($out -split '\r?\n' | Where-Object { $_.Trim() }) | Select-Object -Last 6 }
+            return
+        }
 
         # Two codes are the subject here and nothing else is. CS0122 for a private or protected
         # member, CS1061 for an internal one, which member lookup does not even see across
@@ -551,8 +563,30 @@ It 'every key the assembly asks for exists in English, and French matches key fo
     foreach ($k in $en)   { if ($fr -notcontains $k) { "$k is in English and missing from French" } }
     foreach ($k in $fr)   { if ($en -notcontains $k) { "$k is in French and missing from English" } }
 
-    # Two keys are borrowed from the game rather than shipped. They are the reason the menu entry
-    # can say why it is greyed out without translating anything, and they are not ours to keep.
+    # Validate complete menu templates, including format arguments, not only key presence.
+    foreach ($language in @('English', 'French')) {
+        $document = New-Object System.Xml.XmlDocument
+        $document.Load((Join-Path $ModRoot "Mod\Languages\$language\Keyed\FoldingSkateboard.xml"))
+        $entries = @($document.DocumentElement.ChildNodes | Where-Object { $_.NodeType -eq 'Element' })
+        foreach ($duplicate in @($entries | Group-Object Name | Where-Object { $_.Count -gt 1 })) {
+            "$language contains a duplicate key: $($duplicate.Name)"
+        }
+        foreach ($entry in $entries) {
+            if ([string]::IsNullOrWhiteSpace($entry.InnerText)) { "$language has an empty value: $($entry.Name)" }
+            if ($used -notcontains $entry.Name) { "$language has an unused key: $($entry.Name)" }
+            try {
+                $formatted = [string]::Format($entry.InnerText, [object[]]@('BOARD_TEST'))
+                if ($formatted -notlike '*BOARD_TEST*') { "$language template drops the item argument: $($entry.Name)" }
+            } catch { "$language has invalid format arguments: $($entry.Name)" }
+            $parameters = @([regex]::Matches($entry.InnerText, '\{\d+\}') | ForEach-Object { $_.Value })
+            if ($parameters.Count -ne 1 -or $parameters[0] -ne '{0}') {
+                "$language menu template must consume exactly one item argument: $($entry.Name)"
+            }
+        }
+    }
+
+    # Any future vanilla keys must still exist in the installed game. The owned refusal
+    # messages are complete templates now, so this mod currently borrows no keyed fragments.
     $borrowed = @([regex]::Matches($src, '"([A-Za-z][A-Za-z0-9]*)"\.Translate') | ForEach-Object { $_.Groups[1].Value } |
                   Where-Object { $_ -notlike 'FoldingSkateboard*' } | Sort-Object -Unique)
     $coreKeyed = Join-Path $GameData 'Core\Languages\English\Keyed'

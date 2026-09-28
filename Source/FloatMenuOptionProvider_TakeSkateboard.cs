@@ -52,20 +52,20 @@ namespace FoldingSkateboard
             if (SkateboardUtility.CarriedSkateboard(pawn) != null)
             {
                 yield return new FloatMenuOption(
-                    label + ": " + "FoldingSkateboard.AlreadyCarrying".Translate(),
+                    "FoldingSkateboard.TakeAlreadyCarrying".Translate(clickedThing.LabelShort),
                     null);
                 yield break;
             }
 
             if (clickedThing.IsForbidden(pawn))
             {
-                yield return new FloatMenuOption(label + ": " + "ForbiddenLower".Translate(), null);
+                yield return new FloatMenuOption("FoldingSkateboard.TakeForbidden".Translate(clickedThing.LabelShort), null);
                 yield break;
             }
 
             if (!pawn.CanReach(clickedThing, PathEndMode.ClosestTouch, Danger.Deadly))
             {
-                yield return new FloatMenuOption(label + ": " + "NoPath".Translate(), null);
+                yield return new FloatMenuOption("FoldingSkateboard.TakeNoPath".Translate(clickedThing.LabelShort), null);
                 yield break;
             }
 
