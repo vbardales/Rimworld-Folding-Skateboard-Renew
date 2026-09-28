@@ -131,6 +131,26 @@ foreach ($o in $others) {
 $featureFiles = @(Get-ChildItem -LiteralPath (Join-Path $here 'Mod\Pickle\Features') -Filter *.feature)
 $lines = 0; $unresolved = @(); $ambiguous = @{}
 
+# --- 0. every feature parses as Gherkin ----------------------------------------------------------------
+# A feature that does not parse makes Pickle report an infrastructure error and play zero scenarios, at the cost of a
+# game start. Pickle's own Gherkin parser reads them here, in a second.
+foreach ($d in 'Cucumber.Messages.dll', 'Gherkin.dll') { [Reflection.Assembly]::LoadFrom((Join-Path $PickleAssemblies $d)) | Out-Null }
+$gherkin = [AppDomain]::CurrentDomain.GetAssemblies() | Where-Object { $_.GetName().Name -eq 'Gherkin' }
+if (-not $gherkin) { throw 'Gherkin.dll did not load from the Pickle assemblies: this check cannot run' }
+$gparser = [Activator]::CreateInstance($gherkin.GetType('Gherkin.Parser'))
+$parsedFiles = 0; $scenarioBlocks = 0
+foreach ($file in $featureFiles) {
+    try {
+        $doc = $gparser.Parse((New-Object IO.StringReader ([IO.File]::ReadAllText($file.FullName))))   # the string overload takes a PATH
+        if (-not $doc.Feature) { throw 'the file holds no Feature' }
+        $parsedFiles++
+        foreach ($child in $doc.Feature.Children) { if ($child.GetType().Name -eq 'Scenario') { $scenarioBlocks++ } }
+    } catch {
+        $e = $_.Exception; while ($e.InnerException) { $e = $e.InnerException }
+        Write-Host "PARSE  $($file.Name): $($e.Message.Split("`n")[0])" -ForegroundColor Red; $bad++
+    }
+}
+
 # A Scenario Outline writes <placeholders> in its steps and fills them from its Examples tables at run time. A line
 # such as `is set to degree <degree>` matches no `{int}` until it is filled, so the outline is expanded here with every
 # row of its tables and each expansion is resolved like any other line. (Found on this suite's first check, which
@@ -198,7 +218,7 @@ foreach ($file in $featureFiles) {
 # --- report ------------------------------------------------------------------------------------------------
 
 Write-Host ''
-Write-Host "$($mine.Count) patterns, $($myExprs.Count) compile. $lines step lines in $($featureFiles.Count) feature files, matched against $($pickleCount) steps of Pickle and $($otherExprs.Count - $pickleCount) of $suites other suites."
+Write-Host "$parsedFiles of $($featureFiles.Count) feature files parse as Gherkin ($scenarioBlocks scenario blocks). $($mine.Count) patterns, $($myExprs.Count) compile. $lines step lines, matched against $($pickleCount) steps of Pickle and $($otherExprs.Count - $pickleCount) of $suites other suites."
 if ($suites -eq 0) { Write-Host 'No other suite is around this repository: the shared-namespace check (4) was skipped.' -ForegroundColor Yellow }
 
 foreach ($k in $ambiguous.Keys) { Write-Host "AMBIGUOUS  $k`n           $($ambiguous[$k])" -ForegroundColor Red; $bad++ }

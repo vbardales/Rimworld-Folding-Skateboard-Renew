@@ -11,7 +11,7 @@ stage:        done
 settings_audit: not_applicable
 automated_tests: 15 of 15 passed on 2026-09-28, nine of them seen to fail on injected faults; delivered DLL SHA-256 E829298B8F3A298380B4E0942D2534DE9C8760F7D342FB2F465234DDBA27551D
 xml_tests:    passed on 2026-09-28 (Check-XmlFields, Check-DefRefs, Check-TypeRefs, Check-DefInjected); Check-XmlClasses not applicable
-pickle_scenarios: 20 blocks written in 6 features, 26 scenarios once outlines are expanded; every step line resolves to exactly one step (Check-Steps.ps1, 167 lines, seen to fail on three injected faults); none has been played
+pickle_scenarios: 20 blocks written in 6 features, 26 scenarios once outlines are expanded; every feature parses as Gherkin and every step line resolves to exactly one step (Check-Steps.ps1, 167 lines, seen to fail on four injected faults); none has been played
 audit_revision: 6364ed8fd10beb0f38eaee8e2270faa11eae72ae
 audit_date:   2026-09-28
 licence:      silent

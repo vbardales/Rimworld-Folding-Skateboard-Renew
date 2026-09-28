@@ -109,7 +109,8 @@ compare scenarios played with features discovered, open every `@review` capture,
 
 ## The offline check
 
-`Check-Steps.ps1` needs no game and runs in seconds. It compiles every step pattern with Pickle's own
+`Check-Steps.ps1` needs no game and runs in seconds. It parses every feature with Pickle's own Gherkin
+parser (a file that does not parse makes Pickle play zero scenarios), compiles every step pattern with Pickle's own
 expression engine, refuses a pattern declared twice, and resolves every step line of the features to
 exactly one expression among this suite's, Pickle's installed vocabulary and the steps of every other suite
 of the collection (all steps share one namespace). A Scenario Outline is expanded with every row of its
@@ -117,8 +118,9 @@ Examples tables before its lines are resolved. Its first run found two lines it 
 both `{int}` placeholders of an outline; it was made to expand outlines, and it now reports 167 step lines
 in six files as resolved. Twenty scenario blocks, twenty-six scenarios once the outlines are expanded.
 
-It was **seen to fail** on three faults injected one at a time in a copy: a step line that matches nothing,
-a pattern with an unclosed brace, and a pattern copied from Pickle's own vocabulary (ambiguous).
+It was **seen to fail** on four faults injected one at a time in a copy: a step line that matches nothing,
+a pattern with an unclosed brace, a pattern copied from Pickle's own vocabulary (ambiguous), and a feature with
+a syntax error. On this suite it reports 6 of 6 files parsed, 20 scenario blocks.
 
 It proves the lines resolve. It proves nothing about what a step does.
 
