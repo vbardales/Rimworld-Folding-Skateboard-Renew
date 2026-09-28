@@ -3,33 +3,100 @@ localization: complete
 translation_en: complete
 translation_fr: complete
 mod:          Folding Skateboard Renew (unofficial)
-packageId:    nelim.foldingskateboardrenew
+packageId:    nelim.foldingskateboard
 repo:         Rimworld-Folding-Skateboard-Renew
 visibility:   public
 detached:     yes
-stage:        done
+stage:        preTest
 settings_audit: not_applicable
-automated_tests: passed
-xml_tests: passed
-audit_revision: 2b519339bc8b58c9edf841d68ba86e19518bd72a
+automated_tests: 14 of 14 passed on 2026-09-28, delivered DLL SHA-256 E829298B8F3A298380B4E0942D2534DE9C8760F7D342FB2F465234DDBA27551D
+xml_tests:    passed on 2026-09-28 (Check-XmlFields, Check-DefRefs, Check-TypeRefs, Check-DefInjected); Check-XmlClasses not applicable
+audit_revision: 6364ed8fd10beb0f38eaee8e2270faa11eae72ae
+audit_date:   2026-09-28
 licence:      silent
-licence_at:   four places, the About and the Steam page among them
+licence_at:   four places, the About and the Steam page among them; the page read again 2026-09-28
 dependencies: declared
 showcase:     complete
 tested_on:
-workshop:
+workshop:     "3806761118 (0.1.0, prepublished 2026-09-23; the item is private, visibility and subscription test not done)"
 remaining:
-  - defect: About description claims in-game testing without supporting results and ends with a bare GitHub URL
-  - unverified: never loaded by RimWorld; TESTING.md is the protocol, seventeen scenarios, none run
-  - unverified: whether removing the mod mid-ride costs a colonist their fast walker trait for good, which is scenario 15
+  - feature: no Pickle suite; `Tests/Pickle/` does not exist. TESTING.md justifies its scope (what plays each scenario) but a scope is not a suite. This is what stands between preTest and done
+  - unverified: never seen running in game; TESTING.md is the protocol, seventeen scenarios, none run. The game wrote four .dds beside the textures on 2026-09-23 so it saw the mod once, and no log of that was read
+  - unverified: whether removing the mod mid-ride costs a colonist their fast walker trait for good (scenario 15); the trait is parked in the mod's game component, which goes with the mod
+  - unverified: English and French display of the four pickup keys and the three DefInjected files in game, and the raw-key check; static coverage is complete
+  - defect: the Steam page of item 3806761118 still carries the description of the 0.1.0 upload, which claims in-game testing and ends on a bare URL; the repository's description is corrected, the page changes only by `update_description` of a publish or by hand
+  - unverified: the private 0.1.0 item was uploaded from the working tree and probably carries four .dds caches that git never held, and the earlier packageId; check its file list. 1.0.0 replaces both
+  - unverified: the Workshop mod or mods that define the 141 LTS floors are not identified, so the `avec-lts` pass cannot be written and that integration cannot yet be credited
+  - decision: the ModIcon at 32 px shows the head clearly and the board as a dark shape; the control passes, the owner alone decides to leave it or remake it (STYLE_RIMWORLD.md)
+  - decision: `renew` was removed from the packageId on 2026-09-28 under PUBLISHING.md of 2026-09-27, while the item is still private; reversible until publication, not after
+  - unverified: not yet written for prepublished, namely the gallery and its order, the mature-content answer, the thank-you message for the original's page and Harmony's Covers cell, the Steam change note, the publish workflow and its dry-run
 session:      local_40bd9ed8-65bc-4776-8224-f7aa71edee50
-updated:      2026-09-13, done gate documented from verified delivery evidence
+updated:      2026-09-28, workflow audit by the session that holds the mod
 ---
-
 # Folding Skateboard Renew — status
 
-## Current decision — done (2026-09-13)
+## Current decision — preTest (2026-09-28)
 
+Previous stage `done` (2026-09-13); retained stage **`preTest`**. The full record is
+[docs/AUDIT-2026-09-28.md](docs/AUDIT-2026-09-28.md); the documents read and their versions are in
+[docs/PROTOCOLS-READ.md](docs/PROTOCOLS-READ.md). Stage codes: `preTest` is the workflow's `preTest`;
+the codes `preview`, `preOptions`, `options` and `l10n` of the 2026-09-13 audit map literally to the
+states of the same name in `AUDIT.md`.
+
+**Why it went back.** Every gate up to `preTest` is met, including the one that failed on arrival, the
+description (see below). `done` is not: `AUDIT.md` asks for the Pickle scenarios to be **written**, with
+their scope justified, and `Tests/Pickle/` does not exist. The 2026-09-13 decision rested on the written
+scenarios, the automated tests and the XML checks, and did not name the Pickle suite. It was not a failed
+test. It is kept below as history, not deleted.
+
+**What this audit did**, no game launched and nothing published:
+
+- Committed fifteen days of uncommitted work, in the state the 0.1.0 upload held, then
+  `Add published Workshop file ID for 0.1.0` (item `3806761118`, `CHANGELOG.md` `## [0.1.0]`).
+- Corrected the description, which said the port was made under "in-game testing": it has never run. It is
+  now written once in `PUBLICATION.md`, and `About.xml` is its plain text, ending on `Source code on
+  GitHub`. The tools are named as they are: Claude Code, and OpenAI's `gpt-image` (both source renders say
+  so in their C2PA manifest).
+- Took `renew` out of the packageId: `nelim.foldingskateboard`.
+- Added the fourteenth functional test (the definitions) and the plan in `TESTING.md`: what plays each
+  scenario, the passes, the conditions of `tested`, the evidence to keep.
+- Checked the original for a repository: none, so no fork and no pull request; the port began from the
+  `Source/` its Workshop payload ships. Recorded in `ATTRIBUTION.md`.
+- Ignored `*.dds`, `*.ico`, `desktop.ini` and the evidence folders; trimmed two superseded copies under
+  `.build/`. No Pickle report exists for this mod, so no launcher archive was touched.
+
+### Next transition: `preTest -> done`
+
+Write the Pickle suite in `Tests/Pickle/` for the scope `TESTING.md` justifies: the local steps it needs,
+the features, a README that says what each is for and what was not settled, the pass maps that can be
+written now, and a check that resolves every step line to exactly one step. **Writing it is the whole of
+the work; running it is `done -> tested`, not `done`.**
+
+### After that: `done -> tested`
+
+`AUDIT.md`, applied to this mod (the same list is in `TESTING.md`):
+
+- **No scenario left `@wip`.** Repaired and replayed, or deleted with its reason written.
+- **Every conditional scenario has run.** Each `@requires:<packageId>` had its pass on a map that mounts
+  that mod, and its report was read, suite and scenario names checked first: the report folder is shared
+  by the whole machine. A scenario skipped for want of its condition is not a scenario passed.
+- **No manual test left to tick.** Automated and green, or listed as not applicable with its reason.
+- `exitReason` read before any count; scenarios played against features discovered; `@review` captures
+  opened; the log read from the start; English and French each a pass of their own; every scenario that
+  ever failed replayed green on a build that contains its fix.
+- Passes: `sans-facultatifs` in English then French, `avec-lts`, `incompat-original`, `removal`.
+
+### Evidence policy
+
+Reports stay on disk under `Tests/Pickle/Evidence/` (ignored by git) and one line per run goes to
+`docs/runs/`. Keep the summary, the junit and messages files, `Player.log`, the completeness marker and the
+opened `@review` captures as JPEG; delete `screenshots/` copied whole, `report.html`, failed or superseded
+reports and anything on a superseded build, after the line is written and after repointing any field that
+named it. List before deleting. The full table is in `TESTING.md`.
+## Superseded decision — done (2026-09-13)
+
+*Superseded on 2026-09-28 by the decision above: done is not met against today's AUDIT.md because the
+Pickle suite is not written. Kept as it was written.*
 `preTest -> done` is established under the user's workflow. `done` means ready for
 final functional validation in game; it does not mean tested in game or published.
 The earlier decision to retain preTest was overly conservative, not a failed test.
@@ -51,7 +118,7 @@ DLL SHA256 `9B14EE844E85C36C00E86A849E54FA06CA23FCFFD25B4922B7B62CE5CF792C62`.
 The hash matches the tested delivery. Tests were not rerun for this documentation update.
 Existing local work and historical results are preserved.
 
-### Next transition — done to tested
+### Next transition, as written on 2026-09-13
 
 Execute the applicable TESTING.md scenarios in RimWorld 1.6 with Harmony and record
 actual outcomes, game/mod versions, save context and log evidence. Cover a new game

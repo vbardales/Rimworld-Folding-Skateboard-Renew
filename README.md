@@ -21,6 +21,7 @@ FoldingSkateboardRenew/
   Source/       C#, never published
   Art/          full-resolution image sources, never published
   _tools/       the showcase page and the functional tests, never published
+  docs/         the audits, the protocol documents read, the run history, never published
 ```
 
 Steam publishes the junction's target directory as it stands, with no filtering
