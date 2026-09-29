@@ -7,8 +7,11 @@ Feature: What a person has to look at: the board drawn
   # The camera is as close as the game allows: a board is one cell, and at the default zoom it is a few pixels.
   # A drafted, idle colonist tracks the mouse cursor to aim (RimWorlds own idle-facing behaviour), which
   # overrode the facing set here and made west and north captures show Ada facing the camera instead (first run,
-  # 2026-09-28). Undrafting after the Shredder assertion and before the photo removes that: the trait check runs
-  # off the Tick patch, not the drafted state, so undrafting here changes nothing the scenario is testing.
+  # 2026-09-28). Undrafting after the Shredder assertion and before the photo removes drafted aim: the trait
+  # check runs off the Tick patch, not the drafted state, so undrafting here changes nothing the scenario is
+  # testing. Undrafting alone was not enough (second run, 2026-09-28): south then failed the same way, because the
+  # camera-look-at and zoom steps still ran between the re-face and the photo, and real time passes ticks during
+  # them in which idle facing can still drift. The facing step now runs last, right before the screenshot.
 
   Background:
     Given the save "test-colony" is loaded
@@ -34,9 +37,9 @@ Feature: What a person has to look at: the board drawn
     When I wait 90 ticks
     Then "Ada" has trait "Shredder"
     And I undraft "Ada"
-    When Folding Skateboard Renew: "Ada" faces south
-    And Folding Skateboard Renew: the camera looks at (3, 3) of the yard
+    When Folding Skateboard Renew: the camera looks at (3, 3) of the yard
     And I zoom all the way in
+    And Folding Skateboard Renew: "Ada" faces south
     And I take a screenshot "rider-facing-south"
     Then Folding Skateboard Renew: "Ada" is facing south
     And no errors were logged
@@ -49,9 +52,9 @@ Feature: What a person has to look at: the board drawn
     When I wait 90 ticks
     Then "Ada" has trait "Shredder"
     And I undraft "Ada"
-    When Folding Skateboard Renew: "Ada" faces west
-    And Folding Skateboard Renew: the camera looks at (3, 3) of the yard
+    When Folding Skateboard Renew: the camera looks at (3, 3) of the yard
     And I zoom all the way in
+    And Folding Skateboard Renew: "Ada" faces west
     And I take a screenshot "rider-facing-west"
     Then Folding Skateboard Renew: "Ada" is facing west
     And no errors were logged
@@ -64,9 +67,9 @@ Feature: What a person has to look at: the board drawn
     When I wait 90 ticks
     Then Folding Skateboard Renew: "Ada" does not have the trait "Shredder"
     And I undraft "Ada"
-    When Folding Skateboard Renew: "Ada" faces north
-    And Folding Skateboard Renew: the camera looks at (0, 0) of the yard
+    When Folding Skateboard Renew: the camera looks at (0, 0) of the yard
     And I zoom all the way in
+    And Folding Skateboard Renew: "Ada" faces north
     And I take a screenshot "board-on-back-facing-north"
     Then Folding Skateboard Renew: "Ada" is facing north
     And no errors were logged
@@ -80,9 +83,9 @@ Feature: What a person has to look at: the board drawn
     When I wait 90 ticks
     Then "Ada" has trait "Shredder"
     And I undraft "Ada"
-    When Folding Skateboard Renew: "Ada" faces south
-    And Folding Skateboard Renew: the camera looks at (3, 3) of the yard
+    When Folding Skateboard Renew: the camera looks at (3, 3) of the yard
     And I zoom all the way in
+    And Folding Skateboard Renew: "Ada" faces south
     And I take a screenshot "wall-south-no-board"
     Then Folding Skateboard Renew: "Ada" is facing south
     And no errors were logged

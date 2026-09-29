@@ -11,7 +11,7 @@ stage:        done
 settings_audit: not_applicable
 automated_tests: 15 of 15 passed on 2026-09-28, nine of them seen to fail on injected faults; delivered DLL SHA-256 E829298B8F3A298380B4E0942D2534DE9C8760F7D342FB2F465234DDBA27551D
 xml_tests:    passed on 2026-09-28 (Check-XmlFields, Check-DefRefs, Check-TypeRefs, Check-DefInjected); Check-XmlClasses not applicable
-pickle_scenarios: 20 blocks in 6 features, 26 scenarios; first run 2026-09-28 (request 5877, English, sans-facultatifs, tree 6bc7657, exitReason passed): 25 passed, 0 failed, 1 skipped by requirement (feature 06); two of the five @review captures do not show the facing they are named for, so 05 is being replayed; French pass and incompat-original not run
+pickle_scenarios: 20 blocks in 6 features, 26 scenarios; first run 2026-09-28 (request 5877, English, sans-facultatifs, tree 6bc7657, exitReason passed): 25 passed, 0 failed, 1 skipped by requirement (feature 06); two of the five @review captures do not show the facing they are named for; two replays of feature 05 since (undraft fix, then reorder-of-steps fix), both still failing on facing, a fourth replay to file; French pass and incompat-original not run
 audit_revision: 6364ed8fd10beb0f38eaee8e2270faa11eae72ae
 audit_date:   2026-09-28
 licence:      silent
@@ -25,6 +25,7 @@ remaining:
   - unverified: the first run (docs/runs/) confirmed assumptions 1 to 4 and 6 to 10 of Tests/Pickle/README.md by passing; 5 (the collision in the log queue) is untested because feature 06 was skipped by requirement, and 11 (Pickle build) is not established. Nothing has been played in French
   - done 2026-09-28: request 20260928-104830-059-5877 ran, exitReason passed, 25 of 26, feature 06 skipped by requirement; line in docs/runs/. Evidence kept in Tests/Pickle/Evidence/2026-09-28-sans-facultatifs-en (summary, junit, messages.ndjson, Player.log, 5 JPEG); report.html and PNGs deleted. Player.log shows two "did not load any content" errors, both for code-only companion mods (load audit, this suite), not the mod
   - done 2026-09-28: replay of 05-captures (request 20260928-172643-796-23e6, tree 016fc42) failed 3 of 5: `Ada is facing 2 [South]`, not the asked direction, on rider-facing-west and board-on-back-facing-north. Cause found: a drafted idle colonist tracks the mouse cursor (RimWorld idle-facing), overriding the set rotation; the fixed south scenarios only passed by coincidence, the cursor projecting south. Fix: undraft after the Shredder assertion, before the photo. Report deleted, cause and fix recorded here and in docs/runs/. To replay
+  - done 2026-09-28: second replay (request 20260928-225717-710-7de5, tree 0a0d657) failed 3 of 5, now the opposite way: `Ada is facing 3 [West]`, not South, on rider-facing-south and wall-south-no-board — the two the undraft fix had already made pass. Cause found: undrafting removed drafted aim, but the re-face step still ran before the camera-look-at and zoom steps, and idle facing can still drift during the real time those take. Fix: the facing step now runs last, immediately before the screenshot, in all four scenarios. Report deleted, cause and fix recorded here and in docs/runs/. To replay
   - unverified: to reach tested, the passes sans-facultatifs (English, then French) and incompat-original must run green, no scenario may be @wip, the conditional feature 06 must be played and not skipped, and every @review capture of feature 05 must be opened (AUDIT.md, done to tested); nothing has run
   - feature: the avec-lts pass is not written. The Workshop mod that defines the 141 LTS floors is not identified (one bounded read of About.xml files found nothing before its time limit, which proves no absence), so there is no map, and that integration cannot yet be credited
   - unverified: the collision of the two mods' defNames is asserted by reading the game's log queue for an error mentioning Paddleboard (feature 06); which mod survives is not documented and not asserted
@@ -37,7 +38,7 @@ remaining:
   - unverified: not yet written for prepublished, namely the gallery and its order, the mature-content answer, the thank-you message for the original's page and Harmony's Covers cell, the Steam change note, the publish workflow and its dry-run
   - resolved 2026-09-28 (preTest to done): the Pickle suite is written in Tests/Pickle/ (6 features, 23 step patterns, a README that justifies the scope, two pass maps), and Check-Steps.ps1 resolves every step line to exactly one step. Written, not run: done does not ask for a run
 session:      local_40bd9ed8-65bc-4776-8224-f7aa71edee50
-updated:      2026-09-28, second capture replay failed, cause found and fixed (idle-aim tracking), third replay to file
+updated:      2026-09-28, third capture replay failed, cause found and fixed (re-face timing, not just drafted state), fourth replay to file
 ---
 # Folding Skateboard Renew — status
 
