@@ -17,12 +17,14 @@ p { margin:0; }
 .line { margin-top:16px; width:430px; font-size:21px; font-weight:400; line-height:1.45; letter-spacing:0; color:var(--inkPrimary); }
 .badge { position:absolute; right:0; top:0; width:80px; height:80px; background:var(--accent); clip-path:polygon(0 0,100% 0,100% 100%); }
 .version { position:absolute; left:869px; top:27px; transform:translate(-50%,-50%) rotate(45deg); color:var(--badgeInk); font-size:26px; font-weight:700; line-height:1; }
+.mascot { position:absolute; left:-60px; bottom:-60px; width:240px; height:240px; background:url('mascot.png') no-repeat center/contain; transform:rotate(15deg); filter:drop-shadow(0 6px 14px rgba(0,0,0,.4)); }
 </style>
 <div class="scene"></div><div class="veil"></div>
 <div class="plate"><p class="name">Folding<br>Skateboard <span class="suffix">Renew</span></p>
 <p class="tag">(unofficial)</p><div class="rule"></div>
 <p class="line">Unfolds on hard ground outdoors, folds onto their back indoors.</p></div>
 <div class="badge"></div><p class="version">1.6</p>
+<div class="mascot"></div>
 <script>
 window.previewReady=(async()=>{
  const palette=await (await fetch('preview-palette.json')).json();
