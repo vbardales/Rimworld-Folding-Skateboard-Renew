@@ -387,6 +387,12 @@ namespace FoldingSkateboard.PickleSteps
         {
             Pawn pawn = Colonist(ctx, nickname);
             Rot4 rot = ParseDirection(ctx, direction);
+            // An undrafted colonist in a loaded save can pick up a real work order (seen: HaulToCell) the moment
+            // she is undrafted, and its JobDriver keeps setting Rotation to the direction of travel every tick,
+            // overriding this. Stopping the job and the pather here, in the same step that sets the rotation,
+            // removes that source rather than a fixed few ticks of it.
+            pawn.jobs?.StopAll();
+            pawn.pather?.StopDead();
             pawn.Rotation = rot;
         }
 

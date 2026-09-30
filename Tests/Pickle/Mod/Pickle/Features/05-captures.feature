@@ -11,7 +11,13 @@ Feature: What a person has to look at: the board drawn
   # check runs off the Tick patch, not the drafted state, so undrafting here changes nothing the scenario is
   # testing. Undrafting alone was not enough (second run, 2026-09-28): south then failed the same way, because the
   # camera-look-at and zoom steps still ran between the re-face and the photo, and real time passes ticks during
-  # them in which idle facing can still drift. The facing step now runs last, right before the screenshot.
+  # them in which idle facing can still drift. Reordering the facing step to run last was not enough either
+  # (third run, 2026-09-28): the state dump on failure showed Ada mid-job, `job=HaulToCell`, `drafted=False` --
+  # undrafting in a loaded save with real haulable items lets the colony's own AI hand her a work order the
+  # moment she is undrafted, and its JobDriver sets Rotation to the travel direction every tick, overriding
+  # whatever this step set. The facing step now also stops that job and the pather (Faces, in the step source)
+  # in the same call that sets the rotation, so there is no tick between undrafting and the photo in which a new
+  # job can take hold unchecked.
 
   Background:
     Given the save "test-colony" is loaded
