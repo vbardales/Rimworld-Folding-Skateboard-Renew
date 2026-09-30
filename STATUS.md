@@ -1,7 +1,7 @@
 ---
 localization: complete
 translation_en: complete
-translation_fr: complete
+translation_fr: partial
 mod:          Folding Skateboard Renew (unofficial)
 packageId:    nelim.foldingskateboard
 repo:         Rimworld-Folding-Skateboard-Renew
@@ -22,6 +22,7 @@ showcase:     complete
 tested_on:
 workshop:     "3806761118 (0.1.0, prepublished 2026-09-23; the item is private, visibility and subscription test not done)"
 remaining:
+  - unverified: French review by Virginie. TRANSLATIONS.md's 2026-09-30 gender-agreement rule reset translation_fr to unchecked for every mod with a Languages/French folder; this session generated FRENCH_REVIEW.md by _tools/Generate-FrenchReview.ps1 (Keyed + all three DefInjected files, English/Original identical throughout since the ported original, Paddleboard, had no non-English source text anywhere in this repository). One row flagged `?`: Shredder.degreeDatas.Shredder.label ("Rideur") is a plain trait label with no {PAWN_gender ? ...} switch and no English labelFemale, so it is unclear whether the new rule expects a middle-dot form here. translation_fr cannot be complete until Virginie reviews FRENCH_REVIEW.md; this session does not mark its own French reviewed
   - unverified: the first run (docs/runs/) confirmed assumptions 1 to 4 and 6 to 10 of Tests/Pickle/README.md by passing; 5 (the collision in the log queue) is untested because feature 06 was skipped by requirement, and 11 (Pickle build) is not established. Nothing has been played in French
   - done 2026-09-28: request 20260928-104830-059-5877 ran, exitReason passed, 25 of 26, feature 06 skipped by requirement; line in docs/runs/. Evidence kept in Tests/Pickle/Evidence/2026-09-28-sans-facultatifs-en (summary, junit, messages.ndjson, Player.log, 5 JPEG); report.html and PNGs deleted. Player.log shows two "did not load any content" errors, both for code-only companion mods (load audit, this suite), not the mod
   - done 2026-09-28: replay of 05-captures (request 20260928-172643-796-23e6, tree 016fc42) failed 3 of 5: `Ada is facing 2 [South]`, not the asked direction, on rider-facing-west and board-on-back-facing-north. Cause found: a drafted idle colonist tracks the mouse cursor (RimWorld idle-facing), overriding the set rotation; the fixed south scenarios only passed by coincidence, the cursor projecting south. Fix: undraft after the Shredder assertion, before the photo. Report deleted, cause and fix recorded here and in docs/runs/. To replay
@@ -38,7 +39,7 @@ remaining:
   - unverified: not yet written for prepublished, namely the gallery and its order, the mature-content answer, the thank-you message for the original's page and Harmony's Covers cell, the Steam change note, the publish workflow and its dry-run
   - resolved 2026-09-28 (preTest to done): the Pickle suite is written in Tests/Pickle/ (6 features, 23 step patterns, a README that justifies the scope, two pass maps), and Check-Steps.ps1 resolves every step line to exactly one step. Written, not run: done does not ask for a run
 session:      local_40bd9ed8-65bc-4776-8224-f7aa71edee50
-updated:      2026-09-28, third capture replay failed, cause found and fixed (re-face timing, not just drafted state), fourth replay to file
+updated:      2026-09-30, translation_fr reset to unchecked by gender-agreement rule, audited and set to partial, FRENCH_REVIEW.md generated, awaiting Virginie's review; capture replay 20260929-170915-679-2155 still pending
 ---
 # Folding Skateboard Renew — status
 
@@ -105,6 +106,27 @@ Reports stay on disk under `Tests/Pickle/Evidence/` (ignored by git) and one lin
 opened `@review` captures as JPEG; delete `screenshots/` copied whole, `report.html`, failed or superseded
 reports and anything on a superseded build, after the line is written and after repointing any field that
 named it. List before deleting. The full table is in `TESTING.md`.
+## Translation audit — 2026-09-30
+
+`translation_fr` reset to `unchecked` by the 2026-09-30 French gender-agreement rule (TRANSLATIONS.md
+section 3), then set to `partial` here: audited by this session, not yet reviewed by Virginie.
+
+French lives in four files, all read in full this session:
+- `Mod/Languages/French/Keyed/FoldingSkateboard.xml` — four pickup-refusal/action strings
+- `Mod/Languages/French/DefInjected/ThingDef/FoldingSkateboard.xml` — the board's label/description
+- `Mod/Languages/French/DefInjected/TraitDef/FoldingSkateboard.xml` — the Shredder trait's label/description
+- `Mod/Languages/French/DefInjected/JobDef/FoldingSkateboard.xml` — the pickup job's report string
+
+None of the eight French texts uses `{PAWN_gender ? ...}`: the two that name the colonist ("le colon
+porte déjà...", "le colon gagne le trait...") use the invariant noun "colon" rather than an agreeing
+adjective or participle, which TRANSLATIONS.md's "prefer a wording with no agreement" already permits.
+One row flagged `?` in `FRENCH_REVIEW.md`: the Shredder trait label ("Rideur") has no gender switch and
+no English `labelFemale`, so it is unclear whether the new rule reaches invariant trait labels.
+
+`FRENCH_REVIEW.md` generated by `_tools/Generate-FrenchReview.ps1` (reads the shipped XML, not
+hand-copied), revision: this commit. Virginie has not reviewed it yet: no reviewer/date/corrections line
+below, and `translation_fr` stays `partial` until she has.
+
 ## Superseded decision — done (2026-09-13)
 
 *Superseded on 2026-09-28. Against today's `AUDIT.md` the decision below did not hold until the Pickle suite
