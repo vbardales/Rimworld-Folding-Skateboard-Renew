@@ -79,3 +79,30 @@ Absent, and what that means:
   is wanted and not scheduled.
 - `docs/runs/*.md` lines: no run has happened; a line is written when one does, before its folder is
   deleted.
+
+## Re-read on 2026-10-02
+
+By session `local_c0396786-249c-41aa-9d72-35b215b9c59a`, for the audit re-applied that day. Versions are
+written as above (last commit, then content hash, then working-copy state). A file whose version had not
+moved was not read again; a file that moved was read from the diff against the version of 2026-09-28,
+except `AUDIT.md`, read in full.
+
+| Document | Version now | Read | Useful for this mod? |
+| --- | --- | --- | --- |
+| `AUDIT.md` | `d1fdbe1` 2026-10-02, `10872562d9` | in full | **Useful.** `tested` now needs no `@wip`, every `@requires:` scenario played, no manual test left; session title `foldingskateboard / <workflow_stage>`; `workflow_stage` field; evidence and `.dds` rules |
+| `AGENTS.md` | `7fd7475` 2026-09-29, `44dddcbc8f` | diff | **Useful.** Evidence rule restated (latest report per scenario for the current revision; list before deleting; never delete what `STATUS.md` points to); publishing is by CI only |
+| `PUBLISHING.md` | `4e8f11a` 2026-10-02, `c5b6046d96` | diff | **Useful, partly.** Gallery folder numbered from `0-` with `0-` identical to the Preview (met); Preview carries the ModIcon in a corner (met); a pull request to the origin is systematic when it has a repository (it has none). The line-art, typography and four-animal-integration blocks do not concern this mod |
+| `TRANSLATIONS.md` | `af8427f` 2026-10-02, `7b4d9a23bd` | diff | **Useful.** French agreement and neutral o-series (2026-09-30): this mod's eight French texts avoid agreement with the invariant noun `colon`; plural rule has no number to check |
+| `MOD_SETTINGS.md` | `b83933b` 2026-09-23, `a61cd54192` | unchanged | Not read again |
+| `STYLE_RIMWORLD.md` | `c105a43` 2026-10-01, `f57135f67a`, modified | diff | **Not useful** now: the new blocks describe how colonists and animals are drawn, for new art. Trigger: remaking the ModIcon or the Preview |
+| `WORKSHOP_COMMENTS.md` | `7fd7475` 2026-09-29, `cdd3381ba9` | diff | **Not useful** now: register rows of other mods. Trigger: `tested -> prepublished` |
+| `scripts/SEARCHING.md` | `50de695` 2026-09-28, `45f0fa13cc` | unchanged | Not read again |
+| `PickleTools/README.md` | `ff20d89` 2026-09-29, `1d28b27e67`, modified | diff | Not useful: a pointer to `docs/FIXTURES.md` and an `IdeologySteps` companion |
+| `PickleTools/Headless/README.md` | `ed4e73a` 2026-09-26, `b64e7beefc` | unchanged | Not read again |
+| `PickleTools/docs/steps.md` | `da7c3b0` 2026-09-28, `8639a06971`, modified | diff | Not useful: new `CoatSteps`, `DefFieldSteps`, and a step that moves the pointer to a fixed point, which may help the capture-facing scenarios (idle facing follows the cursor). Trigger: the next capture rewrite |
+| `PickleTools/Authoring/README.md` | `a47799f` 2026-09-29, `75329decf2` | diff | Not useful: a pointer to `docs/FIXTURES.md` |
+| `Rimworld-Release-Admin/docs/OPERATIONS.md` | `3c03f51` 2026-09-26, `347a0d63b9` | unchanged | Not read again; trigger `tested -> prepublished` |
+| `Rimworld-Ticket-Dispatcher/docs/WELCOME.md`, `SUBMIT.md` | `77ca9d7`, `d07b2b8` | unchanged | Not read again; trigger: the next request |
+
+This mod's own documents: `BACKLOG.md`, `NOTES.md`, `BUGS.md` do not exist and nothing needs them today.
+Not re-read: `PickleTools/TESTING.md` (`650adce`, unchanged).

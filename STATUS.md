@@ -8,12 +8,13 @@ repo:         Rimworld-Folding-Skateboard-Renew
 visibility:   public
 detached:     yes
 stage:        done
+workflow_stage: done
 settings_audit: not_applicable
 automated_tests: 15 of 15 passed on 2026-09-28, nine of them seen to fail on injected faults; delivered DLL SHA-256 E829298B8F3A298380B4E0942D2534DE9C8760F7D342FB2F465234DDBA27551D
 xml_tests:    passed on 2026-09-28 (Check-XmlFields, Check-DefRefs, Check-TypeRefs, Check-DefInjected); Check-XmlClasses not applicable
 pickle_scenarios: 20 blocks in 6 features, 26 scenarios; first run 2026-09-28 (request 5877, English, sans-facultatifs, tree 6bc7657, exitReason passed): 25 passed, 0 failed, 1 skipped by requirement (feature 06); two of the five @review captures do not show the facing they are named for; two replays of feature 05 since (undraft fix, then reorder-of-steps fix), both still failing on facing, a fourth replay to file; French pass and incompat-original not run
-audit_revision: 6364ed8fd10beb0f38eaee8e2270faa11eae72ae
-audit_date:   2026-09-28
+audit_revision: 756cb4c61b47dda7850c5aa9d5be20cbcffd77ab
+audit_date:   2026-10-02
 licence:      silent
 licence_at:   four places, the About and the Steam page among them; the page read again 2026-09-28
 upstream_mod_remotes: N/A
@@ -40,7 +41,7 @@ remaining:
   - unverified: not yet written for prepublished, namely the gallery and its order, the mature-content answer, the thank-you message for the original's page and Harmony's Covers cell, the Steam change note, the publish workflow and its dry-run
   - resolved 2026-09-28 (preTest to done): the Pickle suite is written in Tests/Pickle/ (6 features, 23 step patterns, a README that justifies the scope, two pass maps), and Check-Steps.ps1 resolves every step line to exactly one step. Written, not run: done does not ask for a run
 session:      local_40bd9ed8-65bc-4776-8224-f7aa71edee50
-updated:      2026-09-30, translation_fr set to partial (FRENCH_REVIEW.md generated, awaiting Virginie's review); fourth capture replay's cause found (undrafted colonist picks up a real haul job that overrides Rotation) and fixed (StopAll + StopDead in the facing step), fifth replay to file
+updated:      2026-10-02, audit re-applied against AUDIT.md d1fdbe1 (stage kept, workflow_stage added, evidence trimmed, protocols re-read); 2026-09-30, translation_fr set to partial (FRENCH_REVIEW.md generated, awaiting Virginie's review); fourth capture replay's cause found (undrafted colonist picks up a real haul job that overrides Rotation) and fixed (StopAll + StopDead in the facing step), fifth replay to file
 ---
 # Folding Skateboard Renew — status
 
@@ -107,6 +108,30 @@ Reports stay on disk under `Tests/Pickle/Evidence/` (ignored by git) and one lin
 opened `@review` captures as JPEG; delete `screenshots/` copied whole, `report.html`, failed or superseded
 reports and anything on a superseded build, after the line is written and after repointing any field that
 named it. List before deleting. The full table is in `TESTING.md`.
+## Audit — 2026-10-02
+
+Previous stage `done` (`workflow_stage` was missing, now written). Retained: **`done`**. Revision audited
+`756cb4c`, working tree clean, no game launched. Documents re-read against `AUDIT.md` d1fdbe1,
+`PUBLISHING.md` 4e8f11a and `TRANSLATIONS.md` af8427f: see [docs/PROTOCOLS-READ.md](docs/PROTOCOLS-READ.md).
+
+- Gates before `preTest` still hold: `Mod/About/Preview.png` carries the ModIcon in the left corner (rule of
+  2026-09-29) and `Art/Gallery/0-Preview.png` is byte-identical to it. The ModIcon decision stays the owner's.
+- `l10n` against today's TRANSLATIONS.md: no displayed number goes through a key (four Keyed strings and three
+  DefInjected files carry only `{0}`, the item label), so the plural rule has nothing to check. The French
+  gender rule was audited on 2026-09-30; `translation_fr` stays `partial` until Virginie reads
+  `FRENCH_REVIEW.md`. That is an unverified review, not a defect, so `stage` does not fall.
+- Cleaned: no `.dds`, `.ico`, `desktop.ini` or evidence file is tracked, and all four are in `.gitignore`. On
+  disk `Tests/Pickle/Evidence/` went from 63 MB to 1.6 MB. Deleted: the empty `2026-09-28-captures-en`, and
+  `2026-09-30-captures-en-4` (61 MB, a failed replay on a tree older than the `StopAll` fix, its failure
+  already a line in `docs/runs/`). Kept: `2026-09-28-sans-facultatifs-en`, the only full run and the only
+  proof of the 21 scenarios no replay repeated. `pickle-reports-archive/` holds nothing of this mod.
+- The original has no git repository (`ATTRIBUTION.md`, 2026-09-28): `upstream_mod_remotes: N/A`, no fork, no
+  pull request to make.
+- `0.1.0` was prepublished: `Mod/About/PublishedFileId.txt` holds `3806761118` and `CHANGELOG.md` records
+  `## [0.1.0] — 2026-09-23`.
+- `done -> tested`, as `AUDIT.md` now writes it: no scenario `@wip`; every `@requires:` scenario played on a
+  map that mounts that mod (feature 06); no manual test left to tick; `@review` captures opened.
+
 ## Translation audit — 2026-09-30
 
 `translation_fr` reset to `unchecked` by the 2026-09-30 French gender-agreement rule (TRANSLATIONS.md
