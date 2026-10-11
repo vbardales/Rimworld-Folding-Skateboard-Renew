@@ -9,7 +9,7 @@ is not `tested` and not `prepublished`; `STATUS.md` says what is missing.
 The single source of the description, written once. The CI turns this block into the Steam BBCode
 and into the plain-text `<description>` of `Mod/About/About.xml`; until a workflow exists, that
 element is produced from it by `about-description.mjs` of `Rimworld-Release-Admin`, so the two
-cannot drift. The block holds no code fence, and its last line is the source link.
+cannot drift. The block is fenced below only to delimit it: it holds no code fence of its own, and its last line is the source link.
 
 ```markdown
 UNOFFICIAL. This mod is published without the original author's explicit consent. If the original author contacts me to request its removal, I undertake to take it down promptly.
@@ -24,7 +24,7 @@ Original mod: [Folding Skateboard](https://steamcommunity.com/sharedfiles/filede
 
 Craft a folding skateboard at a crafting spot or a smithy - it needs Smithing research and Crafting 4 - then right-click it with a colonist selected and pick "Pick up folding skateboard". It goes into their inventory, not their hands, and stays there.
 
-From then on the board rides itself. Step onto an outdoor hard surface and the board unfolds under them: the colonist gains the Shredder trait and moves at +2 speed. Step indoors, or onto soil, sand or grass, and the board folds back onto their back. Hard surface means a built floor - concrete, paving, wood plank, tiles, flagstone - a mined rock floor, or a bridge. Roofed counts as indoors, so a covered courtyard is not a skate park.
+From then on, the board unfolds and folds automatically. Step onto an outdoor hard surface and the board unfolds under them: the colonist gains the Shredder trait and gains +2 movement speed. Step indoors, or onto soil, sand or grass, and the board folds back onto their back. Hard surface means a built floor - concrete, paving, wood plank, tiles, flagstone - a mined rock floor, or a bridge. Roofed counts as indoors, so a covered courtyard is not a skate park.
 
 While Shredder is on, vanilla's fast walker / slowpoke trait is set aside so the two bonuses do not stack, and given back the moment the board folds up.
 
@@ -87,7 +87,7 @@ None of these exists yet, and none is stubbed here, because an empty heading wou
 decision. `AUDIT.md` (step `tested -> prepublished`) lists them.
 
 - The gallery, in the order it goes on the page, each image opened and looked at. There is no
-  capture yet: the mod has never been run.
+  capture yet: English in-game tests have been run, but full validation, including the French pass, remains pending.
 - The answer to the mature-content boxes, once the gallery images exist.
 - The thank-you message for the original author's page (a first contact, since the source is
   `silent`), and the register entry of `WORKSHOP_COMMENTS.md` for it; Harmony is already `posted`

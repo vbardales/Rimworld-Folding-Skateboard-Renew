@@ -65,7 +65,7 @@ folder.
 
 - The Steam description is written once, in `PUBLICATION.md`, and `Mod/About/About.xml` gets its
   plain text from that block, so the two cannot drift.
-- It no longer says the port was made under "in-game testing": the mod has not been run in game.
+- It no longer says the port was made under "in-game testing": English in-game tests have been run, but full validation, including the French pass, remains pending.
   The line comes back when `tested_on` is set.
 - It names the tools by what they did: Claude Code for the code, tests, documentation and
   translation, OpenAI's gpt-image for the showcase and icon renders.

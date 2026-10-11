@@ -19,7 +19,7 @@ HOW IT WORKS
 
 Craft a folding skateboard at a crafting spot or a smithy - it needs Smithing research and Crafting 4 - then right-click it with a colonist selected and pick "Pick up folding skateboard". It goes into their inventory, not their hands, and stays there.
 
-From then on the board rides itself. Step onto an outdoor hard surface and the board unfolds under them: the colonist gains the Shredder trait and moves at +2 speed. Step indoors, or onto soil, sand or grass, and the board folds back onto their back. Hard surface means a built floor - concrete, paving, wood plank, tiles, flagstone - a mined rock floor, or a bridge. Roofed counts as indoors, so a covered courtyard is not a skate park.
+From then on, the board unfolds and folds automatically. Step onto an outdoor hard surface and the board unfolds under them: the colonist gains the Shredder trait and gains +2 movement speed. Step indoors, or onto soil, sand or grass, and the board folds back onto their back. Hard surface means a built floor - concrete, paving, wood plank, tiles, flagstone - a mined rock floor, or a bridge. Roofed counts as indoors, so a covered courtyard is not a skate park.
 
 While Shredder is on, vanilla's fast walker / slowpoke trait is set aside so the two bonuses do not stack, and given back the moment the board folds up.
 

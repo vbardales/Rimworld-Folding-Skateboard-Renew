@@ -3,8 +3,8 @@
 
   <!-- The trait has a single degree; its entries are addressed by label, not by index. -->
   <!-- EN: Shredder -->
-  <Shredder.degreeDatas.Shredder.label>Rideur</Shredder.degreeDatas.Shredder.label>
+  <Shredder.degreeDatas.Shredder.label>Pro de la glisse</Shredder.degreeDatas.Shredder.label>
   <!-- EN: [PAWN_nameDef] is always shredding the gnar whenever [PAWN_pronoun] goes anywhere. -->
-  <Shredder.degreeDatas.Shredder.description>[PAWN_nameDef] ne se déplace plus qu'en roulant, et ça se voit.</Shredder.degreeDatas.Shredder.description>
+  <Shredder.degreeDatas.Shredder.description>[PAWN_nameDef] ride toujours à fond partout où {PAWN_gender ? il : elle : al} va.</Shredder.degreeDatas.Shredder.description>
 
 </LanguageData>
