@@ -20,7 +20,7 @@ Not here, and why:
 
 - **What the XML says** (the recipe, its gates, its cost, the trait's offset) and **what the provider
   declares** (undrafted only, one pawn, manipulation required): asserted offline by
-  `_tools/Run-Functional-Tests.ps1`, in seconds and with no colony. A scenario that restated them would
+  `scripts/Run-Functional-Tests.ps1`, in seconds and with no colony. A scenario that restated them would
   hold the machine for nothing.
 - **What the game does with a declaration**: whether its menu builder honours the provider's four flags,
   what it does with a bill below Crafting 4, how a caravan forms, what it does with a removed mod. Those
@@ -35,7 +35,7 @@ Not here, and why:
 ```
 Tests/Pickle/
   README.md                          this file
-  Check-Steps.ps1                    the offline check of every step line; see below
+  (offline step check: the shared scripts/Check-Steps.ps1 of the protocols repository, see below)
   wsl-deps.sans-facultatifs.map      the mod, Harmony and the load-audit companion
   wsl-deps.incompat-original.map     SilkCircuit's original beside the mod
   Source/                            the C# of the steps (24 patterns) and its project
@@ -48,7 +48,7 @@ Tests/Pickle/
 
 The steps assembly references nothing of the mod: it reaches the mod through the game's types, the
 mod's defNames and Harmony's patch registry. It builds against `Krafs.Rimworld.Ref` and
-`RimWorks.Pickle.Ref`, intermediates in `.build/pickle/`, outside the companion folder.
+`RimWorks.Pickle.Ref`, intermediates in `Tests/Pickle/Source/obj/`, outside the companion folder.
 
 ## The features
 
@@ -109,7 +109,7 @@ compare scenarios played with features discovered, open every `@review` capture,
 
 ## The offline check
 
-`Check-Steps.ps1` needs no game and runs in seconds. It parses every feature with Pickle's own Gherkin
+The shared `scripts/Check-Steps.ps1 -Mod FoldingSkateboardRenew` needs no game and runs in seconds. It parses every feature with Pickle's own Gherkin
 parser (a file that does not parse makes Pickle play zero scenarios), compiles every step pattern with Pickle's own
 expression engine, refuses a pattern declared twice, and resolves every step line of the features to
 exactly one expression among this suite's, Pickle's installed vocabulary and the steps of every other suite

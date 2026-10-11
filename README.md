@@ -20,13 +20,13 @@ FoldingSkateboardRenew/
   Mod/          the published folder - this is what the NTFS junction into RimWorld/Mods points at
   Source/       C#, never published
   Art/          full-resolution image sources, never published
-  _tools/       the showcase page and the functional tests, never published
+  scripts/      the functional tests, never published
   docs/         the audits, the protocol documents read, the run history, never published
 ```
 
 Steam publishes the junction's target directory as it stands, with no filtering
 (`SteamUGC.SetItemContent`), so anything inside `Mod/` ships. That is why the sources live outside
-it and why build intermediates are redirected to `.build/` by `Source/Directory.Build.props`.
+it and why `Source/` and `Tests/Pickle/Source/` (whose `obj/` and `bin/` are git-ignored) sit outside it.
 
 ## Building
 
@@ -40,7 +40,7 @@ NuGet (`Krafs.Rimworld.Ref`), so no RimWorld installation is needed to compile.
 ## Checks
 
 ```
-powershell -NoProfile -ExecutionPolicy Bypass -File _tools/Run-Functional-Tests.ps1
+powershell -NoProfile -ExecutionPolicy Bypass -File scripts/Run-Functional-Tests.ps1
 ```
 
 Asks the installed game whether it still does what this mod hooks into, without launching it. Most

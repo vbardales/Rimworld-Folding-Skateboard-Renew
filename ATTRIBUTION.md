@@ -200,7 +200,7 @@ are kept in `Art/`, outside the published folder.
 The showcase is a scene rather than a title card: a folded board lit by a standing lamp on paved
 ground, a colonist rolling away behind it, the paving giving way to bare soil at one corner —
 which is the rule of the mod drawn rather than written. Cropped to 896×504, and the name engraved
-over it at that size so the glyphs are never resampled. `_tools/preview.html` is how, and says why
+over it at that size so the glyphs are never resampled. `Art/Preview.config.json`, rendered by the shared `scripts/Render-Preview.cjs`, is how, and says why
 it is cropped where it is.
 
 It replaces SilkCircuit's own 800×451 title card, which this repository shipped until 2026-09-12.

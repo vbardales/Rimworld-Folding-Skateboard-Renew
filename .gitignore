@@ -5,11 +5,11 @@
 # is published. That is what `Mod/` is for: the junction points there, and everything else in
 # this repository - Source/, the docs, this file - stays out of reach by construction.
 
-# Build intermediates. Source/Directory.Build.props redirects them to .build/ at the repository
-# root, so they never land inside Mod/ and never ship; these rules catch a build run without it.
-.build/
+# Build intermediates: beside each csproj (Source/, Tests/Pickle/Source/), never inside Mod/, so they never ship.
 Source/obj/
 Source/bin/
+Tests/Pickle/Source/obj/
+Tests/Pickle/Source/bin/
 
 # Claude Code session worktrees and local settings: each worktree is a full copy of this
 # repository, and they are never shared.
@@ -44,3 +44,6 @@ evidence/
 # System.
 Thumbs.db
 .DS_Store
+
+# Reproducible Preview diagnostics generated locally by the shared renderer.
+Art/.render/

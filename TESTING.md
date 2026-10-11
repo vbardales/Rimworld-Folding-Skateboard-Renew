@@ -6,7 +6,7 @@ This file is the list of what has to be watched, and what counts as a pass.
 
 It is not shipped: it lives beside `Mod/`, never inside it, so Steam never receives it.
 
-Run `_tools/Run-Functional-Tests.ps1` first. It settles, in seconds and without a colony, what the
+Run `scripts/Run-Functional-Tests.ps1` first. It settles, in seconds and without a colony, what the
 mod hooks into and whether the game still does it — the patch targets, the draw-phase call, the
 provider sweep, the floor names, the translation keys. A red line there explains a scenario below
 that would have failed anyway. It proves nothing about what appears on screen, which is why the
@@ -23,11 +23,11 @@ the game can prove stays outside it.
 | # | Scenario | Played by | Why |
 |---|---|---|---|
 | 1 | The mod loads, the patches apply | Any Pickle run, plus the load audit | A patch that throws at startup kills the game before the runner exists; the load audit reads the log for the rest |
-| 2 | The recipe, its gates, its cost | **Offline**, `_tools/Run-Functional-Tests.ps1` (definitions test) | Static facts of the def. That the game refuses a bill below Crafting 4 is the game's own logic, not the mod's, and is not tested |
+| 2 | The recipe, its gates, its cost | **Offline**, `scripts/Run-Functional-Tests.ps1` (definitions test) | Static facts of the def. That the game refuses a bill below Crafting 4 is the game's own logic, not the mod's, and is not tested |
 | 3 | The board takes its material's colour | Pickle, `@review` capture | Only a person can look at a colour |
 | 4 | Picking one up | Pickle | The provider and the job run through the game's own callbacks |
 | 5 | The three refusals, worded | Pickle | Conditions read game state; the wording is the four keys, in each language |
-| 6 | The three silent gates | **Offline**, `_tools/Run-Functional-Tests.ps1` (provider-gates test) | The mod declares four flags: undrafted only, one pawn, manipulation required. That the game's menu builder honours them is the game's business and is not tested; the declaration is the mod's, and is read from the built class |
+| 6 | The three silent gates | **Offline**, `scripts/Run-Functional-Tests.ps1` (provider-gates test) | The mod declares four flags: undrafted only, one pawn, manipulation required. That the game's menu builder honours them is the game's business and is not tested; the declaration is the mod's, and is read from the built class |
 | 7 | Riding | Pickle, with a `@review` capture | The trait and the speed are asserted; the drawn board is looked at |
 | 8 | Folding, indoors and off the hard ground | Pickle, with a `@review` capture | Same |
 | 9 | The roof decides | Pickle | A roof placed over the cell |
@@ -154,7 +154,7 @@ delay is expected and is not a fault.
 that no longer exists throws in a static constructor and takes the game down before it.
 
 **Fail:** any `AmbiguousMatchException` or `null method` from Harmony. That is a patch target that
-moved, and `_tools/Run-Functional-Tests.ps1` would have said which.
+moved, and `scripts/Run-Functional-Tests.ps1` would have said which.
 
 ## 2. The recipe is where it should be, and gated as it should be
 
