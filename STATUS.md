@@ -1,13 +1,13 @@
 ---
 localization: complete
 translation_en: complete
-translation_fr: partial
+translation_fr: complete
 mod:          Folding Skateboard Renew (unofficial)
 packageId:    nelim.foldingskateboard
 repo:         Rimworld-Folding-Skateboard-Renew
 visibility:   public
 detached:     yes
-workflow_stage: writeTests[1.0.0]
+workflow_stage: playTests[1.0.0]
 settings_audit: not_applicable
 automated_tests: 15 of 15 passed on 2026-09-28, nine of them seen to fail on injected faults; delivered DLL SHA-256 E829298B8F3A298380B4E0942D2534DE9C8760F7D342FB2F465234DDBA27551D
 xml_tests:    passed on 2026-09-28 (Check-XmlFields, Check-DefRefs, Check-TypeRefs, Check-DefInjected); Check-XmlClasses not applicable
@@ -25,7 +25,7 @@ remaining:
   - done 2026-10-11 (closing pass 3): Tests/Pickle/Check-Steps.ps1 deleted, shared scripts/Check-Steps.ps1 passes (24 patterns, 179 step lines, one match each); _tools removed (Render-Preview.cjs, preview.html superseded by the shared renderer; Run-Functional-Tests.ps1 moved to scripts/ and justified in LOCAL_SCRIPTS.md; Generate-FrenchReview.ps1 deleted, FRENCH_REVIEW.md now from the shared Make-FrenchReview.ps1 with french-review-flags.json for the Shredder doubt), .build removed (Directory.Build.props deleted, intermediates now in Source/obj and Tests/Pickle/Source/obj, git-ignored); 15 of 15 offline tests pass; DLLs kept at the tested hash
   - unverified: 2026-10-11 ticket 20261011-215617-032-bfee filed (05-captures, English, sans-facultatifs, tree 9505117 plus uncommitted Art/Mod/About image changes, 5 scenarios): fourth capture-facing replay, waiting for RUN_DONE; the four earlier replays failed on facing
   - done 2026-10-11: second review applied (ATTRIBUTION.md wording: upstream search, caravan postfix, SilkCircuit pronouns).
-  - unverified: BLOCKS the exit of writeTests (AUDIT.md 7.g, 6.g): French review by Virginie. 2026-10-11 review proposals applied (trait label "Pro de la glisse", epicene, no flag left; trait description with the {PAWN_gender} switch, token resolution still to check in game; +2 bonus wording; PUBLICATION, About.xml and CHANGELOG wording), awaiting her re-read of the regenerated FRENCH_REVIEW.md. TRANSLATIONS.md's 2026-09-30 gender-agreement rule reset translation_fr to unchecked for every mod with a Languages/French folder; this session generated FRENCH_REVIEW.md by _tools/Generate-FrenchReview.ps1 (Keyed + all three DefInjected files, English/Original identical throughout since the ported original, Paddleboard, had no non-English source text anywhere in this repository). One row flagged `?`: Shredder.degreeDatas.Shredder.label ("Rideur") is a plain trait label with no {PAWN_gender ? ...} switch and no English labelFemale, so it is unclear whether the new rule expects a middle-dot form here. translation_fr cannot be complete until Virginie reviews FRENCH_REVIEW.md; this session does not mark its own French reviewed
+  - done 2026-10-11: French review by Virginie ("validé", on FRENCH_REVIEW.md at committed revision 5b694f5, corrections applied); translation_fr complete (AUDIT.md 6.g, 7.g). Token {PAWN_gender ? il : elle : al} rendering still to check in game (playTests)
   - unverified: the first run (docs/runs/) confirmed assumptions 1 to 4 and 6 to 10 of Tests/Pickle/README.md by passing; 5 (the collision in the log queue) is untested because feature 06 was skipped by requirement, and 11 (Pickle build) is not established. Nothing has been played in French
   - done 2026-09-28: request 20260928-104830-059-5877 ran, exitReason passed, 25 of 26, feature 06 skipped by requirement; line in docs/runs/. Evidence kept in Tests/Pickle/Evidence/2026-09-28-sans-facultatifs-en (summary, junit, messages.ndjson, Player.log, 5 JPEG); report.html and PNGs deleted. Player.log shows two "did not load any content" errors, both for code-only companion mods (load audit, this suite), not the mod
   - done 2026-09-28: replay of 05-captures (request 20260928-172643-796-23e6, tree 016fc42) failed 3 of 5: `Ada is facing 2 [South]`, not the asked direction, on rider-facing-west and board-on-back-facing-north. Cause found: a drafted idle colonist tracks the mouse cursor (RimWorld idle-facing), overriding the set rotation; the fixed south scenarios only passed by coincidence, the cursor projecting south. Fix: undraft after the Shredder assertion, before the photo. Report deleted, cause and fix recorded here and in docs/runs/. To replay
@@ -44,7 +44,7 @@ remaining:
   - resolved 2026-09-28 (preTest to done): the Pickle suite is written in Tests/Pickle/ (6 features, 23 step patterns, a README that justifies the scope, two pass maps), and Check-Steps.ps1 resolves every step line to exactly one step. Written, not run: done does not ask for a run
 session:      local_b01ccdc3-6c60-4c47-bf84-550369df5630
 updated:      2026-10-11, full audit of transitions 1 to 7 against AUDIT.md ad0347e: retained writeTests[1.0.0] (7.g fails: translation_fr partial, Virginie review pending; target version 1.0.0 per CHANGELOG, not 0.1.0); the table-only mapping to playTests was wrong (stage field removed, protocols_read_sha written), capture-facing replay ticket bfee filed; 2026-10-02, audit re-applied against AUDIT.md d1fdbe1 (stage kept, workflow_stage added, evidence trimmed, protocols re-read); 2026-09-30, translation_fr set to partial (FRENCH_REVIEW.md generated, awaiting Virginie's review); fourth capture replay's cause found (undrafted colonist picks up a real haul job that overrides Rotation) and fixed (StopAll + StopDead in the facing step), fifth replay to file
-protocols_read_sha: 55d78595a5c96405648d9198acac5c772f1a3f54
+protocols_read_sha: 3fe114c83324fbdb439d60868016ab707a778d83
 ---
 # Folding Skateboard Renew — status
 
@@ -349,3 +349,7 @@ Retained **`writeTests[1.0.0]`**. The earlier same-day line mapped the old `done
 - 6 (localize): Check-Translations PASS, Check-DefInjected 5 keys 0 errors, FRENCH_REVIEW.md regenerated by the shared Make-FrenchReview.ps1.
 - 7 (writeTests): 7.b 15 of 15 offline tests rerun green today; 7.c Check-XmlFields, Check-DefRefs, Check-TypeRefs, Check-DefInjected green today; 7.d Pickle suite written (Check-Steps shared script: 24 patterns, 179 lines, one match each); 7.e non-applicability reasons in TESTING.md. **7.g FAILS**: `translation_fr: partial`, Virginie's review of FRENCH_REVIEW.md not done, and a session never marks its own French reviewed. 7.a note: the scenarios file is `TESTING.md`, AUDIT.md names `TEST_SCENARIOS.md`; not renamed, to be arbitrated.
 - Pickle ticket bfee (05-captures) stays queued: playing it early is harmless, but it counts as `playTests` work.
+
+## Audit — 2026-10-11, exit of writeTests
+
+Reviewer: Virginie, 2026-10-11, FRENCH_REVIEW.md at revision `5b694f5`; corrections applied (trait label "Pro de la glisse", il/elle/al branch, +2 bonus wording, PUBLICATION, About.xml, CHANGELOG, ATTRIBUTION wording); she validated. 7.g now met, so 7.a to 7.h hold and the stage moves to `playTests[1.0.0]`. Ticket bfee (05-captures) is now playTests work in progress.
