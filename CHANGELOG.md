@@ -30,7 +30,7 @@ verified by reflection against the shipped 1.6 assembly before anything was comp
   same time. The mod carried its terrain list in three copies and one had not kept up.
 - A pawn who left the map while riding kept the +2 movement speed, and their fast walker /
   slowpoke trait stayed held in the mod's save data until they were next spawned.
-- The caravan patch never ran at all: its postfix was declared on a class `PatchAll` skips. Its
+- The caravan postfix never ran: its postfix was declared on a class `PatchAll` skips. Its
   prefix leaked a `Thing` reference per board per caravan arrival, forever. Removed; nothing
   observable depended on it.
 - Two `Log` lines written on every successful pickup.
@@ -55,7 +55,7 @@ folder.
 - `About/Preview.png`, a scene rather than a title card: a folded board lit by a standing lamp on
   paved ground, a colonist rolling away behind it, and the paving giving way to bare soil at one
   corner. 896×504, with the name engraved at that size. It replaces SilkCircuit's own 800×451
-  title card, which this repository shipped until then and which carried his own lettering.
+  title card, which this repository shipped until then and which carried SilkCircuit's lettering.
 - `About/ModIcon.png`, the mascot this repository gives all its mods, with a folded board beside
   it, 128×128. An earlier icon, added and removed earlier in this same unreleased version, had
   been the mod's own item texture cropped square: an icon cut from the source mod's art makes the
@@ -66,7 +66,7 @@ folder.
 - The Steam description is written once, in `PUBLICATION.md`, and `Mod/About/About.xml` gets its
   plain text from that block, so the two cannot drift.
 - It no longer says the port was made under "in-game testing": English in-game tests have been run, but full validation, including the French pass, remains pending.
-  The line comes back when `tested_on` is set.
+  The description will mention in-game validation once the full validation is complete.
 - It names the tools by what they did: Claude Code for the code, tests, documentation and
   translation, OpenAI's gpt-image for the showcase and icon renders.
 - It links the Workshop pages of the original mod and of Harmony wherever it names them, and ends on
