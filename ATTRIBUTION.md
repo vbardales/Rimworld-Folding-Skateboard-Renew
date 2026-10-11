@@ -26,7 +26,7 @@ the first paragraph of the description.
 
 ## Where the port started
 
-**The original has no repository, so there is nothing to fork and no pull request to send.**
+**No upstream repository was found in the checks performed on 2026-09-28, so no upstream pull request can currently be proposed.**
 Checked on 2026-09-28:
 
 - its `About.xml` `<url>` is a Steam profile, and neither that profile nor the Workshop page links a
@@ -36,9 +36,9 @@ Checked on 2026-09-28:
   same person, so it is not used as evidence of anything.
 
 The port started from what the item itself ships: the Workshop payload carries a `Source/` folder
-beside `Assemblies/`, `Defs/` and `Textures/`. That is the only source there is, and it is the
-provenance of everything listed under "What was carried over". A correction therefore cannot be
-proposed upstream. The one way to reach the author is a comment on the item's Steam page, which is
+beside `Assemblies/`, `Defs/` and `Textures/`. That is the source used for this port, and it is the
+provenance of everything listed under "What was carried over". Without an identified upstream repository, corrections can only be suggested through
+the author's Workshop page, which is
 also where the thank-you message will go (see `PUBLICATION.md`).
 
 ## What was carried over
@@ -129,10 +129,10 @@ mutually exclusive by construction.
 
 **A pawn who left the map mid-ride kept the trait.** `Pawn.Tick` only runs while a pawn is spawned,
 and the trait was only ever removed from there. A colonist packed into a caravan while standing on
-concrete left with +2 movement speed and with their fast walker trait held in the mod's save data,
-and got neither back until they were next put on a map. `Patch_Pawn_DeSpawn` is new and closes it.
+concrete left with +2 movement speed and with their fast walker trait held in the mod's save data.
+The riding bonus was not removed, and the displaced movement trait was not restored until the pawn spawned on a map again. `Patch_Pawn_DeSpawn` is new and closes it.
 
-**The caravan patch never ran.** `Patch_CaravanEnterMapUtility` declared its postfix with a
+**The caravan postfix never ran.** `Patch_CaravanEnterMapUtility` declared its postfix with a
 method-level `[HarmonyPatch]` on a class with no class-level `[HarmonyPatch]`, and `PatchAll`
 skips such classes entirely — `PatchClassProcessor` returns before doing anything when the type
 carries no Harmony attributes of its own. So only the prefix was ever applied, and all the prefix
@@ -193,7 +193,7 @@ behaviour was lost with it: nothing observable ever depended on it.
 The four textures are SilkCircuit's, byte for byte; only their file names and the folder they sit
 in changed.
 
-**`About/Preview.png` and `About/ModIcon.png` are ours, and neither is cut from anything of his.**
+**`About/Preview.png` and `About/ModIcon.png` are ours, and neither is cut from anything of SilkCircuit's.**
 Both were generated with OpenAI's gpt-image, under direction: the C2PA manifest embedded in each source render names it as the software agent, dated 2026-09-11 for the icon and 2026-09-12 for the showcase. The full-resolution renders
 are kept in `Art/`, outside the published folder.
 
@@ -204,8 +204,8 @@ over it at that size so the glyphs are never resampled. `Art/Preview.config.json
 it is cropped where it is.
 
 It replaces SilkCircuit's own 800×451 title card, which this repository shipped until 2026-09-12.
-That card carried his lettering and his title, and publishing it as the store image of a port
-meant exhibiting his work under another author line. It stays in this repository's history, at the
+That card carried SilkCircuit's lettering and title, and publishing it as the store image of a port
+meant exhibiting SilkCircuit's work under another author line. It stays in this repository's history, at the
 import commit, and is used nowhere.
 
 The icon is the mascot this repository gives all its mods, drawn for the occasion with a folded
