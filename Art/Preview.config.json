@@ -28,16 +28,16 @@
   "backgroundPosition": "center",
   "backgroundSize": "cover",
   "echo": {
-    "file": "echo.png",
+    "file": "echo-preview.png",
     "preSized": true,
     "color": "var(--accent)",
     "width": 240,
     "height": 180,
     "opacity": 1,
     "veil": false,
-    "panelTop": 14,
-    "panelRight": 0,
-    "panelWidth": 48,
+    "panelTop": 8,
+    "panelRight": -13,
+    "panelWidth": 42,
     "flipX": true
   },
   "iconBadge": {
