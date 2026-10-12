@@ -19,6 +19,8 @@ licence_at:   four places, the About and the Steam page among them; the page rea
 upstream_mod_remotes: N/A
 dependencies: declared
 showcase:     complete
+echo_review_sha: 1963ddbf7e44584189a119f2225c8620d4fc80e5
+social_preview_sha256: 4badb10cc619b465afcf357632b62ded7912f13dfe227c2217dd21cba1acb271
 tested_on:
 workshop:     "3806761118 (0.1.0, prepublished 2026-09-23; the item is private, visibility and subscription test not done)"
 remaining:
@@ -119,7 +121,7 @@ Previous stage `done` (`workflow_stage` was missing, now written). Retained: **`
 `PUBLISHING.md` 4e8f11a and `TRANSLATIONS.md` af8427f: see [docs/PROTOCOLS-READ.md](docs/PROTOCOLS-READ.md).
 
 - Gates before `preTest` still hold: `Mod/About/Preview.png` carries the ModIcon in the left corner (rule of
-  2026-09-29) and `Art/Gallery/0-Preview.png` is byte-identical to it. The ModIcon decision stays the owner's.
+  2026-09-29) and `Art/Gallery/0-preview.png` is byte-identical to it. The ModIcon decision stays the owner's.
 - `l10n` against today's TRANSLATIONS.md: no displayed number goes through a key (four Keyed strings and three
   DefInjected files carry only `{0}`, the item label), so the plural rule has nothing to check. The French
   gender rule was audited on 2026-09-30; `translation_fr` stays `partial` until Virginie reads
@@ -354,3 +356,7 @@ Retained **`writeTests[1.0.0]`**. The earlier same-day line mapped the old `done
 ## Audit — 2026-10-11, exit of writeTests
 
 Reviewer: Virginie, 2026-10-11, FRENCH_REVIEW.md at revision `5b694f5`; corrections applied (trait label "Pro de la glisse", il/elle/al branch, +2 bonus wording, PUBLICATION, About.xml, CHANGELOG, ATTRIBUTION wording); she validated. 7.g now met, so 7.a to 7.h hold and the stage moves to `playTests[1.0.0]`. Ticket bfee (05-captures) is now playTests work in progress.
+
+## Preview refresh — 2026-10-12
+
+Echo: kept as the new line-art `Art/echo-preview.png` (replaces `echo.png` and `echo-source.svg`; it shows the board itself, which is what the gallery shows). `Art/Preview.config.json` now points at it, with `panelRight -13`, `panelWidth 42`, `panelTop 8` so the outline sits clear of the title (the first render crossed the final D). Rendered with the shared `Render-Preview.cjs`: `Mod/About/Preview.png` 896 x 504, 600,926 bytes; `Art/Gallery/0-preview.png` is its byte copy (the tracked name was `0-Preview.png`, renamed). Text, palette and badge are unchanged, so the earlier contrast measurements stand; they were not measured again on this render. GitHub social preview uploaded through the browser, `og:image` downloaded and byte-identical (`social_preview_sha256` above). Nothing was published to the Workshop: the Steam page of item 3806761118 still carries the old image until the 1.0.0 publish.
