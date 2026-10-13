@@ -6,6 +6,7 @@ using RimWorks.Pickle;
 using RimWorld;
 using UnityEngine;
 using Verse;
+using Verse.AI;
 
 namespace FoldingSkateboard.PickleSteps
 {
@@ -391,8 +392,15 @@ namespace FoldingSkateboard.PickleSteps
             // she is undrafted, and its JobDriver keeps setting Rotation to the direction of travel every tick,
             // overriding this. Stopping the job and the pather here, in the same step that sets the rotation,
             // removes that source rather than a fixed few ticks of it.
+            // StopAll alone is not enough: the colony AI hands her a new HaulToCell within a tick or two, and that
+            // JobDriver sets Rotation to the direction of travel every tick (seen again in French, 2026-10-13).
+            // A long forced Wait occupies her, takes no work, and keeps the facing asked for.
             pawn.jobs?.StopAll();
             pawn.pather?.StopDead();
+            Job wait = JobMaker.MakeJob(JobDefOf.Wait);
+            wait.expiryInterval = 60000;
+            wait.overrideFacing = rot;
+            pawn.jobs?.StartJob(wait, JobCondition.InterruptForced);
             pawn.Rotation = rot;
         }
 
