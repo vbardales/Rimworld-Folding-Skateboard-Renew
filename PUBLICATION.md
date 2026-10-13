@@ -60,6 +60,8 @@ The port work - the code, the tests, the documentation and the French translatio
 
 SilkCircuit for the mod. Andreas Pardeike for [Harmony](https://steamcommunity.com/sharedfiles/filedetails/?id=2009463077).
 
+[Pickle](https://steamcommunity.com/sharedfiles/filedetails/?id=3791648678) (RimWorks) and [PickleTools](https://steamcommunity.com/sharedfiles/filedetails/?id=3806142401) were used to test this mod in the game: development tools only, never a dependency of the mod.
+
 Attribution and licence: see ATTRIBUTION.md and LICENSE, in the mod folder and in the repository.
 
 [Source code on GitHub](https://github.com/vbardales/Rimworld-Folding-Skateboard-Renew)
