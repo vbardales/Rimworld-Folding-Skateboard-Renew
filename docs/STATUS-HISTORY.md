@@ -161,3 +161,114 @@ DefInjected recheck: 5 keys checked, 0 errors, exit 0 (11,589 definitions indexe
 
 Copy, typography, layout and palette are consolidated in `Art/Preview.config.json`. Canonical inputs are `Art/Preview-source.png`, `Art/echo.png` and `Art/ModIcon-source.png`; temporary renderer diagnostics belong under ignored `Art/.render/`. Existing Preview, gallery and ICO outputs were preserved because they were present and coherent; no render was run. Superseded JSON files and generated QA intermediates were removed. Nothing published.
 
+
+# Folded 2026-10-13: sections of the retired `done` vocabulary
+
+## Current decision — done (2026-09-28)
+
+Stage `done`. Stage codes: `done` is the workflow's `done`; the codes `preview`, `preOptions`, `options` and
+`l10n` of the 2026-09-13 audit map literally to the states of the same name in `AUDIT.md`. **`done` means
+ready for the final in-game validation. It does not mean tested in game, and nothing has been played.**
+
+**How it got here, in two steps the same day.** The audit of the morning, recorded in
+[docs/AUDIT-2026-09-28.md](docs/AUDIT-2026-09-28.md), retained **`preTest`**: every gate up to it was met, once
+the description that failed on arrival was corrected, and `done` was not, because `AUDIT.md` asks for the Pickle
+scenarios to be written with their scope justified and `Tests/Pickle/` did not exist. The audit itself creates
+nothing; the session that holds the mod then wrote the suite, and the criteria of `done` were checked again:
+
+| Criterion of `preTest -> done` | State |
+| --- | --- |
+| Functional scenarios written, with preconditions, actions and expected results | met: `TESTING.md`, seventeen |
+| Automated tests written, run, green | met: 15 of 15, on the delivered DLL; nine seen to fail on injected faults |
+| Pickle scenarios written, scope justified | met: six features in `Tests/Pickle/`, 26 scenarios expanded; scope in `TESTING.md` ("What plays each scenario") and `Tests/Pickle/README.md` |
+| XML tests written, run, green | met: `Check-XmlFields`, `Check-DefRefs`, `Check-TypeRefs`, `Check-DefInjected` |
+| Every non-applicability justified, no artificial test | met: five, each with its reason in `TESTING.md` |
+| Results correspond to the delivered version | met: `Mod/Assemblies/FoldingSkateboard.dll` is unchanged since `6364ed8`, SHA-256 above |
+
+The document read and the versions are in [docs/PROTOCOLS-READ.md](docs/PROTOCOLS-READ.md).
+
+**What was done on the way**, no game launched and nothing published:
+
+- Committed fifteen days of uncommitted work, in the state the 0.1.0 upload held, then
+  `Add published Workshop file ID for 0.1.0` (item `3806761118`, `CHANGELOG.md` `## [0.1.0]`).
+- Corrected the description, which said the port was made under "in-game testing": it has never run. It is
+  now written once in `PUBLICATION.md`, and `About.xml` is its plain text, ending on `Source code on GitHub`.
+  The tools are named as they are: Claude Code, and OpenAI's `gpt-image` (both source renders say so in their
+  C2PA manifest).
+- Took `renew` out of the packageId: `nelim.foldingskateboard`.
+- Two more offline tests (the definitions, the provider's declared gates), and the plan in `TESTING.md`.
+- Checked the original for a repository: none, so no fork and no pull request; the port began from the
+  `Source/` its Workshop payload ships. Recorded in `ATTRIBUTION.md`.
+- Wrote the README's "Known limitations", the one that matters being what removing the mod mid-ride can cost.
+- Ignored `*.dds`, `*.ico`, `desktop.ini` and the evidence folders; trimmed two superseded copies under
+  `.build/`. No Pickle report exists for this mod, so no launcher archive was touched.
+
+### Next transition: `done -> tested`
+
+Nothing of it has started. It needs the game, through the dispatcher and never directly:
+
+- Play the passes: `sans-facultatifs` in English and in French, and `incompat-original`, commands in
+  `Tests/Pickle/README.md`. Write `avec-lts` once the LTS mod is identified.
+- **No scenario left `@wip`.** Repaired and replayed, or deleted with its reason written.
+- **Every conditional scenario has run.** Feature 06 carries `@requires:silkcircuit.foldableskateboardmod`: it
+  must have its pass, on a map that mounts that mod, and its report must be read, suite and scenario names
+  checked first (the report folder is shared by the whole machine). A scenario skipped for want of its
+  condition is not a scenario passed.
+- **No manual test left to tick.** Everything in `TESTING.md` is automated and green or listed as not
+  applicable with its reason. The `@review` captures are still opened.
+- `exitReason` read before any count; scenarios played against features discovered; the log read from the start;
+  every scenario that ever failed replayed green on a build that contains its fix.
+- Then Options and MainButtons stay not applicable unless a setting is added.
+
+### Evidence policy
+
+Reports stay on disk under `Tests/Pickle/Evidence/` (ignored by git) and one line per run goes to
+`docs/runs/`. Keep the summary, the junit and messages files, `Player.log`, the completeness marker and the
+opened `@review` captures as JPEG; delete `screenshots/` copied whole, `report.html`, failed or superseded
+reports and anything on a superseded build, after the line is written and after repointing any field that
+named it. List before deleting. The full table is in `TESTING.md`.
+## Audit — 2026-10-02
+
+Previous stage `done` (`workflow_stage` was missing, now written). Retained: **`done`**. Revision audited
+`756cb4c`, working tree clean, no game launched. Documents re-read against `AUDIT.md` d1fdbe1,
+`PUBLISHING.md` 4e8f11a and `TRANSLATIONS.md` af8427f: see [docs/PROTOCOLS-READ.md](docs/PROTOCOLS-READ.md).
+
+- Gates before `preTest` still hold: `Mod/About/Preview.png` carries the ModIcon in the left corner (rule of
+  2026-09-29) and `Art/Gallery/0-preview.png` is byte-identical to it. The ModIcon decision stays the owner's.
+- `l10n` against today's TRANSLATIONS.md: no displayed number goes through a key (four Keyed strings and three
+  DefInjected files carry only `{0}`, the item label), so the plural rule has nothing to check. The French
+  gender rule was audited on 2026-09-30; `translation_fr` stays `partial` until Virginie reads
+  `FRENCH_REVIEW.md`. That is an unverified review, not a defect, so `stage` does not fall.
+- Cleaned: no `.dds`, `.ico`, `desktop.ini` or evidence file is tracked, and all four are in `.gitignore`. On
+  disk `Tests/Pickle/Evidence/` went from 63 MB to 1.6 MB. Deleted: the empty `2026-09-28-captures-en`, and
+  `2026-09-30-captures-en-4` (61 MB, a failed replay on a tree older than the `StopAll` fix, its failure
+  already a line in `docs/runs/`). Kept: `2026-09-28-sans-facultatifs-en`, the only full run and the only
+  proof of the 21 scenarios no replay repeated. `pickle-reports-archive/` holds nothing of this mod.
+- The original has no git repository (`ATTRIBUTION.md`, 2026-09-28): `upstream_mod_remotes: N/A`, no fork, no
+  pull request to make.
+- `0.1.0` was prepublished: `Mod/About/PublishedFileId.txt` holds `3806761118` and `CHANGELOG.md` records
+  `## [0.1.0] — 2026-09-23`.
+- `done -> tested`, as `AUDIT.md` now writes it: no scenario `@wip`; every `@requires:` scenario played on a
+  map that mounts that mod (feature 06); no manual test left to tick; `@review` captures opened.
+
+## Translation audit — 2026-09-30
+
+`translation_fr` reset to `unchecked` by the 2026-09-30 French gender-agreement rule (TRANSLATIONS.md
+section 3), then set to `partial` here: audited by this session, not yet reviewed by Virginie.
+
+French lives in four files, all read in full this session:
+- `Mod/Languages/French/Keyed/FoldingSkateboard.xml` — four pickup-refusal/action strings
+- `Mod/Languages/French/DefInjected/ThingDef/FoldingSkateboard.xml` — the board's label/description
+- `Mod/Languages/French/DefInjected/TraitDef/FoldingSkateboard.xml` — the Shredder trait's label/description
+- `Mod/Languages/French/DefInjected/JobDef/FoldingSkateboard.xml` — the pickup job's report string
+
+None of the eight French texts uses `{PAWN_gender ? ...}`: the two that name the colonist ("le colon
+porte déjà...", "le colon gagne le trait...") use the invariant noun "colon" rather than an agreeing
+adjective or participle, which TRANSLATIONS.md's "prefer a wording with no agreement" already permits.
+One row flagged `?` in `FRENCH_REVIEW.md`: the Shredder trait label ("Rideur") has no gender switch and
+no English `labelFemale`, so it is unclear whether the new rule reaches invariant trait labels.
+
+`FRENCH_REVIEW.md` generated by `_tools/Generate-FrenchReview.ps1` (reads the shipped XML, not
+hand-copied), revision: this commit. Virginie has not reviewed it yet: no reviewer/date/corrections line
+below, and `translation_fr` stays `partial` until she has.
+
