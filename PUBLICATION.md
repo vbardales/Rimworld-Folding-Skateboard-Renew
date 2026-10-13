@@ -16,9 +16,9 @@ UNOFFICIAL. This mod is published without the original author's explicit consent
 
 A skateboard that boosts pawn movement speed while in use and conveniently folds up and straps to their back when they aren't shredding the gnar.
 
-I am not the author of this mod. The idea, the artwork, the trait and the balance are SilkCircuit's; all I did was bring it forward to 1.6, fix what the port turned up, and write the French. Credit goes to them; mistakes in the port are mine.
+I am not the author of this mod. The idea, the artwork, the trait and the balance are SilkCircuit's; all I did was bring it forward to the latest RimWorld version, fix what the port turned up, and write the French. Credit goes to them; mistakes in the port are mine.
 
-Original mod: [Folding Skateboard](https://steamcommunity.com/sharedfiles/filedetails/?id=3414678101) by SilkCircuit. Its About.xml declares 1.5 only and its page says 1.5+; neither names 1.6.
+Original mod: [Folding Skateboard](https://steamcommunity.com/sharedfiles/filedetails/?id=3414678101) by SilkCircuit. Its About.xml declares 1.5 only and its page says 1.5+; neither names the latest RimWorld version.
 
 **HOW IT WORKS**
 
@@ -32,9 +32,9 @@ The board is made from stuff and takes the colour of what it was made from.
 
 **WHAT CHANGED IN THE PORT**
 
-One thing was actually broken by 1.6, and it was fatal rather than quiet. Right-click menus were rebuilt in 1.6 around FloatMenuOptionProvider, and the method the 1.5 mod patched to add its "pick up" option no longer exists. [Harmony](https://steamcommunity.com/sharedfiles/filedetails/?id=2009463077) would have thrown on startup, before the main menu - so the port would not have loaded at all. The option is now a provider, which is what 1.6 wants and needs no patching.
+One thing was actually broken by the move from 1.5, and it was fatal rather than quiet. Right-click menus were rebuilt in the latest version around FloatMenuOptionProvider, and the method the 1.5 mod patched to add its "pick up" option no longer exists. [Harmony](https://steamcommunity.com/sharedfiles/filedetails/?id=2009463077) would have thrown on startup, before the main menu - so the port would not have loaded at all. The option is now a provider, which is what the latest version wants and needs no patching.
 
-Three things were broken before 1.6 and are fixed here:
+Three things were broken before the port and are fixed here:
 
 - Every patch was applied twice. The mod ran Harmony's PatchAll from two places under two ids, so the board was drawn twice every frame and the terrain check ran twice per tick.
 - On floors from LTS Systems' mods, a colonist was drawn riding the board AND wearing it on their back at the same time. The mod carried its terrain list three times over and one of the copies had not been kept up to date.
