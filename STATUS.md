@@ -25,7 +25,7 @@ tested_on:
 workshop:     "3806761118 (0.1.0, prepublished 2026-09-23; the item is private, visibility and subscription test not done)"
 remaining:
   - done 2026-10-11 (closing pass 3): Tests/Pickle/Check-Steps.ps1 deleted, shared scripts/Check-Steps.ps1 passes (24 patterns, 179 step lines, one match each); _tools removed (Render-Preview.cjs, preview.html superseded by the shared renderer; Run-Functional-Tests.ps1 moved to scripts/ and justified in LOCAL_SCRIPTS.md; Generate-FrenchReview.ps1 deleted, FRENCH_REVIEW.md now from the shared Make-FrenchReview.ps1 with french-review-flags.json for the Shredder doubt), .build removed (Directory.Build.props deleted, intermediates now in Source/obj and Tests/Pickle/Source/obj, git-ignored); 15 of 15 offline tests pass; DLLs kept at the tested hash
-  - unverified: 2026-10-12 tickets filed on tree a80532f: 20261012-041854-454-69a1 (incompat-original, feature 06 on the original, Workshop id 3414678101 already in the map) and 20261012-041855-872-478d (sans-facultatifs, French, all but 06); waiting for RUN_DONE
+  - done 2026-10-12: tickets 69a1 (incompat-original: 1 of 1 passed, feature 06 played) and 478d (sans-facultatifs French: 24 of 25, `a wall directly south...` failed on facing 3 not 2, job=HaulToCell despite StopAll); lines in docs/runs/. Replay filed 2026-10-13: 20261013-113610-729-1256 (05-captures, French, tree 98ae182); waiting for RUN_DONE
   - done 2026-10-12: ticket 20261011-215617-032-bfee, 05-captures, English, sans-facultatifs: exitReason passed, 5 of 5, all five @review captures opened and as named (the four earlier replays failed on facing); line in docs/runs/README.md; evidence kept in Tests/Pickle/Evidence/2026-10-11-captures-en (summary, junit, messages.ndjson, Player.log, 5 JPEG; report.html and PNGs deleted). Still to play in playTests: full suite after the commit and deploy, French pass, incompat-original, feature 06 (needs silkcircuit.foldableskateboardmod)
   - done 2026-10-11: second review applied (ATTRIBUTION.md wording: upstream search, caravan postfix, SilkCircuit pronouns).
   - done 2026-10-11: French review by Virginie ("validé", on FRENCH_REVIEW.md at committed revision 5b694f5, corrections applied); translation_fr complete (AUDIT.md 6.g, 7.g). Token {PAWN_gender ? il : elle : al} rendering still to check in game (playTests)
@@ -47,7 +47,7 @@ remaining:
   - resolved 2026-09-28 (preTest to done): the Pickle suite is written in Tests/Pickle/ (6 features, 23 step patterns, a README that justifies the scope, two pass maps), and Check-Steps.ps1 resolves every step line to exactly one step. Written, not run: done does not ask for a run
 session:      local_b01ccdc3-6c60-4c47-bf84-550369df5630
 updated:      2026-10-11, full audit of transitions 1 to 7 against AUDIT.md ad0347e: retained writeTests[1.0.0] (7.g fails: translation_fr partial, Virginie review pending; target version 1.0.0 per CHANGELOG, not 0.1.0); the table-only mapping to playTests was wrong (stage field removed, protocols_read_sha written), capture-facing replay ticket bfee filed; 2026-10-02, audit re-applied against AUDIT.md d1fdbe1 (stage kept, workflow_stage added, evidence trimmed, protocols re-read); 2026-09-30, translation_fr set to partial (FRENCH_REVIEW.md generated, awaiting Virginie's review); fourth capture replay's cause found (undrafted colonist picks up a real haul job that overrides Rotation) and fixed (StopAll + StopDead in the facing step), fifth replay to file
-protocols_read_sha: 5e7c922c02ef44b3ee1357f59dde11a7da5e66f6
+protocols_read_sha: 2f4e0002e2543fcde57999c51ff8b2f0dfc8efdb
 ---
 # Folding Skateboard Renew — status
 
@@ -159,104 +159,6 @@ no English `labelFemale`, so it is unclear whether the new rule reaches invarian
 hand-copied), revision: this commit. Virginie has not reviewed it yet: no reviewer/date/corrections line
 below, and `translation_fr` stays `partial` until she has.
 
-## Superseded decision — done (2026-09-13)
-
-*Superseded on 2026-09-28. Against today's `AUDIT.md` the decision below did not hold until the Pickle suite
-was written, which it now is: see the decision above. Kept as it was written.*
-
-`preTest -> done` is established under the user's workflow. `done` means ready for
-final functional validation in game; it does not mean tested in game or published.
-The earlier decision to retain preTest was overly conservative, not a failed test.
-
-- TESTING.md contains 17 written functional scenarios with shared or scenario-specific
-  preconditions, actions and expected results.
-- The updated automated suite passed 13/13 against the delivered DLL after the pickup
-  translation change; compilation passed with zero warnings/errors.
-- All seven distributed XML files parsed; five DefInjected paths passed with zero errors.
-  Four nonempty EN/FR menu templates passed key and format-argument checks.
-- Earlier image, localization, settings and dependency gates remain established.
-  Settings tests and MainButtons customization tests are not applicable: no relevant
-  settings, empty page or shortcut exists. This does not exempt gameplay persistence.
-
-Evidence is recorded in the dated sections below and in [AUDIT-2026-09-13.md](AUDIT-2026-09-13.md).
-On this documentation-only update, HEAD and the delivered DLL hash were rechecked:
-`2b519339bc8b58c9edf841d68ba86e19518bd72a` plus existing uncommitted corrections;
-DLL SHA256 `9B14EE844E85C36C00E86A849E54FA06CA23FCFFD25B4922B7B62CE5CF792C62`.
-The hash matches the tested delivery. Tests were not rerun for this documentation update.
-Existing local work and historical results are preserved.
-
-### Next transition, as written on 2026-09-13
-
-Execute the applicable TESTING.md scenarios in RimWorld 1.6 with Harmony and record
-actual outcomes, game/mod versions, save context and log evidence. Cover a new game
-and an existing save, English and French UI, pickup refusals, trait restoration,
-save/reload and leaving the map. Check logs for errors and unresolved keys. Run the
-mod-removal scenario only on a disposable copy of a save. Any fixes require the
-corresponding regression tests before tested can be claimed.
-
-Options and MainButtons checks remain not applicable unless such features are added.
-Record optional integrations actually exercised (for example LTS floors); do not infer
-integration compatibility from static inspection. `tested_on` remains empty until
-successful gameplay validation is recorded. No scenario has been certified in game.
-
-The About description's unsupported in-game-testing claim and bare GitHub link remain
-tracked publication-documentation defects. They are not hidden by done and must be
-addressed before publication; they do not negate the technical readiness gate above.
-
-## Historical evidence
-
-Read by a sweep across every mod, rather than by asking each thread in turn. It lives at the
-root, never inside `Mod/`, so Steam never receives it.
-
-The sweep of 2026-09-12 read what it could off the disk and left four fields for whoever holds
-this mod. They are answered now, and this is what they rest on.
-
-- **`stage`** — one of `port`, `showcase`, `preTest`, `done`, `tested`, `published`. **`showcase`**:
-  the port itself is finished and pushed, and what is left is the two images. The session group
-  says the same thing.
-- **`tested_on`** — the date of the last run in game. **Empty, and it means never.** The mod has
-  never been loaded by RimWorld, here or anywhere: it was ported by reading the 1.6 assembly, not
-  by running it. `_tools/Run-Functional-Tests.ps1` asks the installed game the questions that can
-  be settled without launching it, and passes; it says nothing about what a colony does, which is
-  what `TESTING.md` is for.
-- **`dependencies`** — **`declared`**, and it is the whole answer. Harmony is the only mod this one
-  needs, and the About names it in `modDependencies`. The 1.6 assembly and Harmony are the only
-  things the C# references. The ~170 terrain names in `SkateableTerrain` include floors from LTS
-  Systems' mods, but a name belonging to a mod that is not loaded simply resolves to nothing: they
-  are opportunities, not dependencies, and declaring them would be wrong.
-- **`remaining`** — what is left, in three kinds: `feature` for something missing from a first
-  release, `defect` for a known fault left unfixed, `unverified` for what could not be checked.
-
-`workshop` stays empty because the mod has never been uploaded: there is no `PublishedFileId.txt`
-in the folder, which is also why the `packageId` could still be renamed on 2026-09-12.
-
-## Audit of 2026-09-13
-
-Previous stage: `preTest`. Retained stage: `preview` = **Preview generated**
-(user workflow: **Preview générée**). This code extends the legacy vocabulary below;
-`preOptions`, `options` and `l10n` map literally to the user's workflow stages.
-The previous narrative is retained as historical context, not current validation evidence.
-
-See [AUDIT-2026-09-13.md](AUDIT-2026-09-13.md) for the revision, initial local changes,
-ordered gates, commands, findings and remaining checks. GitHub existence, public visibility
-and pushed HEAD were checked live. Build succeeded and reproduced the distributed DLL
-byte for byte. All 13 automated tests and all 5 DefInjected path checks passed; seven
-distributed XML files also passed syntax and resource checks. Both images were inspected.
-The initial restricted compiler-probe failure was environmental and passed on retry.
-
-### Settings audit
-
-`not_applicable`: faithful fixed-balance port, no useful configuration requirement found.
-Source and Def inventory confirms no ModSettings, empty settings page or MainButtons shortcut.
-No customization integration was tested. Gameplay trait persistence is still unverified.
-
-### Translation audit
-
-EN/FR resource coverage is complete: two owned Keyed entries, two verified vanilla keys,
-five valid French injected fields with English Def sources. `localization: partial` because
-three disabled-menu messages concatenate translated fragments contrary to TRANSLATIONS.md.
-No missing key or failed in-game rendering is asserted. FR/EN runtime checks remain pending.
-
 ## Vocabulary
 
 `licence`: `open` an explicit licence, `silent` no licence and a dead source, `alive` no licence
@@ -278,69 +180,6 @@ So the rule for keeping it is the same one the documents of this repository foll
 that stops being true is a line to change, and the moment to change it is the commit that made
 it false.** Not the next sweep, which will simply copy the lie forward.
 
-## Preview correction and test diagnostic follow-up — 2026-09-13
-
-Stage at that follow-up: `options`. `preview` -> `preOptions` now passes; the independent
-`settings_audit: not_applicable` remains valid, so `preOptions` -> `options` also passes.
-The next gate is l10n, still blocked by the recorded translated-fragment construction.
-The earlier audit and its original stage decision above are historical evidence.
-
-The overlay now uses the prescribed Renew suffix hierarchy, the (unofficial) tag,
-shared primary ink for title/summary, current spacing and typography, and a 1.6 badge.
-The source illustration and crop are unchanged. The paving's warm rose-brown family
-anchors the secondary ink; the lamp supplies the more saturated golden accent.
-Canonical composition: `Art/Preview.config.json`, rendered by the shared `Render-Preview.cjs` of the protocols repository (the mod copies were removed 2026-10-11).
-and installed Chrome. The renderer waits for fonts and source image decoding.
-
-The delivered PNG was inspected at 896 x 504 and 268 px wide: title and version
-identifiable, rule visible, tag/suffix and accent distinct, no overlap or clipping.
-PNG size: 577,913 bytes. Chrome reports Segoe UI Semibold for the title, not fallback.
-Contrast minima measured against every background pixel in each text bounding box:
-title 7.77:1, suffix 5.47:1, tag 4.79:1, summary 6.06:1; opaque badge 9.96:1.
-QA snapshots and machine-readable measurements are in `.build/preview-qa/` (not shipped).
-
-The compile probe now fails explicitly as UNVERIFIED when dotnet is missing or a
-failed build has SDK/restore/infrastructure errors or no C# diagnostics. It preserves
-the exit code and useful diagnostic lines and does not infer obsolete private access.
-A real restricted run reproduced MSB4184 and correctly reported the SDK access denial;
-the suite stayed nonzero. This replaces the misleading publiciser-removal suggestion.
-No mod C# or language resource changed; prior DLL and localization checks remain applicable.
-Final verification: the updated 13-test suite passed with SDK access (exit 0),
-including the expected PawnRenderer.pawn diagnostic. Render-Preview.cjs exited 0;
-git diff --check passed. No gameplay run or publication was performed.
-
-## Complete pickup translations — 2026-09-13
-
-Replaced all three disabled pickup labels with complete owned EN/FR templates:
-TakeAlreadyCarrying, TakeForbidden and TakeNoPath. Each receives the localized item
-label as {0}; no translated-fragment concatenation or vanilla refusal key remains.
-The ordinary TakeToInventory action remains translated, giving four keys per language.
-No gameplay condition, pickup action, settings or dependency was changed.
-
-Updated the existing resource test to check duplicates, empty/unused keys and to format
-each template with a sample item argument; malformed or missing arguments fail the suite.
-Updated TESTING.md refusal and French scenarios, and CHANGELOG.md. The audit's original
-observations above remain historical; this section records the correction.
-
-`dotnet build Source/FoldingSkateboard.csproj --no-restore --nologo` succeeded with
-zero warnings/errors and installed the updated DLL in Mod/Assemblies.
-Delivered SHA256: `9B14EE844E85C36C00E86A849E54FA06CA23FCFFD25B4922B7B62CE5CF792C62`.
-Revision baseline remains 2b519339bc8b58c9edf841d68ba86e19518bd72a plus the documented
-local changes. Earlier image, settings and dependency validations remain applicable.
-The changed menu needs English/French in-game regression checks (TESTING.md 4–6 and 16);
-these have not been executed. No gameplay success is claimed.
-
-Final resource and assembly suite: 13/13 passed, exit 0, four keys per language.
-All seven distributed XML files parse. Stage at that follow-up: preTest; localization is complete,
-with prior settings and dependency checks preserved. In-game validation remains pending.
-
-DefInjected recheck: 5 keys checked, 0 errors, exit 0 (11,589 definitions indexed).
-
-
-## Preview source migration — 2026-10-03
-
-Copy, typography, layout and palette are consolidated in `Art/Preview.config.json`. Canonical inputs are `Art/Preview-source.png`, `Art/echo.png` and `Art/ModIcon-source.png`; temporary renderer diagnostics belong under ignored `Art/.render/`. Existing Preview, gallery and ICO outputs were preserved because they were present and coherent; no render was run. Superseded JSON files and generated QA intermediates were removed. Nothing published.
-
 ## Audit — 2026-10-11 (transitions 1 to 7, checked one by one)
 
 Retained **`writeTests[1.0.0]`**. The earlier same-day line mapped the old `done` to `playTests` by the correspondence table alone; that was not an audit.
@@ -360,3 +199,7 @@ Reviewer: Virginie, 2026-10-11, FRENCH_REVIEW.md at revision `5b694f5`; correcti
 ## Preview refresh — 2026-10-12
 
 Echo: kept as the new line-art `Art/echo-preview.png` (replaces `echo.png` and `echo-source.svg`; it shows the board itself, which is what the gallery shows). `Art/Preview.config.json` now points at it, with `panelRight -13`, `panelWidth 42`, `panelTop 8` so the outline sits clear of the title (the first render crossed the final D). Rendered with the shared `Render-Preview.cjs`: `Mod/About/Preview.png` 896 x 504, 600,926 bytes; `Art/Gallery/0-preview.png` is its byte copy (the tracked name was `0-Preview.png`, renamed). Text, palette and badge are unchanged, so the earlier contrast measurements stand; they were not measured again on this render. GitHub social preview uploaded through the browser, `og:image` downloaded and byte-identical (`social_preview_sha256` above). Nothing was published to the Workshop: the Steam page of item 3806761118 still carries the old image until the 1.0.0 publish.
+
+## Folded history
+
+Superseded 2026-09-13 decisions, the sweep notes and the 2026-09-13 to 2026-10-03 dated sections moved to [docs/STATUS-HISTORY.md](docs/STATUS-HISTORY.md) on 2026-10-13 (rule: STATUS.md keeps the current state only).
