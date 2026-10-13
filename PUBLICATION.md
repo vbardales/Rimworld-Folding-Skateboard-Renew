@@ -94,4 +94,24 @@ decision. `AUDIT.md` (step `tested -> prepublished`) lists them.
 - The thank-you message for the original author's page (a first contact, since the source is
   `silent`), and the register entry of `WORKSHOP_COMMENTS.md` for it; Harmony is already `posted`
   there, so only its `Covers` column moves.
-- The Steam change note, `### 1.0.0`, whose first line is `[b]1.0.0[/b]`.
+
+## Release notes (the change note of each upload)
+
+The block under `### <version>` is sent as the Steam change note, with the version alone on its first line
+(`[b]1.0.0[/b]`, `../PUBLISHING.md`); the `## [<version>]` section of `CHANGELOG.md` goes into the GitHub
+release instead.
+
+### 1.0.0
+
+```
+[b]1.0.0[/b]
+First public release. Brings SilkCircuit's Folding Skateboard forward to the latest RimWorld version: the "pick up" right-click option is rebuilt (the old one would have stopped the game from loading), every patch now applies once instead of twice, the board is no longer drawn twice on LTS floors, and a colonist who leaves the map mid-ride gets their speed trait back. Full French coverage is added. Requires Harmony. Incompatible with the original mod.
+```
+
+## Use This Instead comment (not posted)
+
+Register: `../USE_THIS_INSTEAD.md`, row 3414678101. The item 3806761118 is still private. Post by the owner on the [Use This Instead](https://steamcommunity.com/sharedfiles/filedetails/?id=3396308787) page, after the switch to public.
+
+```
+A replacement for [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3414678101]Folding Skateboard[/url] (SilkCircuit; packageId silkcircuit.foldableskateboardmod; RimWorld 1.5): [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3806761118]Folding Skateboard Renew (unofficial)[/url] (Nelim; packageId nelim.foldingskateboard), for the latest RimWorld version. It is unofficial: the original author has not been reached. Thank you for keeping this list :)
+```
