@@ -441,7 +441,8 @@ namespace FoldingSkateboard.PickleSteps
             ctx.Assert(trait != null, $"no TraitDef named \"{traitName}\"");
             TraitDegreeData data = trait.degreeDatas[0];
             string label = data.label ?? "";
-            string description = data.description.Formatted(pawn.Named("PAWN")).Resolve();
+            // [PAWN_nameDef] and [PAWN_pronoun] are grammar symbols that AdjustedFor fills, as Trait.TipString does for the inspect tab.
+            string description = data.description.Formatted(pawn.Named("PAWN")).AdjustedFor(pawn).Resolve();
             foreach (string text in new[] { label, description })
             {
                 ctx.Assert(!string.IsNullOrWhiteSpace(text), $"{traitName} has an empty text");
