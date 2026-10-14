@@ -430,6 +430,29 @@ namespace FoldingSkateboard.PickleSteps
         }
 
         // ------------------------------------------------------------------ the trait, the speed
+        // A raw key, an unresolved grammar token or a stray brace shows on screen as text a player reads, and nothing
+        // else in the suite looks at the trait's own texts. The description names the colonist and carries the
+        // gender switch of the French file, so it is resolved for the colonist the way the inspect tab does.
+        [Then("Folding Skateboard Renew: the label and description of the trait {string} read as words for {string}")]
+        public void TraitTextsReadAsWords(PickleContext ctx, string traitName, string nickname)
+        {
+            Pawn pawn = Colonist(ctx, nickname);
+            TraitDef trait = DefDatabase<TraitDef>.GetNamed(traitName, false);
+            ctx.Assert(trait != null, $"no TraitDef named \"{traitName}\"");
+            TraitDegreeData data = trait.degreeDatas[0];
+            string label = data.label ?? "";
+            string description = data.description.Formatted(pawn.Named("PAWN")).Resolve();
+            foreach (string text in new[] { label, description })
+            {
+                ctx.Assert(!string.IsNullOrWhiteSpace(text), $"{traitName} has an empty text");
+                ctx.Assert(text.IndexOfAny(new[] { '{', '}', '[', ']' }) < 0,
+                    $"{traitName} shows an unresolved token or brace: \"{text}\" (language {LanguageDatabase.activeLanguage?.folderName})");
+                ctx.Assert(!text.Contains(traitName + "."),
+                    $"{traitName} shows a raw key: \"{text}\" (language {LanguageDatabase.activeLanguage?.folderName})");
+            }
+            ctx.Attach("trait-texts", $"[{LanguageDatabase.activeLanguage?.folderName}] label=\"{label}\" description=\"{description}\"");
+        }
+
 
         [Then("Folding Skateboard Renew: {string} does not have the trait {string}")]
         public void DoesNotHaveTrait(PickleContext ctx, string nickname, string traitName)
