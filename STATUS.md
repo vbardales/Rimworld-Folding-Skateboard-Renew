@@ -40,7 +40,7 @@ remaining:
   - feature: the avec-lts pass is not written. The Workshop mod that defines the 141 LTS floors is not identified (one bounded read of About.xml files found nothing before its time limit, which proves no absence), so there is no map, and that integration cannot yet be credited
   - unverified: the collision of the two mods' defNames is asserted by reading the game's log queue for an error mentioning Paddleboard (feature 06); which mod survives is not documented and not asserted
   - unverified: English and French display of the four pickup keys and the three DefInjected files in game, and the raw-key check; static coverage is complete
-  - unverified: 2026-10-14 tickets afd3 (French) and f28b (English) filed on tree 7a50e81 for scenario 07-trait-texts (Shredder label and description read as words, closes the token and raw-key checks); waiting for RUN_DONE
+  - unverified: scenario 07-trait-texts (Shredder label and description read as words, closes the token and raw-key checks): afd3 failed on a step defect (unresolved [PAWN_nameDef], fixed 6a12ceb); French replay 20261015-002749-008-1428 and English f28b waiting for RUN_DONE
   - defect: the Steam page of item 3806761118 still carries the description of the 0.1.0 upload, which claims in-game testing and ends on a bare URL; the repository's description is corrected, the page changes only by update_description of a publish or by hand
   - unverified: the private 0.1.0 item was uploaded from the working tree and probably carries four .dds caches that git never held, and the earlier packageId; check its file list. 1.0.0 replaces both
   - done 2026-10-14: ModIcon validated by Virginie (control passed, the decision was hers)
