@@ -265,6 +265,32 @@ namespace FoldingSkateboard.PickleSteps
             comp.Forbidden = true;
         }
 
+        // The steps below speak in absolute cells of the map, for the gallery: it plays on a named place of the
+        // Sanctuary, where the yard (a clear square found near the middle of the map) is not the place.
+
+        [Given("Folding Skateboard Renew: the terrain of the cells from \\({int}, {int}\\) to \\({int}, {int}\\) is {string}")]
+        public void SetTerrainOfCells(PickleContext ctx, int x1, int z1, int x2, int z2, string terrainName)
+        {
+            TerrainDef terrain = DefDatabase<TerrainDef>.GetNamed(terrainName, false);
+            ctx.Assert(terrain != null, $"no TerrainDef named \"{terrainName}\"");
+            Map map = CurrentMap(ctx);
+            foreach (IntVec3 cell in CellRect.FromLimits(Math.Min(x1, x2), Math.Min(z1, z2), Math.Max(x1, x2), Math.Max(z1, z2)))
+            {
+                ctx.Assert(cell.InBounds(map), $"({cell.x}, {cell.z}) is outside the map");
+                map.terrainGrid.SetTerrain(cell, terrain);
+            }
+        }
+
+        [Given("Folding Skateboard Renew: a folding skateboard made of {string} lies on the cell \\({int}, {int}\\)")]
+        public void BoardLiesOnCell(PickleContext ctx, string stuffName, int x, int z)
+        {
+            ThingDef stuff = DefDatabase<ThingDef>.GetNamed(stuffName, false);
+            ctx.Assert(stuff != null, $"no ThingDef \"{stuffName}\" to make the board of");
+            IntVec3 cell = new IntVec3(x, 0, z);
+            ctx.Assert(cell.InBounds(CurrentMap(ctx)), $"({x}, {z}) is outside the map");
+            GenSpawn.Spawn(ThingMaker.MakeThing(BoardDef(ctx), stuff), cell, CurrentMap(ctx));
+        }
+
         [Given("Folding Skateboard Renew: {string} carries a folding skateboard made of {string}")]
         public void Carries(PickleContext ctx, string nickname, string stuffName)
         {
