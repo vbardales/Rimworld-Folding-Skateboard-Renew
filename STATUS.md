@@ -40,7 +40,7 @@ remaining:
   - feature: the avec-lts pass is not written. The Workshop mod that defines the 141 LTS floors is not identified (one bounded read of About.xml files found nothing before its time limit, which proves no absence), so there is no map, and that integration cannot yet be credited
   - unverified: the collision of the two mods' defNames is asserted by reading the game's log queue for an error mentioning Paddleboard (feature 06); which mod survives is not documented and not asserted
   - unverified: English and French display of the four pickup keys and the three DefInjected files in game, and the raw-key check; static coverage is complete
-  - unverified: scenario 07-trait-texts (Shredder label and description read as words, closes the token and raw-key checks): afd3 failed on a step defect (unresolved [PAWN_nameDef], fixed 6a12ceb); French replay 20261015-002749-008-1428 and English f28b waiting for RUN_DONE
+  - done 2026-10-15: scenario 07-trait-texts green in English (f28b) and French (1428, after the AdjustedFor fix of the step): Shredder label and description read as words, no raw key, no brace. Only the "il" branch of {PAWN_gender ? il : elle : al} is seen (Ada); elle and al are not exercised in game. Lines in docs/runs/
   - defect: the Steam page of item 3806761118 still carries the description of the 0.1.0 upload, which claims in-game testing and ends on a bare URL; the repository's description is corrected, the page changes only by update_description of a publish or by hand
   - unverified: the private 0.1.0 item was uploaded from the working tree and probably carries four .dds caches that git never held, and the earlier packageId; check its file list. 1.0.0 replaces both
   - done 2026-10-14: ModIcon validated by Virginie (control passed, the decision was hers)
@@ -56,7 +56,7 @@ protocols_read_sha: abe91647aaaabbb913f42a9a699ab0b3db63942c
 
 ## Current state, 2026-10-13
 
-Stage `playTests[1.0.0]`. Automated 15 of 15 and the XML checks pass on the delivered DLL. Pickle on 1.6: English full run 25 of 26 plus feature 06 green, English captures 5 of 5, French full run 24 of 25, French captures 5 of 5 after the `Faces` fix (ticket `0f2a`, five captures opened). Code review of `Source/` done (`code_review_sha`). Still open for the exit of `playTests`: the rendering of the `{PAWN_gender ? il : elle : al}` token in the Shredder description (no scenario shows it), the raw-key check, Virginie's call on the ModIcon, and the 1.7 pass (separate, `tested_1_7` absent). Nothing has been played by a person. The earlier decision text, the 2026-10-02 audit and the 2026-09-30 translation audit are in [docs/STATUS-HISTORY.md](docs/STATUS-HISTORY.md).
+Stage `playTests[1.0.0]`. Automated 15 of 15 and the XML checks pass on the delivered DLL. Pickle on 1.6: English full run 25 of 26 plus feature 06 green, English captures 5 of 5, French full run 24 of 25, French captures 5 of 5 after the `Faces` fix (ticket `0f2a`, five captures opened). Code review of `Source/` done (`code_review_sha`). Scenario 07 closed the raw-key check and the "il" branch of the token (French and English green); the "elle" and "al" branches are not exercised in game. The ModIcon is validated. Open: the 1.7 pass (separate, `tested_1_7` absent). Nothing has been played by a person. The earlier decision text, the 2026-10-02 audit and the 2026-09-30 translation audit are in [docs/STATUS-HISTORY.md](docs/STATUS-HISTORY.md).
 
 ## Vocabulary
 
