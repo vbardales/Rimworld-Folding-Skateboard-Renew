@@ -14,7 +14,7 @@
 #   4. 14:20  One step off the concrete onto soil, Nelim facing North, seen from behind, the board strapped to her back. Shogun
 #             faces South toward the camera. The image says that off hard ground the board folds onto her back.
 # Nelim wears an ochre shirt (214, 163, 58) and dark blue trousers (45, 58, 92), warm against the grey and silver boards; her
-# hair is a Ponytail. Her face follows the story: the fixture's own face in 1, a smile with cheerful lids in 2 and 3. The face
+# hair is the Ponytails style. Her face follows the story: the fixture's own face in 1, a smile with cheerful lids in 2 and 3. The face
 # is set last, after every wait, because Facial Animation recomputes it at every tick (SanctuaryBacklot, run 56b0).
 # The only animal is a dog, awake at the hour used, shown facing the camera in 1, 2 and 4.
 # Nothing asserts about the image: a person opens each one. What is asserted before a capture (the trait on or off) is only so
@@ -36,7 +36,7 @@ Feature: gallery: an afternoon on the board
     And Folding Skateboard Renew: the terrain of the cells from (196, 192) to (204, 194) is "Soil"
     And Nelim's Pickle Tools: "Nelim" wears "Apparel_BasicShirt" dyed rgb (214, 163, 58)
     And Nelim's Pickle Tools: "Nelim" wears "Apparel_Pants" dyed rgb (45, 58, 92)
-    And Nelim's Pickle Tools: "Nelim" hairstyle is "Ponytail"
+    And Nelim's Pickle Tools: "Nelim" hairstyle is "Ponytails"
 
   Scenario: 1. three boards lie on the stone, each the colour of what it is made from
     Given Folding Skateboard Renew: a folding skateboard made of "Steel" lies on the cell (198, 187)
