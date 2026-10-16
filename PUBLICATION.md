@@ -121,27 +121,31 @@ A replacement for [url=https://steamcommunity.com/sharedfiles/filedetails/?id=34
 Nothing in `Art/Gallery/` yet but `0-preview.png`. The five captures of `Tests/Pickle/Evidence/` are checks that a rider is drawn
 facing the way it is named, taken in a plain test yard with the default colonist: they are evidence, not gallery images, and none
 goes on the page. The gallery is one staged story, played on Nelim's Sanctuary (`SanctuaryBacklot`), with Nelim as its
-protagonist and Shogun, her labrador, as her only company. The plan came first
+protagonist, her friend Kenji (a second colonist made for the scene) and Shogun, her labrador. The plan came first
 (`GALLERY.md`, "La session est la metteuse en scène"), the scenarios in `08-gallery.feature` follow it, one scenario per image.
+The first draft (one figure standing still) was refused by its own director on 2026-10-16: no arc, nothing moving, and the
+speed of the trait could not be seen.
 
-**The story, "an afternoon on the board".** The square of the calm zone, centre (200, 187), has no roof and no wall shadow. For the
-story a patch of concrete is laid on it (the mod's own terrain step, removed with the scene), because the board only unfolds on a
-built hard floor. Same corner every time, Nelim and Shogun the same two figures, three boards lying on the stone. Time of day
-14:00, then five game minutes between images, clear weather, 20 degrees so that no face shows sweat.
+**The story, "an afternoon on the board".** Nelim shows Kenji, who has no board, what hers does. On the square of the calm zone,
+centre (200, 187), no roof and no wall shadow, a patch of concrete is laid (the mod's own terrain step, removed with the scene),
+because the board only unfolds on a built hard floor. Same corner every time. Time of day 14:00, then five game minutes between
+images, clear weather, 20 degrees so that no face shows sweat.
 
-| # | Time | Scene | Nelim | What the image says |
+| # | Time | Scene | Faces | What the image says |
 | --- | --- | --- | --- | --- |
-| 1 | 14:00 | Three boards lie on the concrete: steel, wood, plasteel. Wide shot, zoom 5.5. | Stands behind them, small smile. Shogun awake, facing the camera (South). | The board is the colour of what it is made from. |
-| 2 | 14:05 | Nelim on the concrete with a board in her pack, facing South. Close, zoom 4. | Wide smile, cheerful lids. Shogun at her side, facing South. | Step on hard ground and the board unfolds under her. |
-| 3 | 14:10 | Same corner, Nelim facing West, side on. Zoom 4. | Smile, eyes ahead. Shogun in the background. | On the board she is faster than on foot (Shredder, +2 speed). |
-| 4 | 14:20 | Nelim one step off the concrete onto the grass, facing North, seen from behind. Zoom 4. | Face not visible. Shogun faces South toward the camera. | Off hard ground the board folds onto her back. |
+| 1 | 14:00 | Three boards lie on the concrete: steel, wood, plasteel. Wide shot, zoom 5.5. Nelim stands behind them, Kenji beside her, Shogun faces the camera (South). | Nelim: her own face, a small smile. Kenji: calm. | The board is the colour of what it is made from. |
+| 2 | 14:05 | Nelim on the concrete, a board in her pack, facing South; Kenji faces her (East). Zoom 4. | Nelim: wide smile, cheerful lids. Kenji: smile. | Step on hard ground and the board unfolds under her. |
+| 3 | 14:10 | The race, side on: Nelim on the board facing West, Kenji on foot five cells behind her, Shogun between them. Zoom 4. | Nelim: smile, cheerful lids. Kenji: angry kit (effort). | On the board she leaves him behind (Shredder, +2 speed). |
+| 4 | 14:20 | Nelim one step off the concrete onto soil, facing North, seen from behind. Kenji, with a board of his own, rides on the concrete facing East. Zoom 4. | Nelim: not visible. Kenji: smug. | Off hard ground the board folds onto her back; now he has one too. |
 
-**Looks.** Nelim wears an ochre shirt (214, 163, 58) and the fixture's trousers dyed dark blue (45, 58, 92): warm against the grey
-and silver boards. Hairstyle `Ponytails` (the game's name), hair colour left as the fixture has it, no hat. Her face follows the story: the fixture's
-own face in 1, `MouthSmile` with `LidCheerful` in 2 and 3. Facial Animation recomputes the face every tick, so the face is set
-last, after every wait. No new mod: the outfit, the hair and the faces come from vanilla and from the mods the Sanctuary pass map
-already stages (Facial Animation and EyeGenes3, for her dark brown eyes). I looked for a skater clothing mod on the Workshop and
-found none that is clearly for 1.6, so none is imported.
+**Looks.** Nelim: ochre shirt (214, 163, 58), the fixture's trousers dyed dark blue (45, 58, 92), Vanilla Apparel Expanded shoes,
+hairstyle `Ponytails` (the game's name), hair colour as the fixture has it, no hat, her dark brown eyes. Kenji, the skater of the
+pair: male body, `ShortCut` hair under a red baseball cap (200, 52, 48), a teal hoodie (46, 139, 139), dark shorts (58, 58, 66),
+shoes, blue eyes (EyeGenes3 `Eyes_Blue`), no traits. Faces: Facial Animation recomputes the face every tick, so each face is set
+last, after every wait. **Imported mod:** Vanilla Apparel Expanded (`VanillaExpanded.VAPPE`, Workshop 1814987817, with its
+framework `OskarPotocki.VanillaFactionsExpanded.Core`, 2023507013), for the cap, hoodie, shorts and shoes; it is added to the
+gallery pass map `wsl-deps.sanctuary.map` only, never a dependency of the mod. The Workshop corpus holds no skater-specific
+apparel for 1.6; this is the closest wardrobe (searched 2026-10-16).
 
 **Not in the story yet.** A fifth image, the right-click menu with "Pick up folding skateboard", is a menu capture (no subtitle).
 It needs a step that draws the float menu on screen: the mod's own steps read the menu but do not draw it. To ask the PickleTools
@@ -157,5 +161,5 @@ the planned ones: the table follows the final files after the captures are accep
 | --- | --- | --- |
 | 1 | `1-three-boards.jpg` | Three folding boards on the stone, each the colour of what it is made from. |
 | 2 | `2-first-push.jpg` | Step onto hard ground and the board unfolds under her feet. |
-| 3 | `3-side-on.jpg` | On the board she is faster than on foot. |
-| 4 | `4-folds-away.jpg` | Back on the grass, the board folds and straps to her back. |
+| 3 | `3-the-race.jpg` | On the board she leaves him behind. |
+| 4 | `4-folds-away.jpg` | Back on the grass the board folds onto her back, and now he has one too. |
