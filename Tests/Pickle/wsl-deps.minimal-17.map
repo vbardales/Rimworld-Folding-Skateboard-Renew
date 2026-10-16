@@ -1,0 +1,5 @@
+# RimWorld 1.7 diagnostic pass (AUDIT.md "Passe 1.7"): the mod's own steps as a net10.0 build, English, no PickleTools, no Sanctuary.
+# Overlay built by scripts/build-pickle-steps-net10.sh from Tests/Pickle/Source; features 01 to 04, 06, 07 only (05 and 08 are captures); About.xml declares 1.6 and 1.7.
+# path: is relative to REPO=/mnt/c/Users/nelim/Documents/rimworld, six levels up reach /. Run with -Game /home/nelim/rimworld17 -PickleSrc /home/nelim/Rimworld-Pickle.
+# No No Version Warning mod is staged: the undeclared 1.7 gives a yellow warning only; the proof is the log and the report.
+nelim.foldingskateboard.pickletests path:../../../../../../home/nelim/pt17/mods/FoldingSkateboardSteps
