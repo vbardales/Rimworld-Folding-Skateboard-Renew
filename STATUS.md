@@ -12,7 +12,7 @@ settings_audit: not_applicable
 automated_tests: 15 of 15 passed on 2026-09-28, nine of them seen to fail on injected faults; delivered DLL SHA-256 E829298B8F3A298380B4E0942D2534DE9C8760F7D342FB2F465234DDBA27551D
 xml_tests:    passed on 2026-09-28 (Check-XmlFields, Check-DefRefs, Check-TypeRefs, Check-DefInjected); Check-XmlClasses not applicable
 pickle_scenarios: 20 blocks in 6 features, 26 scenarios; first run 2026-09-28 (request 5877, English, sans-facultatifs, tree 6bc7657, exitReason passed): 25 passed, 0 failed, 1 skipped by requirement (feature 06); two of the five @review captures do not show the facing they are named for; replay of feature 05 on 2026-10-11 (request bfee) passed 5 of 5 with the five captures opened; French pass and incompat-original not run
-audit_revision: 005d9b2
+audit_revision: 99bba7d
 audit_date:   2026-10-16
 licence:      silent
 licence_at:   four places, the About and the Steam page among them; the page read again 2026-09-28
