@@ -116,7 +116,7 @@ Register: `../USE_THIS_INSTEAD.md`, row 3414678101. The item 3806761118 is still
 A replacement for [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3414678101]Folding Skateboard[/url] (SilkCircuit; packageId silkcircuit.foldableskateboardmod; RimWorld 1.5): [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3806761118]Folding Skateboard Renew (unofficial)[/url] (Nelim; packageId nelim.foldingskateboard), for the latest RimWorld version. It is unofficial: the original author has not been reached. Thank you for keeping this list :)
 ```
 
-## Gallery plan (shootGallery, draft 2 in the queue)
+## Gallery plan (shootGallery, draft 3 in the queue)
 
 Nothing in `Art/Gallery/` yet but `0-preview.png`. The five captures of `Tests/Pickle/Evidence/` are checks that a rider is drawn
 facing the way it is named, taken in a plain test yard with the default colonist: they are evidence, not gallery images, and none
