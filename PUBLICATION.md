@@ -116,13 +116,13 @@ Register: `../USE_THIS_INSTEAD.md`, row 3414678101. The item 3806761118 is still
 A replacement for [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3414678101]Folding Skateboard[/url] (SilkCircuit; packageId silkcircuit.foldableskateboardmod; RimWorld 1.5): [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3806761118]Folding Skateboard Renew (unofficial)[/url] (Nelim; packageId nelim.foldingskateboard), for the latest RimWorld version. It is unofficial: the original author has not been reached. Thank you for keeping this list :)
 ```
 
-## Gallery plan (shootGallery, not yet played)
+## Gallery plan (shootGallery, draft 2 in the queue)
 
 Nothing in `Art/Gallery/` yet but `0-preview.png`. The five captures of `Tests/Pickle/Evidence/` are checks that a rider is drawn
 facing the way it is named, taken in a plain test yard with the default colonist: they are evidence, not gallery images, and none
 goes on the page. The gallery is one staged story, played on Nelim's Sanctuary (`SanctuaryBacklot`), with Nelim as its
-protagonist and Shogun, her labrador, as her only company. No scenario exists for it yet: the plan comes first
-(`GALLERY.md`, "La session est la metteuse en scène"), the scenarios follow it, one scenario per image.
+protagonist and Shogun, her labrador, as her only company. The plan came first
+(`GALLERY.md`, "La session est la metteuse en scène"), the scenarios in `08-gallery.feature` follow it, one scenario per image.
 
 **The story, "an afternoon on the board".** The square of the calm zone, centre (200, 187), has no roof and no wall shadow. For the
 story a patch of concrete is laid on it (the mod's own terrain step, removed with the scene), because the board only unfolds on a
@@ -137,7 +137,7 @@ built hard floor. Same corner every time, Nelim and Shogun the same two figures,
 | 4 | 14:20 | Nelim one step off the concrete onto the grass, facing North, seen from behind. Zoom 4. | Face not visible. Shogun faces South toward the camera. | Off hard ground the board folds onto her back. |
 
 **Looks.** Nelim wears an ochre shirt (214, 163, 58) and the fixture's trousers dyed dark blue (45, 58, 92): warm against the grey
-and silver boards. Hairstyle `Ponytail`, hair colour left as the fixture has it, no hat. Her face follows the story: the fixture's
+and silver boards. Hairstyle `Ponytails` (the game's name), hair colour left as the fixture has it, no hat. Her face follows the story: the fixture's
 own face in 1, `MouthSmile` with `LidCheerful` in 2 and 3. Facial Animation recomputes the face every tick, so the face is set
 last, after every wait. No new mod: the outfit, the hair and the faces come from vanilla and from the mods the Sanctuary pass map
 already stages (Facial Animation and EyeGenes3, for her dark brown eyes). I looked for a skater clothing mod on the Workshop and
