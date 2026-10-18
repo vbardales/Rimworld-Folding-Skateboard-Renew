@@ -51,7 +51,7 @@ remaining:
   - resolved 2026-09-28 (preTest to done): the Pickle suite is written in Tests/Pickle/ (6 features, 23 step patterns, a README that justifies the scope, two pass maps), and Check-Steps.ps1 resolves every step line to exactly one step. Written, not run: done does not ask for a run
 session:      local_b01ccdc3-6c60-4c47-bf84-550369df5630
 updated:      2026-10-11, full audit of transitions 1 to 7 against AUDIT.md ad0347e: retained writeTests[1.0.0] (7.g fails: translation_fr partial, Virginie review pending; target version 1.0.0 per CHANGELOG, not 0.1.0); the table-only mapping to playTests was wrong (stage field removed, protocols_read_sha written), capture-facing replay ticket bfee filed; 2026-10-02, audit re-applied against AUDIT.md d1fdbe1 (stage kept, workflow_stage added, evidence trimmed, protocols re-read); 2026-09-30, translation_fr set to partial (FRENCH_REVIEW.md generated, awaiting Virginie's review); fourth capture replay's cause found (undrafted colonist picks up a real haul job that overrides Rotation) and fixed (StopAll + StopDead in the facing step), fifth replay to file
-protocols_read_sha: 508b3ff82ae4356413586586fa4c824042fe6519
+protocols_read_sha: 114fdced85a80e9c17840fdb561a63e48e587579
 ---
 # Folding Skateboard Renew — status
 
