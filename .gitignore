@@ -39,6 +39,8 @@ desktop.ini
 # Test evidence stays on disk and out of git: captures and Player.log grow without a limit. What is
 # kept in git is one line per run in docs/runs/, and STATUS.md points at that, never at these folders.
 Tests/Pickle/Evidence/
+Tests/Pickle/Inbox/
+Tests/Pickle/Parked/
 evidence/
 
 # System.
