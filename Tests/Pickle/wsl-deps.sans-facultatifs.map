@@ -1,2 +1,4 @@
 # The load audit companion: the step that reads the game log for what belongs to the mod. Every pass names it.
 nelim.pickletools.loadaudit path:PickleTools/LoadAudit/Mod
+# Gender of a colonist (07-trait-texts, the elle and al branches of the trait text).
+nelim.pickletools.colonistrace path:PickleTools/ColonistRace/Mod

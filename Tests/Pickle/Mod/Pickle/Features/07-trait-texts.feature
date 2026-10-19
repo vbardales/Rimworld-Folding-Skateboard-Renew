@@ -10,3 +10,14 @@ Feature: The trait's texts read as words in the pass's language
 
   Scenario: the label and description of Shredder read as words for a colonist
     Then Folding Skateboard Renew: the label and description of the trait "Shredder" read as words for "Ada"
+
+  # The other two branches of {PAWN_gender ? il : elle : al} in the French text (the first scenario's colonist is male).
+  @requires:nelim.pickletools.colonistrace
+  Scenario: the label and description of Shredder read as words for a female colonist
+    Given Nelim's Pickle Tools: "Ada" gender is female
+    Then Folding Skateboard Renew: the label and description of the trait "Shredder" read as words for "Ada"
+
+  @requires:nelim.pickletools.colonistrace
+  Scenario: the label and description of Shredder read as words for a colonist with no gender
+    Given Nelim's Pickle Tools: "Ada" gender is neutral
+    Then Folding Skateboard Renew: the label and description of the trait "Shredder" read as words for "Ada"
