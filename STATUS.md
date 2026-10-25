@@ -101,6 +101,10 @@ Reviewer: Virginie, 2026-10-11, FRENCH_REVIEW.md at revision `5b694f5`; correcti
 
 Echo: kept as new line-art `Art/echo-preview.png` (replaces `echo.png` and `echo-source.svg`; shows board itself, which gallery shows). `Art/Preview.config.json` now points at it, with `panelRight -13`, `panelWidth 42`, `panelTop 8` so outline sits clear of title (first render crossed final D). Rendered with shared `Render-Preview.cjs`: `Mod/About/Preview.png` 896 x 504, 600,926 bytes; `Art/Gallery/0-preview.png` is byte copy (tracked name was `0-Preview.png`, renamed). Text, palette, badge unchanged, so earlier contrast measurements stand; not measured again on this render. GitHub social preview uploaded through browser, `og:image` downloaded and byte-identical (`social_preview_sha256` above). Nothing published to Workshop: Steam page of item 3806761118 still carries old image until 1.0.0 publish.
 
+## Preview re-render — 2026-10-25
+
+Owner rewrote `Art/Preview.config.json` (new schema: `panel`, `icon`; engine defaults for echo placement and badge corner, now bottom-right) and validated the render of `Mod/About/Preview.png` (sha256 `e3491d6dfd0096961c1b2f542137d254f437240f410788b2a661bfb412c996cc`, 591 KB); `Art/Gallery/0-preview.png` is its byte copy. GitHub social preview not yet re-uploaded: `social_preview_sha256` keeps the old value until it is, and the Steam page keeps the old image until the 1.0.0 publish.
+
 ## Folded history
 
 Superseded 2026-09-13 decisions, sweep notes and 2026-09-13 to 2026-10-03 dated sections moved to [docs/STATUS-HISTORY.md](docs/STATUS-HISTORY.md) on 2026-10-13 (rule: STATUS.md keeps current state only).

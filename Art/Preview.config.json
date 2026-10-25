@@ -1,55 +1,36 @@
 {
-  "title": "Folding Skateboard Renew (unofficial)",
-  "titleSize": 48,
-  "titleParts": [
-    {
-      "text": "Folding"
-    },
-    {
-      "text": "Skateboard",
-      "breakBefore": true
-    },
-    {
-      "text": "Renew (unofficial)",
-      "scale": 0.65,
-      "font": "ui",
-      "color": "secondary",
-      "breakBefore": true
-    }
-  ],
-  "suffix": "",
-  "tag": "",
-  "copyLines": [
-    "Unfolds on hard ground outdoors, folds onto their back indoors."
-  ],
-  "layout": "panel",
-  "panelAnchor": "top-left",
+  "panel": {
+    "title": "Folding Skateboard Renew (unofficial)",
+    "titleSize": 48,
+    "titleParts": [
+      {
+        "text": "Folding"
+      },
+      {
+        "text": "Skateboard",
+        "breakBefore": true
+      },
+      {
+        "text": "Renew (unofficial)",
+        "scale": 0.65,
+        "font": "ui",
+        "color": "secondary",
+        "breakBefore": true
+      }
+    ],
+    "copyLines": [
+      "Unfolds on hard ground outdoors, folds onto their back indoors."
+    ]
+  },
   "backgroundFile": "Preview-source.png",
-  "backgroundPosition": "center",
-  "backgroundSize": "cover",
   "echo": {
     "file": "echo-preview.png",
-    "preSized": true,
     "color": "var(--accent)",
     "width": 240,
-    "height": 180,
-    "opacity": 1,
-    "veil": false,
-    "panelTop": 8,
-    "panelRight": -13,
-    "panelWidth": 42,
-    "flipX": true
+    "height": 180
   },
-  "iconBadge": {
-    "file": "ModIcon-source.png",
-    "corner": "bottom-left",
-    "width": 180,
-    "translate": "-12.5%, 12.5%",
-    "outline": false,
-    "veil": "radial",
-    "veilSize": 275,
-    "veilLeft": -55,
-    "veilBottom": -61
+  "icon": {
+    "file": "ModIcon-source.png"
   },
   "palette": {
     "veil": "#443C3B",
