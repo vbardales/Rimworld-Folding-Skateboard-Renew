@@ -21,7 +21,7 @@ dependencies: declared
 showcase:     complete
 echo_review_sha: 1963ddbf7e44584189a119f2225c8620d4fc80e5
 code_review_sha: 8f4619cddda5298af8b7e3a05342e15aad9d8a59
-social_preview_sha256: 4badb10cc619b465afcf357632b62ded7912f13dfe227c2217dd21cba1acb271
+social_preview_sha256: e3491d6dfd0096961c1b2f542137d254f437240f410788b2a661bfb412c996cc
 tested_on:    2026-10-14 (RimWorld 1.6, Pickle in WSL, English and French; nothing played by a person)
 workshop:     "3806761118 (0.1.0, prepublished 2026-09-23; the item is private, visibility and subscription test not done)"
 remaining:
@@ -103,7 +103,7 @@ Echo: kept as new line-art `Art/echo-preview.png` (replaces `echo.png` and `echo
 
 ## Preview re-render — 2026-10-25
 
-Owner rewrote `Art/Preview.config.json` (new schema: `panel`, `icon`; engine defaults for echo placement and badge corner, now bottom-right) and validated the render of `Mod/About/Preview.png` (sha256 `e3491d6dfd0096961c1b2f542137d254f437240f410788b2a661bfb412c996cc`, 591 KB); `Art/Gallery/0-preview.png` is its byte copy. GitHub social preview not yet re-uploaded: `social_preview_sha256` keeps the old value until it is, and the Steam page keeps the old image until the 1.0.0 publish.
+Owner rewrote `Art/Preview.config.json` (new schema: `panel`, `icon`; engine defaults for echo placement and badge corner, now bottom-right) and validated the render of `Mod/About/Preview.png` (sha256 `e3491d6dfd0096961c1b2f542137d254f437240f410788b2a661bfb412c996cc`, 591 KB); `Art/Gallery/0-preview.png` is its byte copy. GitHub social preview re-uploaded through Chrome 2026-10-25 and the served image downloaded, byte-identical (`social_preview_sha256` updated); the Steam page keeps the old image until the 1.0.0 publish.
 
 ## Folded history
 
