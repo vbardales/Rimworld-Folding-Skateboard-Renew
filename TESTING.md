@@ -5,7 +5,9 @@ This file = list of what must be watched, and what counts as pass.
 
 Not shipped: lives beside `Mod/`, never inside, so Steam never receives it.
 
-Run `scripts/Run-Functional-Tests.ps1` first. Settles in seconds, no colony, what mod hooks into and whether game still does it — patch targets, draw-phase call, provider sweep, floor names, translation keys. Red line there explains a scenario below that would have failed anyway. Proves nothing about what appears on screen, so the seventeen below stand unchanged.
+Run the shared `scripts/Check-HarmonyContract.ps1` first (protocols repository, no colony, seconds): patch targets, draw-phase call, provider sweep, access grant, PatchAll. Command, from the protocols root, in a PowerShell session with real arrays:
+`& .\scripts\Check-HarmonyContract.ps1 -ModRoot FoldingSkateboardRenew -Hooks @('PawnRenderer.RenderPawnAt:Vector3','Pawn.Tick:','Pawn.DeSpawn:DestroyMode') -Calls @('PawnRenderer.DynamicDrawPhaseAt>RenderPawnAt','FloatMenuMakerMap.*>AllSubclassesNonAbstract') -MinPatches 3 -CompileProbe -ExpectedNonPublic 'PawnRenderer.pawn'`
+Red line there explains a scenario below that would have failed anyway. Proves nothing about what appears on screen, so the seventeen below stand unchanged. The former local script `Run-Functional-Tests.ps1` (deleted in b5d4d96) also held the provider-gates, floor-names, definitions and key-template tests: no shared check holds them yet, see `STATUS.md`.
 
 ## What plays each scenario, and what `tested` asks
 
@@ -14,11 +16,11 @@ Seventeen scenarios below = acceptance list. None played by hand at end: `AUDIT.
 | # | Scenario | Played by | Why |
 |---|---|---|---|
 | 1 | The mod loads, the patches apply | Any Pickle run, plus the load audit | Patch that throws at startup kills game before runner exists; load audit reads log for rest |
-| 2 | The recipe, its gates, its cost | **Offline**, `scripts/Run-Functional-Tests.ps1` (definitions test) | Static facts of def. Game refusing bill below Crafting 4 is game's own logic, not mod's, not tested |
+| 2 | The recipe, its gates, its cost | **Offline, no home yet**: the definitions test of the deleted local script (exact values of Paddleboard, Shredder, the job) has no shared replacement | Static facts of def. Game refusing bill below Crafting 4 is game's own logic, not mod's, not tested |
 | 3 | The board takes its material's colour | Pickle, `@review` capture | Only person can look at colour |
 | 4 | Picking one up | Pickle | Provider and job run through game's own callbacks |
 | 5 | The three refusals, worded | Pickle | Conditions read game state; wording is the four keys, in each language |
-| 6 | The three silent gates | **Offline**, `scripts/Run-Functional-Tests.ps1` (provider-gates test) | Mod declares four flags: undrafted only, one pawn, manipulation required. Game's menu builder honouring them is game's business, not tested; declaration is mod's, read from built class |
+| 6 | The three silent gates | **Offline, no home yet**: the provider-gates test of the deleted local script has no shared replacement | Mod declares four flags: undrafted only, one pawn, manipulation required. Game's menu builder honouring them is game's business, not tested; declaration is mod's, read from built class |
 | 7 | Riding | Pickle, with `@review` capture | Trait and speed asserted; drawn board looked at |
 | 8 | Folding, indoors and off the hard ground | Pickle, with `@review` capture | Same |
 | 9 | The roof decides | Pickle | Roof placed over cell |
@@ -111,7 +113,7 @@ Useful conversions: 60 ticks = one second at normal speed. Surface check runs ev
 
 **Pass:** no red line naming FoldingSkateboard, no Harmony patching error, no `Could not resolve cross-reference`. Main menu reached at all — patch aimed at method that no longer exists throws in static constructor, takes game down before it.
 
-**Fail:** any `AmbiguousMatchException` or `null method` from Harmony. Patch target moved, `scripts/Run-Functional-Tests.ps1` would have said which.
+**Fail:** any `AmbiguousMatchException` or `null method` from Harmony. Patch target moved, `scripts/Check-HarmonyContract.ps1` would have said which.
 
 ## 2. The recipe is where it should be, and gated as it should be
 
