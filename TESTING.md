@@ -16,7 +16,7 @@ Seventeen scenarios below = acceptance list. None played by hand at end: `AUDIT.
 | # | Scenario | Played by | Why |
 |---|---|---|---|
 | 1 | The mod loads, the patches apply | Any Pickle run, plus the load audit | Patch that throws at startup kills game before runner exists; load audit reads log for rest |
-| 2 | The recipe, its gates, its cost | **Not applicable offline** for exact values (the XML is the value; shape and references by shared Check-XmlFields, Check-DefRefs, Check-TypeRefs); the recipe in game is in the first Pickle run's scope | Static facts of def. Game refusing bill below Crafting 4 is game's own logic, not mod's, not tested |
+| 2 | The recipe, its gates, its cost | **Not applicable offline** for exact values (the XML is the value; shape and references by shared Check-XmlFields, Check-DefRefs, Check-TypeRefs); no Pickle scenario reads the recipe in game (feature 01 asserts only that the def exists), and the game's own gating of bills is the engine's rule, so scenario 2 stands as not applicable | Static facts of def. Game refusing bill below Crafting 4 is game's own logic, not mod's, not tested |
 | 3 | The board takes its material's colour | Pickle, `@review` capture | Only person can look at colour |
 | 4 | Picking one up | Pickle | Provider and job run through game's own callbacks |
 | 5 | The three refusals, worded | Pickle | Conditions read game state; wording is the four keys, in each language |
