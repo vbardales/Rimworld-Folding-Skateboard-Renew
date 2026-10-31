@@ -1,4 +1,4 @@
-# Run history
+﻿# Run history
 
 One text line per game run, in git. The reports themselves (captures, `Player.log`, `junit.xml`) stay on
 disk under `Tests/Pickle/Evidence/`, which git ignores; `AGENTS.md` and `TESTING.md` say what to keep
@@ -24,6 +24,9 @@ One game run so far, below. An empty table would be the honest state before one.
 | 2026-10-23 | 20261020-001246-711-654a | 241aa08 | sans-facultatifs | French | 07-trait-texts | passed | 3 of 3 | 3 | 0 | 0 | 0 | n/a | All three branches of `{PAWN_gender ? il : elle : al}` read in the attached text: Ada male "où il va", female "où elle va", neutral "où al va"; label "Pro de la glisse", no raw key, no brace. The steps assert no word, the attachments were read. Evidence: Tests/Pickle/Evidence/2026-10-23-trait-texts-fr-genders. |
 | 2026-10-17 | ffea | unknown | minimal-17 | English | none (features 01-04, 06, 07) | no-report | 0 of 0 | 0 | 0 | 0 | 0 | n/a | RimWorld 1.7 diagnostic, exit 1, no report. Infrastructure, not a result: the launcher looked for suite packageId `nelim.foldingskateboardrenew.pickletests`, ours is `nelim.foldingskateboard.pickletests`. Replayed with `-Filter "Folding Skateboard Renew - Pickle tests"` as fa9b. |
 | 2026-10-18 | 20261017-212227-666-fa9b | unknown | minimal-17 | English | Folding Skateboard Renew - Pickle tests | in-progress | 11 of 11 | 4 | 6 | 1 | 0 | n/a | RimWorld 1.7 diagnostic, exit 5. Not a tested_1_7 verdict. The six failures are 5 s timeouts on `wait N ticks` (pick-up scenario on 600, the five ground scenarios on 90; 88 of 90 ticks done), cause not established; same symptom as AnimaSong's walk scenarios (probe ticket 75fc). The load scenario was skipped. Summary kept in Tests/Pickle/Parked/p17-fs-english-1017 (minified). |
+| 2026-10-30 | 4d45 | 7e54a40 | sans-facultatifs | English | whole suite | passed | 33 | 28 | 0 | 5 (feature 06 by requirement, four gallery scenarios by design) | 0 | not opened (five screenshots kept) | Non-regression of the 2026-10-12 to 2026-10-14 verdicts on the tree after the last code commit 2037264. Evidence: Tests/Pickle/Evidence/2026-10-31-full-en. |
+| 2026-10-30 | d2c1 | 7e54a40 | sans-facultatifs | French | whole suite | passed | 33 | 28 | 0 | 5 (feature 06 by requirement, four gallery scenarios by design) | 0 | not opened (five screenshots kept) | Same as 4d45 in French. Evidence: Tests/Pickle/Evidence/2026-10-31-full-fr. |
+| 2026-10-31 | 20261025-175855-849-173e | 7e54a40 | incompat-original | English | 06-incompatible-original | passed | 1 of 1 | 1 | 0 | 0 | 0 | n/a | Feature 06 played, not skipped, on the current tree: the collision on the board's defName is still read from the log queue. Replaces the evidence of 69a1. Evidence: Tests/Pickle/Evidence/2026-10-31-incompat-original. |
 
 How to fill a line: the request id from the dispatcher's `RUN_DONE`, the full or ten-character SHA of
 the tree that was staged (a request carries none, so it is written in the request's label), the pass
