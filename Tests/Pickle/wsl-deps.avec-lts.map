@@ -1,0 +1,4 @@
+# The load audit companion: the step that reads the game log for what belongs to the mod. Every pass names it.
+nelim.pickletools.loadaudit path:PickleTools/LoadAudit/Mod
+# LimeTreeSnake's [LTS]Furnishing: defines the 141 LTS_* floors the mod lists (09-lts-floors). Its only hard dependency is Harmony.
+limetreesnake.furnishing 2567438519

@@ -46,6 +46,7 @@ Where Pickle scenarios live, in `Tests/Pickle/Mod/Pickle/Features/` (suite writt
 | 11, 13, 14 | `04-speed-trait` |
 | 16 | every feature, played once per language |
 | the declared incompatibility | `06-incompatible-original` (`@requires:silkcircuit.foldableskateboardmod`) |
+| the LTS floors (pass `avec-lts`) | `09-lts-floors` (`@requires:limetreesnake.furnishing`) |
 
 ## Passes
 
@@ -59,7 +60,7 @@ One run does not validate a mod, and `TESTING.md` that does not say how many is 
 
 Not needed, and why: pass without DLC (no DLC used, named or branched on); separate restart chain for scenario 14 (`I save and reload` restores component from real save file, nothing this mod keeps lives outside that file).
 
-Pass `avec-lts` cannot be written until Workshop mod defining `LTS_PlankFloor` and its 141 siblings identified: not known from this repository, unverified whether one mod or several supply them. That mod then also thanked, since tested integration credited.
+Pass `avec-lts`: the 141 LTS floors come from LimeTreeSnake's [LTS]Furnishing (Workshop 2567438519, packageId `LimeTreeSnake.Furnishing`, hard dependency Harmony only). Read offline on 2026-10-31 against its v1.6 TerrainDefs: all 141 names of `SkateableTerrain.LtsNames` are defined there, none missing, and the mod defines exactly 141 terrain defs. Played by feature `09-lts-floors` (`@requires:limetreesnake.furnishing`) on map `wsl-deps.avec-lts.map`: four floors of four families, same expectations as feature 03. [LTS]Biosphere also defines two LTS terrains (`LTS_PaddyShallow`, `LTS_Waterbed`, water), not listed by the mod, not tested. That mod then also thanked, since tested integration credited.
 
 ## What has to be true before `tested`
 
