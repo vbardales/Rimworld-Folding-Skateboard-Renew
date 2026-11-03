@@ -34,3 +34,4 @@ map name and the language, the filter as given, then `exitReason` **read before*
 against discovered, and the number of `@review` captures actually opened. A run that produced no
 report is a line too: `no-report` in `exitReason`, and the cause in the note. That is infrastructure,
 not a result.
+| 2026-11-03 | 20261031-234925-501-22ce | 40af532 | avec-lts | English | 09-lts-floors | passed | 4 | 4 | 0 | 0 | 0 | n/a | Four LTS floors (LTS_PlankFloor, LTS_Herringbone, LTS_ChevronParquet, LTS_GravelGranite) from [LTS]Furnishing 2567438519: rider gains Shredder and +2 speed on each, 1 attempt each. Meets 8.f. Evidence: Tests/Pickle/Evidence/avec-lts. |
