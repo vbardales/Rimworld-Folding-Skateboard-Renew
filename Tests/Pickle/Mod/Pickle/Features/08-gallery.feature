@@ -24,9 +24,9 @@
 #     (203,188) facing W, smiling. Decor: pot + daylily (204,185). Instant: the board has just unfolded. Subtitle: "Step onto hard ground
 #     and the board unfolds."
 #  S3 workshop-3-the-race      14:10 WIDE along E-W, frame (199,185) zoom 4, track in the lower third. Nelim on the board (steel in pack,
-#     start (203,187)) and Soren on foot (start (201,187)) both sent West to the finish pot (196,187) with a goto job; game paused when she
-#     draws level with him (tick N tuned, estimate 45); Nelim smiling, Soren set face "angry" (effort, planned), Shogun at (199,189)
-#     facing W. Needs a NEW step: "<name>" walks to (x, z) (asked of NPT 2026-11-03). All on concrete (x 196-204): board stays unfolded.
+#     start (203,187)) and Soren on foot (start (201,187)) both sent West to the finish pot (196,187) with a forced-walk job; game paused when she
+#     draws level with him (I let N ticks pass, then "time is paused for the capture"; N tuned, estimate 25 to 40); Nelim smiling, Soren set face "angry" (effort, planned), Shogun at (199,189)
+#     facing W. Step exists (NPT, 2026-11-03): `Nelim's Pickle Tools: "<name>" is forced to walk to (x, z)`, never `stands at ... facing` on the walker after it starts; written, not played. All on concrete (x 196-204): board stays unfolded.
 #     Decor: pot + daylily (196,185) as the finish. Says: she is faster on the board. Subtitle: "Hers has wheels."
 #  S4 workshop-4-his-turn      14:15 TIGHT, frame (199,187) zoom 3.2. Soren (no board yet) walks to the wood board at (199,187) (pick-up
 #     job, pause ~15 ticks, mid-stride facing W), smug grin (kit smug, planned: he is about to win a board); Nelim rides beside him on the
@@ -40,7 +40,7 @@
 # DepMap: the SanctuaryBacklot map as base, nothing challenged, plus screenshotstudio, camerazoom, colonistrace, stagedecor, vappe.
 # Steps: Nelim's Sanctuary (frame, animals kept out, own face), NPT (studio mode, frame at zoom, face kit/parts, facing, decor, apparel,
 # apparel policy 4ca133c for the VAE garments, animal spawn), this mod's "takes the pick-up option" (pick-up job, never to completion in S1
-# and S4). The one missing step: "walks to (x, z)" (S3). Nothing asserts about the image: a person opens each one.
+# and S4). No missing step. Nothing asserts about the image: a person opens each one.
 @requires:nelim.sanctuarybacklot @requires:nelim.pickletools.screenshotstudio @requires:nelim.pickletools.colonistrace @requires:nelim.pickletools.camerazoom @requires:vanillaexpanded.vappe
 @review
 Feature: gallery: an afternoon on the board
