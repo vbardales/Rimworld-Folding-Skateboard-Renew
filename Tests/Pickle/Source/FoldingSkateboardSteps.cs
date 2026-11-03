@@ -375,8 +375,21 @@ namespace FoldingSkateboard.PickleSteps
         [When("Folding Skateboard Renew: {string} takes the pick-up option for the board at \\({int}, {int}\\) of the yard")]
         public void TakesPickUp(PickleContext ctx, string nickname, int dx, int dz)
         {
+            TakePickUpAt(ctx, nickname, Yard(ctx, dx, dz));
+        }
+
+        // The gallery has no yard: its boards lie on named cells of the Sanctuary, so the same menu entry is taken by map cell.
+        [When("Folding Skateboard Renew: {string} takes the pick-up option for the board on the cell \\({int}, {int}\\)")]
+        public void TakesPickUpOnCell(PickleContext ctx, string nickname, int x, int z)
+        {
+            IntVec3 cell = new IntVec3(x, 0, z);
+            ctx.Assert(cell.InBounds(CurrentMap(ctx)), $"({x}, {z}) is outside the map");
+            TakePickUpAt(ctx, nickname, cell);
+        }
+
+        private static void TakePickUpAt(PickleContext ctx, string nickname, IntVec3 cell)
+        {
             Pawn pawn = Colonist(ctx, nickname);
-            IntVec3 cell = Yard(ctx, dx, dz);
             Thing board = BoardAt(ctx, cell);
             string want = TakeKey.Translate(board.LabelShort).ToString();
             List<FloatMenuOption> options = MenuFor(ctx, pawn, cell);

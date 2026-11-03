@@ -7,6 +7,7 @@ nelim.sanctuarybacklot path:SanctuaryBacklot/Mod
 nelim.pickletools.screenshotstudio path:PickleTools/ScreenshotStudio/Mod
 nelim.pickletools.camerazoom path:PickleTools/CameraZoom/Mod
 nelim.pickletools.stagedecor path:PickleTools/StageDecor/Mod
+nelim.pickletools.screenshotmode path:PickleTools/ScreenshotMode/Mod
 nelim.pickletools.coatsteps path:PickleTools/CoatSteps/Mod
 nelim.pickletools.clearscreen path:PickleTools/ClearScreen/Mod
 nelim.pickletools.colonistrace path:PickleTools/ColonistRace/Mod

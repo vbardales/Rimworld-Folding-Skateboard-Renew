@@ -41,7 +41,7 @@
 # Steps: Nelim's Sanctuary (frame, animals kept out, own face), NPT (studio mode, frame at zoom, face kit/parts, facing, decor, apparel,
 # apparel policy 4ca133c for the VAE garments, animal spawn), this mod's "takes the pick-up option" (pick-up job, never to completion in S1
 # and S4). No missing step. Nothing asserts about the image: a person opens each one.
-@requires:nelim.sanctuarybacklot @requires:nelim.pickletools.screenshotstudio @requires:nelim.pickletools.colonistrace @requires:nelim.pickletools.camerazoom @requires:vanillaexpanded.vappe
+@requires:nelim.sanctuarybacklot @requires:nelim.pickletools.screenshotmode @requires:nelim.pickletools.stagedecor @requires:nelim.pickletools.screenshotstudio @requires:nelim.pickletools.colonistrace @requires:nelim.pickletools.camerazoom @requires:vanillaexpanded.vappe
 @review
 Feature: gallery: an afternoon on the board
 
@@ -51,133 +51,172 @@ Feature: gallery: an afternoon on the board
     And Nelim's Sanctuary: the animals are removed from the sanctuary "calm-zone"
     And Nelim's Sanctuary: I am at the sanctuary "calm-zone"
     And Nelim's Pickle Tools: all filth is cleaned
-    And I set the hour to 14
     And I set the weather to "Clear"
     And Nelim's Pickle Tools: the temperature of the map is 20 degrees
     And Folding Skateboard Renew: the terrain of the cells from (196, 183) to (204, 191) is "Concrete"
     And Folding Skateboard Renew: the terrain of the cells from (196, 192) to (204, 194) is "Soil"
+    And Nelim's Pickle Tools: the colonist "Nelim" follows an apparel policy that allows everything
     And Nelim's Pickle Tools: "Nelim" wears "Apparel_BasicShirt" dyed rgb (214, 163, 58)
     And Nelim's Pickle Tools: "Nelim" wears "Apparel_Pants" dyed rgb (45, 58, 92)
     And Nelim's Pickle Tools: "Nelim" wears "VAE_Footwear_Shoes"
     And Nelim's Pickle Tools: "Nelim" hairstyle is "Ponytails"
-    And a colonist "Kenji" exists
-    And Nelim's Pickle Tools: "Kenji" gender is male
-    And Nelim's Pickle Tools: "Kenji" body type is Male
-    And Nelim's Pickle Tools: "Kenji" has no traits
-    And Nelim's Pickle Tools: "Kenji" has the gene "Eyes_Blue"
-    And Nelim's Pickle Tools: "Kenji" hairstyle is "ShortCut"
-    And Nelim's Pickle Tools: "Kenji" wears "VAE_Apparel_Hoodie" dyed rgb (46, 139, 139)
-    And Nelim's Pickle Tools: "Kenji" wears "VAE_Apparel_Shorts" dyed rgb (58, 58, 66)
-    And Nelim's Pickle Tools: "Kenji" wears "VAE_Footwear_Shoes"
-    And Nelim's Pickle Tools: "Kenji" wears "VAE_Headgear_BaseballCap" dyed rgb (200, 52, 48)
+    And a colonist "Soren" exists
+    And Nelim's Pickle Tools: the colonist "Soren" follows an apparel policy that allows everything
+    And Nelim's Pickle Tools: "Soren" gender is male
+    And Nelim's Pickle Tools: "Soren" body type is Male
+    And Nelim's Pickle Tools: "Soren" has no traits
+    And Nelim's Pickle Tools: "Soren" has the gene "Eyes_SkyBlue"
+    And Nelim's Pickle Tools: "Soren" hairstyle is "ShortCut"
+    And Nelim's Pickle Tools: "Soren" wears "VAE_Apparel_Hoodie" dyed rgb (46, 139, 139)
+    And Nelim's Pickle Tools: "Soren" wears "VAE_Apparel_Shorts" dyed rgb (58, 58, 66)
+    And Nelim's Pickle Tools: "Soren" wears "VAE_Footwear_Shoes"
+    And Nelim's Pickle Tools: "Soren" wears "VAE_Headgear_BaseballCap" dyed rgb (200, 52, 48)
 
-  Scenario: 1. three boards lie on the stone, each the colour of what it is made from
-    Given Folding Skateboard Renew: a folding skateboard made of "Steel" lies on the cell (198, 187)
+  Scenario: 1. three boards: Nelim sets off to take the steel one
+    Given I set the hour to 14
+    And Folding Skateboard Renew: a folding skateboard made of "Steel" lies on the cell (198, 187)
     And Folding Skateboard Renew: a folding skateboard made of "WoodLog" lies on the cell (200, 187)
     And Folding Skateboard Renew: a folding skateboard made of "Plasteel" lies on the cell (202, 187)
-    And Nelim's Pickle Tools: "Nelim" stands at (200, 189) facing South
-    And Nelim's Pickle Tools: "Kenji" stands at (197, 189) facing South
+    And Nelim's Pickle Tools: I place the decor "PlantPot" holding "Plant_Daylily" fully grown at (196, 184)
+    And Nelim's Pickle Tools: I place the decor "PlantPot" holding "Plant_Daylily" fully grown at (204, 184)
+    And Nelim's Pickle Tools: "Soren" stands at (196, 189) facing East
     And Nelim's Pickle Tools: an adult animal of kind "LabradorRetriever" named "Shogun" is spawned at (203, 189)
     And Nelim's Pickle Tools: the animal "Shogun" stands at (203, 189) facing South
-    When Nelim's Pickle Tools: I let 60 ticks pass
-    And Nelim's Pickle Tools: all filth is cleaned
+    And Nelim's Pickle Tools: "Nelim" stands at (200, 191) facing North
+    When Folding Skateboard Renew: "Nelim" takes the pick-up option for the board on the cell (198, 187)
+    And Nelim's Pickle Tools: I let 20 ticks pass
     And Nelim's Pickle Tools: studio presentation mode is enabled
-    And Nelim's Pickle Tools: I frame the cell (200, 188) at zoom 5.5
-    And Nelim's Pickle Tools: "Nelim" stands at (200, 189) facing South
-    And Nelim's Pickle Tools: "Kenji" stands at (197, 189) facing South
-    And Nelim's Sanctuary: Nelim has her own face
-    And Nelim's Pickle Tools: "Kenji" face kit is "calm"
-    And Nelim's Pickle Tools: "Kenji" facial expression is "normal+blink"
+    And Nelim's Pickle Tools: I frame the cell (200, 188) at zoom 4.5
+    And Nelim's Pickle Tools: "Soren" face kit is "smile"
+    And Nelim's Pickle Tools: "Soren" facial expression is "normal+blink"
+    And Nelim's Pickle Tools: "Nelim" face kit is "neutral"
+    And Nelim's Pickle Tools: "Nelim" brows are "BrowNormal"
+    And Nelim's Pickle Tools: "Nelim" mouth is "MouthSmile"
+    And Nelim's Pickle Tools: "Nelim" lids are "LidCheerful"
+    And Nelim's Pickle Tools: "Nelim" facial expression is "normal+blink"
+    And Nelim's Pickle Tools: time is paused for the capture
     And Nelim's Pickle Tools: I let 5 frames pass
     And Nelim's Pickle Tools: "Nelim" face state is logged
-    And Nelim's Pickle Tools: "Kenji" face state is logged
     And Nelim's Pickle Tools: the thermal state and thoughts of "Nelim" are logged
-    Then I take a screenshot "gallery 1 - three boards on the stone"
+    Then I take a screenshot "gallery 1 - three boards"
+    When Nelim's Pickle Tools: the decor is removed
 
-  Scenario: 2. on hard ground the board unfolds under her feet
-    Given Folding Skateboard Renew: "Nelim" carries a folding skateboard made of "Steel"
-    And Nelim's Pickle Tools: "Nelim" stands at (201, 187) facing South
-    And Nelim's Pickle Tools: "Kenji" stands at (198, 187) facing East
-    And Nelim's Pickle Tools: an adult animal of kind "LabradorRetriever" named "Shogun" is spawned at (203, 189)
-    And Nelim's Pickle Tools: the animal "Shogun" stands at (203, 189) facing South
+  Scenario: 2. the board unfolds under her feet
+    Given I set the hour to 14
+    And Folding Skateboard Renew: a folding skateboard made of "WoodLog" lies on the cell (200, 191)
+    And Folding Skateboard Renew: "Nelim" carries a folding skateboard made of "Steel"
+    And Nelim's Pickle Tools: I place the decor "PlantPot" holding "Plant_Daylily" fully grown at (204, 185)
+    And Nelim's Pickle Tools: an adult animal of kind "LabradorRetriever" named "Shogun" is spawned at (202, 192)
+    And Nelim's Pickle Tools: the animal "Shogun" stands at (202, 192) facing South
+    And Nelim's Pickle Tools: "Soren" stands at (203, 188) facing West
+    And Nelim's Pickle Tools: "Nelim" stands at (200, 194) facing North
     When Nelim's Pickle Tools: I let 208 ticks pass
-    And Nelim's Pickle Tools: "Nelim" stands at (201, 187) facing South
-    And Nelim's Pickle Tools: "Kenji" stands at (198, 187) facing East
-    And I wait 60 ticks
+    And Nelim's Pickle Tools: "Nelim" stands at (200, 194) facing North
+    And Nelim's Pickle Tools: "Soren" stands at (203, 188) facing West
+    And Folding Skateboard Renew: "Nelim" takes the pick-up option for the board on the cell (200, 191)
+    And Nelim's Pickle Tools: I let 150 ticks pass
     Then "Nelim" has trait "Shredder"
-    When Nelim's Pickle Tools: all filth is cleaned
-    And Nelim's Pickle Tools: studio presentation mode is enabled
-    And Nelim's Pickle Tools: I frame the cell (200, 187) at zoom 4
+    When Nelim's Pickle Tools: studio presentation mode is enabled
+    And Nelim's Pickle Tools: I frame the cell (200, 190) at zoom 3.5
+    And Nelim's Pickle Tools: "Soren" face kit is "smile"
+    And Nelim's Pickle Tools: "Soren" facial expression is "normal+blink"
     And Nelim's Pickle Tools: "Nelim" face kit is "neutral"
     And Nelim's Pickle Tools: "Nelim" brows are "BrowNormal"
     And Nelim's Pickle Tools: "Nelim" mouth is "MouthSmile"
     And Nelim's Pickle Tools: "Nelim" lids are "LidCheerful"
     And Nelim's Pickle Tools: "Nelim" facial expression is "normal+blink"
-    And Nelim's Pickle Tools: "Kenji" face kit is "smile"
-    And Nelim's Pickle Tools: "Kenji" facial expression is "normal+blink"
-    And Folding Skateboard Renew: "Nelim" faces south
-    And Folding Skateboard Renew: "Kenji" faces east
+    And Nelim's Pickle Tools: time is paused for the capture
     And Nelim's Pickle Tools: I let 5 frames pass
-    And Nelim's Pickle Tools: "Nelim" face state is logged
-    And Nelim's Pickle Tools: "Kenji" face state is logged
-    And Nelim's Pickle Tools: the thermal state and thoughts of "Nelim" are logged
-    Then Folding Skateboard Renew: "Nelim" is facing south
-    And Folding Skateboard Renew: "Kenji" is facing east
-    And I take a screenshot "gallery 2 - the board unfolds under her feet"
+    Then I take a screenshot "gallery 2 - the board unfolds"
+    When Nelim's Pickle Tools: the decor is removed
 
-  Scenario: 3. side on, the race: she is faster on the board
-    Given Folding Skateboard Renew: "Nelim" carries a folding skateboard made of "Steel"
-    And Nelim's Pickle Tools: "Nelim" stands at (198, 187) facing West
-    And Nelim's Pickle Tools: "Kenji" stands at (203, 187) facing West
-    And Nelim's Pickle Tools: an adult animal of kind "LabradorRetriever" named "Shogun" is spawned at (200, 189)
-    And Nelim's Pickle Tools: the animal "Shogun" stands at (200, 189) facing West
+  Scenario: 3. the race: she draws level with him
+    Given I set the hour to 14
+    And Folding Skateboard Renew: "Nelim" carries a folding skateboard made of "Steel"
+    And Nelim's Pickle Tools: I place the decor "PlantPot" holding "Plant_Daylily" fully grown at (196, 185)
+    And Nelim's Pickle Tools: an adult animal of kind "LabradorRetriever" named "Shogun" is spawned at (199, 189)
+    And Nelim's Pickle Tools: the animal "Shogun" stands at (199, 189) facing West
+    And Nelim's Pickle Tools: "Nelim" stands at (203, 187) facing West
+    And Nelim's Pickle Tools: "Soren" stands at (201, 187) facing West
     When Nelim's Pickle Tools: I let 417 ticks pass
-    And Nelim's Pickle Tools: "Nelim" stands at (198, 187) facing West
-    And Nelim's Pickle Tools: "Kenji" stands at (203, 187) facing West
-    And I wait 60 ticks
+    And Nelim's Pickle Tools: "Nelim" stands at (203, 187) facing West
+    And Nelim's Pickle Tools: "Soren" stands at (201, 187) facing West
+    And Nelim's Pickle Tools: "Nelim" is forced to walk to (196, 187)
+    And Nelim's Pickle Tools: "Soren" is forced to walk to (196, 187)
+    And Nelim's Pickle Tools: I let 45 ticks pass
     Then "Nelim" has trait "Shredder"
-    And Folding Skateboard Renew: "Kenji" does not have the trait "Shredder"
-    When Nelim's Pickle Tools: all filth is cleaned
-    And Nelim's Pickle Tools: studio presentation mode is enabled
-    And Nelim's Pickle Tools: I frame the cell (200, 187) at zoom 4
+    And Folding Skateboard Renew: "Soren" does not have the trait "Shredder"
+    When Nelim's Pickle Tools: studio presentation mode is enabled
+    And Nelim's Pickle Tools: I frame the cell (199, 185) at zoom 4
+    And Nelim's Pickle Tools: "Soren" face kit is "angry"
+    And Nelim's Pickle Tools: "Soren" facial expression is "normal+blink"
     And Nelim's Pickle Tools: "Nelim" face kit is "neutral"
     And Nelim's Pickle Tools: "Nelim" brows are "BrowNormal"
     And Nelim's Pickle Tools: "Nelim" mouth is "MouthSmile"
     And Nelim's Pickle Tools: "Nelim" lids are "LidCheerful"
     And Nelim's Pickle Tools: "Nelim" facial expression is "normal+blink"
-    And Nelim's Pickle Tools: "Kenji" face kit is "angry"
-    And Nelim's Pickle Tools: "Kenji" facial expression is "normal+blink"
-    And Folding Skateboard Renew: "Nelim" faces west
-    And Folding Skateboard Renew: "Kenji" faces west
+    And Nelim's Pickle Tools: time is paused for the capture
     And Nelim's Pickle Tools: I let 5 frames pass
-    And Nelim's Pickle Tools: "Nelim" face state is logged
-    And Nelim's Pickle Tools: "Kenji" face state is logged
-    And Nelim's Pickle Tools: the thermal state and thoughts of "Nelim" are logged
-    Then Folding Skateboard Renew: "Nelim" is facing west
-    And Folding Skateboard Renew: "Kenji" is facing west
-    And I take a screenshot "gallery 3 - side on, the race"
+    Then I take a screenshot "gallery 3 - the race"
+    When Nelim's Pickle Tools: the decor is removed
 
-  Scenario: 4. one step onto the grass, the board folds onto her back
-    Given Folding Skateboard Renew: "Nelim" carries a folding skateboard made of "Steel"
-    And Folding Skateboard Renew: "Kenji" carries a folding skateboard made of "WoodLog"
-    And Nelim's Pickle Tools: "Nelim" stands at (200, 193) facing North
-    And Nelim's Pickle Tools: "Kenji" stands at (198, 189) facing East
-    And Nelim's Pickle Tools: an adult animal of kind "LabradorRetriever" named "Shogun" is spawned at (203, 190)
-    And Nelim's Pickle Tools: the animal "Shogun" stands at (203, 190) facing South
-    When Nelim's Pickle Tools: I let 833 ticks pass
-    And Nelim's Pickle Tools: "Nelim" stands at (200, 193) facing North
-    And Nelim's Pickle Tools: "Kenji" stands at (198, 189) facing East
-    And I wait 60 ticks
-    Then Folding Skateboard Renew: "Nelim" does not have the trait "Shredder"
-    And "Kenji" has trait "Shredder"
-    When Nelim's Pickle Tools: all filth is cleaned
+  Scenario: 4. his turn: Soren sets off to take the wood board
+    Given I set the hour to 14
+    And Folding Skateboard Renew: a folding skateboard made of "WoodLog" lies on the cell (199, 187)
+    And Folding Skateboard Renew: "Nelim" carries a folding skateboard made of "Steel"
+    And Nelim's Pickle Tools: I place the decor "PlantPot" holding "Plant_Daylily" fully grown at (204, 185)
+    And Nelim's Pickle Tools: an adult animal of kind "LabradorRetriever" named "Shogun" is spawned at (199, 189)
+    And Nelim's Pickle Tools: the animal "Shogun" stands at (199, 189) facing South
+    And Nelim's Pickle Tools: "Nelim" stands at (201, 189) facing West
+    And Nelim's Pickle Tools: "Soren" stands at (202, 187) facing West
+    When Nelim's Pickle Tools: I let 625 ticks pass
+    And Nelim's Pickle Tools: "Nelim" stands at (201, 189) facing West
+    And Nelim's Pickle Tools: "Soren" stands at (202, 187) facing West
+    And Folding Skateboard Renew: "Soren" takes the pick-up option for the board on the cell (199, 187)
+    And Nelim's Pickle Tools: I let 25 ticks pass
     And Nelim's Pickle Tools: studio presentation mode is enabled
-    And Nelim's Pickle Tools: I frame the cell (200, 191) at zoom 4
-    And Nelim's Pickle Tools: "Kenji" face kit is "smug"
-    And Nelim's Pickle Tools: "Kenji" facial expression is "normal+blink"
-    And Folding Skateboard Renew: "Nelim" faces north
-    And Folding Skateboard Renew: "Kenji" faces east
+    And Nelim's Pickle Tools: I frame the cell (199, 187) at zoom 3.2
+    And Nelim's Pickle Tools: "Soren" face kit is "smug"
+    And Nelim's Pickle Tools: "Soren" facial expression is "normal+blink"
+    And Nelim's Pickle Tools: "Nelim" face kit is "neutral"
+    And Nelim's Pickle Tools: "Nelim" brows are "BrowNormal"
+    And Nelim's Pickle Tools: "Nelim" mouth is "MouthSmile"
+    And Nelim's Pickle Tools: "Nelim" lids are "LidCheerful"
+    And Nelim's Pickle Tools: "Nelim" facial expression is "normal+blink"
+    And Nelim's Pickle Tools: time is paused for the capture
     And Nelim's Pickle Tools: I let 5 frames pass
-    Then Folding Skateboard Renew: "Nelim" is facing north
-    And Folding Skateboard Renew: "Kenji" is facing east
-    And I take a screenshot "gallery 4 - the board folds onto her back"
+    Then I take a screenshot "gallery 4 - his turn"
+    When Nelim's Pickle Tools: the decor is removed
+
+  Scenario: 5. soft ground: the board folds onto her back
+    Given I set the hour to 17
+    And Folding Skateboard Renew: a folding skateboard made of "WoodLog" lies on the cell (200, 193)
+    And Folding Skateboard Renew: "Soren" carries a folding skateboard made of "WoodLog"
+    And Nelim's Pickle Tools: I place the decor "TorchLamp" at (198, 190)
+    And Nelim's Pickle Tools: I place the decor "TorchLamp" at (202, 190)
+    And Nelim's Pickle Tools: the decor "TorchLamp" at (198, 190) is lit
+    And Nelim's Pickle Tools: the decor "TorchLamp" at (202, 190) is lit
+    And Nelim's Pickle Tools: an adult animal of kind "LabradorRetriever" named "Shogun" is spawned at (199, 194)
+    And Nelim's Pickle Tools: the animal "Shogun" stands at (199, 194) facing South
+    And Nelim's Pickle Tools: "Soren" stands at (204, 188) facing West
+    And Nelim's Pickle Tools: "Nelim" stands at (200, 191) facing South
+    When Nelim's Pickle Tools: I let 60 ticks pass
+    And Nelim's Pickle Tools: "Soren" stands at (204, 188) facing West
+    And Nelim's Pickle Tools: "Nelim" stands at (200, 191) facing South
+    And Folding Skateboard Renew: "Nelim" takes the pick-up option for the board on the cell (200, 193)
+    And Nelim's Pickle Tools: I let 150 ticks pass
+    Then Folding Skateboard Renew: "Nelim" does not have the trait "Shredder"
+    And "Soren" has trait "Shredder"
+    When Nelim's Pickle Tools: studio presentation mode is enabled
+    And Nelim's Pickle Tools: I frame the cell (200, 192) at zoom 4
+    And Nelim's Pickle Tools: "Soren" face kit is "smile"
+    And Nelim's Pickle Tools: "Soren" facial expression is "normal+blink"
+    And Nelim's Pickle Tools: "Nelim" face kit is "neutral"
+    And Nelim's Pickle Tools: "Nelim" brows are "BrowNormal"
+    And Nelim's Pickle Tools: "Nelim" mouth is "MouthSmile"
+    And Nelim's Pickle Tools: "Nelim" lids are "LidCheerful"
+    And Nelim's Pickle Tools: "Nelim" facial expression is "normal+blink"
+    And Nelim's Pickle Tools: time is paused for the capture
+    And Nelim's Pickle Tools: I let 5 frames pass
+    Then I take a screenshot "gallery 5 - soft ground"
+    When Nelim's Pickle Tools: the decor is removed
