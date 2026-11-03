@@ -112,3 +112,17 @@ Owner rewrote `Art/Preview.config.json` (new schema: `panel`, `icon`; engine def
 ## Folded history
 
 Superseded 2026-09-13 decisions, sweep notes and 2026-09-13 to 2026-10-03 dated sections moved to [docs/STATUS-HISTORY.md](docs/STATUS-HISTORY.md) on 2026-10-13 (rule: STATUS.md keeps current state only).
+
+## Shotlist (shootGallery, 2026-11-03)
+
+Story "an afternoon on the board" at `calm-zone` (concrete patch, soil strip), Nelim + Soren (NSB) + Shogun, Clear, 20 C, 14:00 to 14:15 then 17:00, outfits fixed all day. Full lines: header of `Tests/Pickle/Mod/Pickle/Features/08-gallery.feature`. Opus director pass done once (kept: moment-based poses, pick-up job paused mid-walk, hand-over of Soren's board in S4, named decor, 17:00 closing, subtitle fix; dropped: hat-hair remark, no hat planned; open-float-menu shot and the "arrival" opening not kept: the pick-up job already shows the feature). Soren replaces Kenji: only NSB colonists, no owner authorization needed.
+
+| shot | a | b | c | d | e | f | g | j | plan | risk |
+|---|---|---|---|---|---|---|---|---|---|---|
+| S1 three boards 14:00 wide | calm-zone, 14:00, Clear | pots+daylily | Shogun front | ochre/blue, smile | mid-stride pick-up job | z4.5 wide | 3 materials | blue/brown/dark boards | 4.5 | steel vs plasteel alike at 268 px |
+| S2 it unfolds 14:05 medium | ok | pot+daylily | Shogun front | smile | board just unfolded | z3.5 left | unfold | board under feet small | 4.5 | pause tick after the pick-up (tuned) |
+| S3 race 14:10 wide | ok | finish pot | Shogun W | smile / angry kit (planned) | gliding, level | z4 lower third | +2 speed | small | 3.5 (-1 step) | goto step absent, asked of NPT |
+| S4 his turn 14:15 tight | ok | pot+daylily | Shogun front | smug (planned) | mid-stride to board | z3.2 | pick-up | wood board small | 4.5 | pause tick |
+| S5 soft ground 17:00 medium | 17:00 warm | 2 TorchLamp lit | Shogun follows | smile | board just folded on back | z4 | fold | small | 4.5 | pause tick; light |
+
+k (series): ok, one story, wide S1/S3, medium S2/S5, tight S4, opening S1, closing S5 at 17:00. Series mean 4.3. Weak points: j (the board is small at 268 px in all shots), the walk-to step for S3 (below 4: no S3 ticket until NPT answers), pause ticks tuned by the first run. S1, S2, S4, S5 reach 4 or more: scenarios to rewrite from the header, then one small ticket per scene (not a full pass). Unplayed dependency: apparel policy steps (PickleTools 4ca133c) for the VAE garments that vanished on 2026-10-16.

@@ -1,25 +1,46 @@
-# Workshop gallery of Folding Skateboard Renew: one story, in one place, staged (PUBLISHING.md: every gallery capture is a
-# staged photo). The plan is also in PUBLICATION.md, "Gallery plan", with the subtitle of each image.
+# SHOTLIST (2026-11-03, replaces the Kenji draft of 2026-10-16). Plan first, scenarios follow (one scenario = one image). The scenarios
+# below are still the OLD draft (Kenji): they are rewritten from this plan before any ticket. Table with scores: STATUS.md, "shotlist".
 #
-# The story, "an afternoon on the board" (redone 2026-10-16: two friends, not one figure): on the cream square of Nelim's tribe
-# (the calm zone: no roof, no torch, no wall shadow) a patch of concrete is laid for the story, because the board only unfolds
-# on a built hard floor. Nelim shows her friend Kenji, who has no board yet, what hers does. Clear weather, 20 degrees so that
-# no face shows sweat, 14:00 and then five game minutes between images. Shogun, her labrador, is the third figure.
-#   1. 14:00  Three boards lie on the concrete: steel, wood, plasteel. Nelim stands behind them, small smile; Kenji beside her,
-#             calm; Shogun awake, turned to the camera (South). The board is the colour of what it is made from.
-#   2. 14:05  Nelim on the concrete facing South, a board in her pack, drawn under her feet, a wide smile. Kenji faces her
-#             (East), smiling. Shogun at her side. Step on hard ground and the board unfolds.
-#   3. 14:10  The race, side on: Nelim on the board, facing West, ahead; Kenji on foot five cells behind her, facing West, his
-#             face set (angry kit: effort). Shogun faces West between them. On the board she is faster (Shredder, +2 speed,
-#             asserted by 04, here only the trait is asserted before the photo).
-#   4. 14:20  Nelim one step off the concrete onto soil, facing North, seen from behind, the board strapped to her back.
-#             Kenji, who now carries a board of his own, rides on the concrete facing East, a smug grin. Shogun faces South.
-# Nelim wears an ochre shirt (214, 163, 58), dark blue trousers (45, 58, 92) and Vanilla Apparel Expanded shoes; her hair is the
-# Ponytails style, bare. Kenji wears Vanilla Apparel Expanded: a red baseball cap (200, 52, 48), a teal hoodie (46, 139, 139),
-# shorts and shoes: the skater of the pair. Their faces follow the story, set last, after every wait, because Facial Animation
-# recomputes the face at every tick (SanctuaryBacklot, run 56b0). The only animal is a dog, awake at the hour used.
-# Nothing asserts about the image: a person opens each one. What is asserted before a capture (the trait on or off) is only so
-# that the image is worth opening.
+# THE STORY, "an afternoon on the board": Nelim (protagonist, NSB) shows her friend Soren (NSB, her male alter ego, constant face; no
+# other colonist) what a folding board does, on the cream square of the tribe (calm-zone: no roof, no wall shadow) where a patch of
+# concrete is laid, because the board only unfolds on a built hard floor, with a soil strip south of it. Shogun (her labrador, NSB) tags
+# along. One afternoon, Clear, 20 degrees (no sweat). Clock: 14:00, then 5 game minutes between images (cumulative waits, 208 ticks per 5
+# min), closing at 17:00 in warm light (hour set, same day). The mod's whole offer is shown: the three materials (S1), the right-click
+# pick-up into the pack (S1, S4), unfold + trait Shredder on hard ground (S2), +2 speed (S3), fold onto the back on soft ground (S5).
+# Outfits do not change all day: Nelim ochre shirt (214,163,58), dark blue trousers (45,58,92), VAE shoes, hair Ponytails, bare head
+# (no hat: the hat-hair rule does not apply); Soren VAE red baseball cap (200,52,48), teal hoodie (46,139,139), grey shorts (58,58,66),
+# VAE shoes, hair ShortCut, eyes Eyes_SkyBlue (a skater look, chosen for the story); Shogun with the default leather dog collar.
+# Faces: Nelim smiles (face kit neutral, then MouthSmile + LidCheerful, normal+blink, set last, no sweat), except where written.
+# Shots (all with a subtitle, no interface window), decor = PlantPot with Plant_Daylily fully grown, TorchLamp lit; removed after each:
+#  S1 workshop-1-three-boards  14:00 WIDE, frame (200,188) zoom 4.5. Boards on concrete: steel (198,187) dark, wood (200,187) brown,
+#     plasteel (202,187) light blue. Nelim starts at (200,191), no board in her pack, and has JUST set off to take the steel board (pick-up
+#     job given, game paused ~20 ticks later, mid-stride facing N); Soren (196,189) faces her, smiling, hands in pockets; Shogun faces the
+#     camera (S) at (203,189). Decor: pot + daylily at (196,184) and (204,184) behind the boards. Instant: she just decided to try one.
+#     Says: three boards, three materials. Subtitle: "Three boards: steel, wood, plasteel."
+#  S2 workshop-2-it-unfolds    14:05 MEDIUM, frame (200,190) zoom 3.5, Nelim off-centre left. Nelim, board in her pack, has JUST finished
+#     taking the board lying on the concrete edge (200,191) (pick-up job from the soil strip; pause 2 ticks after "carrying 1 Paddleboard";
+#     N tuned in the first run, estimate 150), on the concrete facing S, board drawn under her feet, wide smile; trait Shredder asserted
+#     before the photo. Shogun in front of her facing the camera (S) at (200,192) (animal seen from the front); Soren behind her at
+#     (203,188) facing W, smiling. Decor: pot + daylily (204,185). Instant: the board has just unfolded. Subtitle: "Step onto hard ground
+#     and the board unfolds."
+#  S3 workshop-3-the-race      14:10 WIDE along E-W, frame (199,185) zoom 4, track in the lower third. Nelim on the board (steel in pack,
+#     start (203,187)) and Soren on foot (start (201,187)) both sent West to the finish pot (196,187) with a goto job; game paused when she
+#     draws level with him (tick N tuned, estimate 45); Nelim smiling, Soren set face "angry" (effort, planned), Shogun at (199,189)
+#     facing W. Needs a NEW step: "<name>" walks to (x, z) (asked of NPT 2026-11-03). All on concrete (x 196-204): board stays unfolded.
+#     Decor: pot + daylily (196,185) as the finish. Says: she is faster on the board. Subtitle: "Hers has wheels."
+#  S4 workshop-4-his-turn      14:15 TIGHT, frame (199,187) zoom 3.2. Soren (no board yet) walks to the wood board at (199,187) (pick-up
+#     job, pause ~15 ticks, mid-stride facing W), smug grin (kit smug, planned: he is about to win a board); Nelim rides beside him on the
+#     concrete at (201,187) facing W, smiling, waiting; Shogun faces the camera (S) at (199,189). Decor: pot + daylily (204,185). Instant:
+#     he has just started toward the wood board. Subtitle: "His turn: he takes the wood one."
+#  S5 workshop-5-soft-ground   17:00 MEDIUM, light warm, frame (200,192) zoom 4. Nelim has JUST taken the board lying on soil at (200,193)
+#     (pick-up job from the concrete, pause 2 ticks after "carrying"), on the soil facing S, board folded on her back, smiling; trait
+#     gone (asserted); Soren in the background right on the concrete, riding (wood board in pack), small in
+#     frame (204,188), smile; Shogun follows her, at (199,194) facing S. Decor: TorchLamp lit (198,190) and (202,190). Says: off the
+#     concrete it folds away; closes the day. Subtitle: "Soft ground: it folds onto her back."
+# DepMap: the SanctuaryBacklot map as base, nothing challenged, plus screenshotstudio, camerazoom, colonistrace, stagedecor, vappe.
+# Steps: Nelim's Sanctuary (frame, animals kept out, own face), NPT (studio mode, frame at zoom, face kit/parts, facing, decor, apparel,
+# apparel policy 4ca133c for the VAE garments, animal spawn), this mod's "takes the pick-up option" (pick-up job, never to completion in S1
+# and S4). The one missing step: "walks to (x, z)" (S3). Nothing asserts about the image: a person opens each one.
 @requires:nelim.sanctuarybacklot @requires:nelim.pickletools.screenshotstudio @requires:nelim.pickletools.colonistrace @requires:nelim.pickletools.camerazoom @requires:vanillaexpanded.vappe
 @review
 Feature: gallery: an afternoon on the board
