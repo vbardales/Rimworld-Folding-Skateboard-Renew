@@ -134,8 +134,8 @@ Feature: gallery: an afternoon on the board
   Scenario: 3. the race: she draws level with him
     Given I set the hour to 14
     And Folding Skateboard Renew: "Nelim" carries a folding skateboard made of "Steel"
-    And Nelim's Pickle Tools: I place the decor "PlantPot" holding "Plant_Daylily" fully grown at (196, 185)
-    And Nelim's Pickle Tools: the animal "Shogun" stands at (199, 189) facing West
+    And Nelim's Pickle Tools: I place the decor "PlantPot" holding "Plant_Daylily" fully grown at (196, 186)
+    And Nelim's Pickle Tools: the animal "Shogun" stands at (199, 190) facing West
     And Nelim's Pickle Tools: "Nelim" stands at (203, 187) facing West
     And Nelim's Pickle Tools: "Soren" stands at (201, 187) facing West
     When Nelim's Pickle Tools: I let 417 ticks pass
@@ -147,7 +147,7 @@ Feature: gallery: an afternoon on the board
     Then "Nelim" has trait "Shredder"
     And Folding Skateboard Renew: "Soren" does not have the trait "Shredder"
     When Nelim's Pickle Tools: studio presentation mode is enabled
-    And Nelim's Pickle Tools: I frame the cell (199, 185) at zoom 4
+    And Nelim's Pickle Tools: I frame the cell (199, 188) at zoom 4
     And Nelim's Pickle Tools: "Soren" face kit is "angry"
     And Nelim's Pickle Tools: "Soren" facial expression is "normal+blink"
     And Nelim's Pickle Tools: "Nelim" face kit is "neutral"
