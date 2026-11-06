@@ -135,7 +135,7 @@ Expanded (`VanillaExpanded.VAPPE`, Workshop 1814987817).
 | 4 | Soren sets off to take the wood board while Nelim rides beside him. | His turn. |
 | 5 | Nelim on soil, board folded on her back, Soren riding in the background, warm 17:00 light. | Off hard ground it folds away. |
 
-**Open:** capture 3 (an interaction bubble floats over Soren, reported to PickleTools 2026-11-06); in capture 5 the folded board is
+**Open:** in capture 5 the folded board is
 not visible because Nelim faces south.
 
 ## Gallery subtitles
@@ -148,6 +148,6 @@ the final ones of the 2026-11-06 captures.
 | --- | --- | --- |
 | 1 | `1-three-boards.jpg` | Three boards: steel, wood, plasteel. |
 | 2 | `2-it-unfolds.jpg` | Step onto hard ground and the board unfolds. |
-| 3 | `3-the-race.jpg` | Hers has wheels. (waits for the interaction bubble fix, not yet in `Art/Gallery/`) |
+| 3 | `3-the-race.jpg` | Hers has wheels. |
 | 4 | `4-his-turn.jpg` | His turn: he takes the wood one. |
 | 5 | `5-soft-ground.jpg` | Soft ground: it folds onto her back. |
