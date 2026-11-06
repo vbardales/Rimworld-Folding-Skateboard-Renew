@@ -116,50 +116,38 @@ Register: `../USE_THIS_INSTEAD.md`, row 3414678101. The item 3806761118 is still
 A replacement for [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3414678101]Folding Skateboard[/url] (SilkCircuit; packageId silkcircuit.foldableskateboardmod; RimWorld 1.5): [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3806761118]Folding Skateboard Renew (unofficial)[/url] (Nelim; packageId nelim.foldingskateboard), for the latest RimWorld version. It is unofficial: the original author has not been reached. Thank you for keeping this list :)
 ```
 
-## Gallery plan (shootGallery, draft 3 in the queue)
+## Gallery plan (shootGallery, five scenes, 2026-11-06)
 
-Nothing in `Art/Gallery/` yet but `0-preview.png`. The five captures of `Tests/Pickle/Evidence/` are checks that a rider is drawn
-facing the way it is named, taken in a plain test yard with the default colonist: they are evidence, not gallery images, and none
-goes on the page. The gallery is one staged story, played on Nelim's Sanctuary (`SanctuaryBacklot`), with Nelim as its
-protagonist, her friend Kenji (a second colonist made for the scene) and Shogun, her labrador. The plan came first
-(`GALLERY.md`, "La session est la metteuse en scène"), the scenarios in `08-gallery.feature` follow it, one scenario per image.
-The first draft (one figure standing still) was refused by its own director on 2026-10-16: no arc, nothing moving, and the
-speed of the trait could not be seen.
+The gallery is one staged story, "an afternoon on the board", played on Nelim's Sanctuary (`SanctuaryBacklot`, the calm-zone
+square: a patch of concrete with a soil strip on its north side). Cast: Nelim, her friend Soren (a second colonist made for the
+scene) and Shogun, her labrador, who is saved in the Sanctuary file and is never spawned. The shotlist (place, time, subject,
+composition, scores) is in the header of `Tests/Pickle/Mod/Pickle/Features/08-gallery.feature` and in `STATUS.md`; the scenarios
+follow it, one scenario per image. Clear weather, 20 degrees so that no face shows sweat, 14:00 then five game minutes between
+images, 17:00 for the last. Outfits: Nelim ochre shirt, dark blue trousers, VAE shoes, `Ponytails`; Soren red cap, teal hoodie,
+grey shorts, VAE shoes, `ShortCut`, `Eyes_SkyBlue`. Imported mod for the gallery pass only, never a dependency: Vanilla Apparel
+Expanded (`VanillaExpanded.VAPPE`, Workshop 1814987817).
 
-**The story, "an afternoon on the board".** Nelim shows Kenji, who has no board, what hers does. On the square of the calm zone,
-centre (200, 187), no roof and no wall shadow, a patch of concrete is laid (the mod's own terrain step, removed with the scene),
-because the board only unfolds on a built hard floor. Same corner every time. Time of day 14:00, then five game minutes between
-images, clear weather, 20 degrees so that no face shows sweat.
+| # | Scene | What the image says |
+| --- | --- | --- |
+| 1 | Three boards on the concrete, Nelim sets off to take the steel one, Soren and Shogun watch. | Three materials. |
+| 2 | Nelim has just picked up a board and it unfolds under her feet on the concrete. | Hard ground unfolds the board. |
+| 3 | The race: Nelim on the board draws level with Soren on foot. | The board is faster (Shredder). |
+| 4 | Soren sets off to take the wood board while Nelim rides beside him. | His turn. |
+| 5 | Nelim on soil, board folded on her back, Soren riding in the background, warm 17:00 light. | Off hard ground it folds away. |
 
-| # | Time | Scene | Faces | What the image says |
-| --- | --- | --- | --- | --- |
-| 1 | 14:00 | Three boards lie on the concrete: steel, wood, plasteel. Wide shot, zoom 5.5. Nelim stands behind them, Kenji beside her, Shogun faces the camera (South). | Nelim: her own face, a small smile. Kenji: calm. | The board is the colour of what it is made from. |
-| 2 | 14:05 | Nelim on the concrete, a board in her pack, facing South; Kenji faces her (East). Zoom 4. | Nelim: wide smile, cheerful lids. Kenji: smile. | Step on hard ground and the board unfolds under her. |
-| 3 | 14:10 | The race, side on: Nelim on the board facing West, Kenji on foot five cells behind her, Shogun between them. Zoom 4. | Nelim: smile, cheerful lids. Kenji: angry kit (effort). | On the board she leaves him behind (Shredder, +2 speed). |
-| 4 | 14:20 | Nelim one step off the concrete onto soil, facing North, seen from behind. Kenji, with a board of his own, rides on the concrete facing East. Zoom 4. | Nelim: not visible. Kenji: smug. | Off hard ground the board folds onto her back; now he has one too. |
-
-**Looks.** Nelim: ochre shirt (214, 163, 58), the fixture's trousers dyed dark blue (45, 58, 92), Vanilla Apparel Expanded shoes,
-hairstyle `Ponytails` (the game's name), hair colour as the fixture has it, no hat, her dark brown eyes. Kenji, the skater of the
-pair: male body, `ShortCut` hair under a red baseball cap (200, 52, 48), a teal hoodie (46, 139, 139), dark shorts (58, 58, 66),
-shoes, blue eyes (EyeGenes3 `Eyes_Blue`), no traits. Faces: Facial Animation recomputes the face every tick, so each face is set
-last, after every wait. **Imported mod:** Vanilla Apparel Expanded (`VanillaExpanded.VAPPE`, Workshop 1814987817, with its
-framework `OskarPotocki.VanillaFactionsExpanded.Core`, 2023507013), for the cap, hoodie, shorts and shoes; it is added to the
-gallery pass map `wsl-deps.sanctuary.map` only, never a dependency of the mod. The Workshop corpus holds no skater-specific
-apparel for 1.6; this is the closest wardrobe (searched 2026-10-16).
-
-**Not in the story yet.** A fifth image, the right-click menu with "Pick up folding skateboard", is a menu capture (no subtitle).
-It needs a step that draws the float menu on screen: the mod's own steps read the menu but do not draw it. To ask the PickleTools
-session.
+**Open:** capture 3 (an interaction bubble floats over Soren, reported to PickleTools 2026-11-06); in capture 5 the folded board is
+not visible because Nelim faces south.
 
 ## Gallery subtitles
 
 One line of English written at the bottom of each scene without an interface window, as a film subtitle (`GALLERY.md`,
 "Sous-titres"). The originals stay clean in `Art/Gallery-clean/`; `Art/Gallery/` holds the subtitled images. The file names are
-the planned ones: the table follows the final files after the captures are accepted and the indexes closed.
+the final ones of the 2026-11-06 captures.
 
 | Index | File | Subtitle |
 | --- | --- | --- |
-| 1 | `1-three-boards.jpg` | Three folding boards on the stone, each the colour of what it is made from. |
-| 2 | `2-first-push.jpg` | Step onto hard ground and the board unfolds under her feet. |
-| 3 | `3-the-race.jpg` | On the board she leaves him behind. |
-| 4 | `4-folds-away.jpg` | Back on the grass the board folds onto her back, and now he has one too. |
+| 1 | `1-three-boards.jpg` | Three boards: steel, wood, plasteel. |
+| 2 | `2-it-unfolds.jpg` | Step onto hard ground and the board unfolds. |
+| 3 | `3-the-race.jpg` | Hers has wheels. (waits for the interaction bubble fix, not yet in `Art/Gallery/`) |
+| 4 | `4-his-turn.jpg` | His turn: he takes the wood one. |
+| 5 | `5-soft-ground.jpg` | Soft ground: it folds onto her back. |
