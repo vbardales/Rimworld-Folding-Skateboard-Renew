@@ -48,7 +48,6 @@ Feature: gallery: an afternoon on the board
   Background:
     Given the save "Nelims-tribe" is loaded
     And game speed is paused
-    And Nelim's Sanctuary: the animals are removed from the sanctuary "calm-zone"
     And Nelim's Pickle Tools: the animals except "Shogun" are kept out of the area from (190, 178) to (216, 198)
     And Nelim's Sanctuary: I am at the sanctuary "calm-zone"
     And Nelim's Pickle Tools: all filth is cleaned
@@ -81,7 +80,6 @@ Feature: gallery: an afternoon on the board
     And Nelim's Pickle Tools: I place the decor "PlantPot" holding "Plant_Daylily" fully grown at (196, 184)
     And Nelim's Pickle Tools: I place the decor "PlantPot" holding "Plant_Daylily" fully grown at (204, 184)
     And Nelim's Pickle Tools: "Soren" stands at (196, 189) facing East
-    And Nelim's Pickle Tools: an adult animal of kind "LabradorRetriever" named "Shogun" is spawned at (203, 189)
     And Nelim's Pickle Tools: the animal "Shogun" stands at (203, 189) facing South
     And Nelim's Pickle Tools: "Nelim" stands at (200, 191) facing North
     When Folding Skateboard Renew: "Nelim" takes the pick-up option for the board on the cell (198, 187)
@@ -106,7 +104,6 @@ Feature: gallery: an afternoon on the board
     Given I set the hour to 14
     And Folding Skateboard Renew: a folding skateboard made of "WoodLog" lies on the cell (200, 191)
     And Nelim's Pickle Tools: I place the decor "PlantPot" holding "Plant_Daylily" fully grown at (204, 187)
-    And Nelim's Pickle Tools: an adult animal of kind "LabradorRetriever" named "Shogun" is spawned at (202, 192)
     And Nelim's Pickle Tools: the animal "Shogun" stands at (202, 192) facing South
     And Nelim's Pickle Tools: "Soren" stands at (203, 188) facing West
     And Nelim's Pickle Tools: "Nelim" stands at (200, 194) facing North
@@ -138,7 +135,6 @@ Feature: gallery: an afternoon on the board
     Given I set the hour to 14
     And Folding Skateboard Renew: "Nelim" carries a folding skateboard made of "Steel"
     And Nelim's Pickle Tools: I place the decor "PlantPot" holding "Plant_Daylily" fully grown at (196, 185)
-    And Nelim's Pickle Tools: an adult animal of kind "LabradorRetriever" named "Shogun" is spawned at (199, 189)
     And Nelim's Pickle Tools: the animal "Shogun" stands at (199, 189) facing West
     And Nelim's Pickle Tools: "Nelim" stands at (203, 187) facing West
     And Nelim's Pickle Tools: "Soren" stands at (201, 187) facing West
@@ -169,7 +165,6 @@ Feature: gallery: an afternoon on the board
     And Folding Skateboard Renew: a folding skateboard made of "WoodLog" lies on the cell (199, 187)
     And Folding Skateboard Renew: "Nelim" carries a folding skateboard made of "Steel"
     And Nelim's Pickle Tools: I place the decor "PlantPot" holding "Plant_Daylily" fully grown at (204, 185)
-    And Nelim's Pickle Tools: an adult animal of kind "LabradorRetriever" named "Shogun" is spawned at (199, 189)
     And Nelim's Pickle Tools: the animal "Shogun" stands at (199, 189) facing South
     And Nelim's Pickle Tools: "Nelim" stands at (201, 189) facing West
     And Nelim's Pickle Tools: "Soren" stands at (202, 187) facing West
@@ -200,7 +195,6 @@ Feature: gallery: an afternoon on the board
     And Nelim's Pickle Tools: I place the decor "TorchLamp" at (202, 190)
     And Nelim's Pickle Tools: the decor "TorchLamp" at (198, 190) is lit
     And Nelim's Pickle Tools: the decor "TorchLamp" at (202, 190) is lit
-    And Nelim's Pickle Tools: an adult animal of kind "LabradorRetriever" named "Shogun" is spawned at (199, 194)
     And Nelim's Pickle Tools: the animal "Shogun" stands at (199, 194) facing South
     And Nelim's Pickle Tools: "Soren" stands at (204, 188) facing West
     And Nelim's Pickle Tools: "Nelim" stands at (200, 191) facing South
