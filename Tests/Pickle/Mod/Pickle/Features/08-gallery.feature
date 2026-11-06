@@ -49,6 +49,7 @@ Feature: gallery: an afternoon on the board
     Given the save "Nelims-tribe" is loaded
     And game speed is paused
     And Nelim's Sanctuary: the animals are removed from the sanctuary "calm-zone"
+    And Nelim's Pickle Tools: the animals except "Shogun" are kept out of the area from (190, 178) to (216, 198)
     And Nelim's Sanctuary: I am at the sanctuary "calm-zone"
     And Nelim's Pickle Tools: all filth is cleaned
     And I set the weather to "Clear"
