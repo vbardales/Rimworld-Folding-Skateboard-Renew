@@ -128,6 +128,7 @@ Feature: gallery: an afternoon on the board
     And Nelim's Pickle Tools: "Nelim" facial expression is "normal+blink"
     And Nelim's Pickle Tools: time is paused for the capture
     And Nelim's Pickle Tools: I let 5 frames pass
+    And Nelim's Pickle Tools: the interaction bubbles are cleared
     Then I take a screenshot "gallery 2 - the board unfolds"
     When Nelim's Pickle Tools: the decor is removed
 
@@ -157,6 +158,7 @@ Feature: gallery: an afternoon on the board
     And Nelim's Pickle Tools: "Nelim" facial expression is "normal+blink"
     And Nelim's Pickle Tools: time is paused for the capture
     And Nelim's Pickle Tools: I let 5 frames pass
+    And Nelim's Pickle Tools: the interaction bubbles are cleared
     Then I take a screenshot "gallery 3 - the race"
     When Nelim's Pickle Tools: the decor is removed
 
@@ -184,6 +186,7 @@ Feature: gallery: an afternoon on the board
     And Nelim's Pickle Tools: "Nelim" facial expression is "normal+blink"
     And Nelim's Pickle Tools: time is paused for the capture
     And Nelim's Pickle Tools: I let 5 frames pass
+    And Nelim's Pickle Tools: the interaction bubbles are cleared
     Then I take a screenshot "gallery 4 - his turn"
     When Nelim's Pickle Tools: the decor is removed
 
@@ -220,5 +223,6 @@ Feature: gallery: an afternoon on the board
     And Nelim's Pickle Tools: "Nelim" facial expression is "normal+blink"
     And Nelim's Pickle Tools: time is paused for the capture
     And Nelim's Pickle Tools: I let 5 frames pass
+    And Nelim's Pickle Tools: the interaction bubbles are cleared
     Then I take a screenshot "gallery 5 - soft ground"
     When Nelim's Pickle Tools: the decor is removed
