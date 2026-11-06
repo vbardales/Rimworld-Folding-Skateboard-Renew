@@ -104,7 +104,6 @@ Feature: gallery: an afternoon on the board
   Scenario: 2. the board unfolds under her feet
     Given I set the hour to 14
     And Folding Skateboard Renew: a folding skateboard made of "WoodLog" lies on the cell (200, 191)
-    And Folding Skateboard Renew: "Nelim" carries a folding skateboard made of "Steel"
     And Nelim's Pickle Tools: I place the decor "PlantPot" holding "Plant_Daylily" fully grown at (204, 185)
     And Nelim's Pickle Tools: an adult animal of kind "LabradorRetriever" named "Shogun" is spawned at (202, 192)
     And Nelim's Pickle Tools: the animal "Shogun" stands at (202, 192) facing South
@@ -204,7 +203,7 @@ Feature: gallery: an afternoon on the board
     And Nelim's Pickle Tools: "Soren" stands at (204, 188) facing West
     And Nelim's Pickle Tools: "Nelim" stands at (200, 191) facing South
     And Folding Skateboard Renew: "Nelim" takes the pick-up option for the board on the cell (200, 193)
-    And Nelim's Pickle Tools: I let 150 ticks pass
+    And Nelim's Pickle Tools: I let 40 ticks pass
     Then Folding Skateboard Renew: "Nelim" does not have the trait "Shredder"
     And "Soren" has trait "Shredder"
     When Nelim's Pickle Tools: studio presentation mode is enabled
