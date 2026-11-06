@@ -118,7 +118,7 @@ Feature: gallery: an afternoon on the board
     And Nelim's Pickle Tools: I let 10 ticks pass
     Then "Nelim" has trait "Shredder"
     When Nelim's Pickle Tools: studio presentation mode is enabled
-    And Nelim's Pickle Tools: I frame the cell (200, 190) at zoom 3.5
+    And Nelim's Pickle Tools: I frame the cell (201, 190) at zoom 3.0
     And Nelim's Pickle Tools: "Soren" face kit is "smile"
     And Nelim's Pickle Tools: "Soren" facial expression is "normal+blink"
     And Nelim's Pickle Tools: "Nelim" face kit is "neutral"
@@ -206,7 +206,7 @@ Feature: gallery: an afternoon on the board
     And Nelim's Pickle Tools: "Nelim" stands at (200, 191) facing South
     And Folding Skateboard Renew: "Nelim" takes the pick-up option for the board on the cell (200, 193)
     And Nelim's Pickle Tools: I let 60 ticks pass
-    And Nelim's Pickle Tools: "Nelim" stands at (200, 193) facing South
+    And Nelim's Pickle Tools: "Nelim" stands at (200, 193) facing North
     And Nelim's Pickle Tools: "Soren" stands at (204, 189) facing West
     And Nelim's Pickle Tools: the animal "Shogun" stands at (199, 194) facing South
     And Nelim's Pickle Tools: I let 10 ticks pass
