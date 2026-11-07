@@ -123,8 +123,8 @@ square: a patch of concrete with a soil strip on its north side). Cast: Nelim, h
 the hair and eyes of the 2026-11-06 captures until the owner rules on them, see `STATUS.md`, "NSB") and Shogun, her labrador, who is saved in the Sanctuary file and is never spawned. The shotlist (place, time, subject,
 composition, scores) is in the header of `Tests/Pickle/Mod/Pickle/Features/08-gallery.feature` and in `STATUS.md`; the scenarios
 follow it, one scenario per image. Clear weather, 20 degrees so that no face shows sweat, 14:00 then five game minutes between
-images, 17:00 for the last. Outfits: Nelim ochre shirt, dark blue trousers, VAE shoes, `Ponytails`; Soren red cap, teal hoodie,
-grey shorts, VAE shoes, `ShortCut`, `Eyes_SkyBlue`. Imported mod for the gallery pass only, never a dependency: Vanilla Apparel
+images, 17:00 for the last. Outfits: Nelim ochre shirt, dark blue trousers, VAE shoes, `Roo_HD_Hair_Highpony`; Soren red cap, teal hoodie,
+grey shorts, VAE shoes, `Roo_HD_Hair_Tidy`, `Eyes_DarkGreen`. Imported mod for the gallery pass only, never a dependency: Vanilla Apparel
 Expanded (`VanillaExpanded.VAPPE`, Workshop 1814987817).
 
 | # | Scene | What the image says |

@@ -7,10 +7,10 @@
 # along. One afternoon, Clear, 20 degrees (no sweat). Clock: 14:00, then 5 game minutes between images (cumulative waits, 208 ticks per 5
 # min), closing at 17:00 in warm light (hour set, same day). The mod's whole offer is shown: the three materials (S1), the right-click
 # pick-up into the pack (S1, S4), unfold + trait Shredder on hard ground (S2), +2 speed (S3), fold onto the back on soft ground (S5).
-# Outfits do not change all day: Nelim ochre shirt (214,163,58), dark blue trousers (45,58,92), VAE shoes, hair Ponytails, bare head
+# Outfits do not change all day: Nelim ochre shirt (214,163,58), dark blue trousers (45,58,92), VAE shoes, hair Roo_HD_Hair_Highpony (NSB canon), bare head
 # (no hat: the hat-hair rule does not apply); Soren VAE red baseball cap (200,52,48), teal hoodie (46,139,139), grey shorts (58,58,66),
-# VAE shoes, hair ShortCut, eyes Eyes_SkyBlue (a skater look, chosen for the story); Shogun with the default leather dog collar.
-# Faces: Nelim smiles (face kit neutral, then MouthSmile + LidCheerful, normal+blink, set last, no sweat), except where written.
+# VAE shoes, hair Roo_HD_Hair_Tidy and eyes Eyes_DarkGreen (NSB canon; the skater-look hair and eyes of 2026-11-06 were refused); Shogun with the default leather dog collar.
+# Faces: Nelim smiles (face kit neutral, then MouthLipsSimpleSmile (validated by Virginie 2026-11-07) + LidCheerful, normal+blink, set last, no sweat), except where written.
 # Shots (all with a subtitle, no interface window), decor = PlantPot with Plant_Daylily fully grown, TorchLamp lit; removed after each:
 #  S1 workshop-1-three-boards  14:00 WIDE, frame (200,188) zoom 4.5. Boards on concrete: steel (198,187) dark, wood (200,187) brown,
 #     plasteel (202,187) light blue. Nelim starts at (200,191), no board in her pack, and has JUST set off to take the steel board (pick-up
@@ -59,14 +59,14 @@ Feature: gallery: an afternoon on the board
     And Nelim's Pickle Tools: "Nelim" wears "Apparel_BasicShirt" dyed rgb (214, 163, 58)
     And Nelim's Pickle Tools: "Nelim" wears "Apparel_Pants" dyed rgb (45, 58, 92)
     And Nelim's Pickle Tools: "Nelim" wears "VAE_Footwear_Shoes"
-    And Nelim's Pickle Tools: "Nelim" hairstyle is "Ponytails"
+    And Nelim's Pickle Tools: "Nelim" hairstyle is "Roo_HD_Hair_Highpony"
     And a colonist "Soren" exists
     And Nelim's Pickle Tools: the colonist "Soren" follows an apparel policy that allows everything
     And Nelim's Pickle Tools: "Soren" gender is male
     And Nelim's Pickle Tools: "Soren" body type is Male
     And Nelim's Pickle Tools: "Soren" has no traits
-    And Nelim's Pickle Tools: "Soren" has the gene "Eyes_SkyBlue"
-    And Nelim's Pickle Tools: "Soren" hairstyle is "ShortCut"
+    And Nelim's Pickle Tools: "Soren" has the gene "Eyes_DarkGreen"
+    And Nelim's Pickle Tools: "Soren" hairstyle is "Roo_HD_Hair_Tidy"
     And Nelim's Pickle Tools: "Soren" wears "VAE_Apparel_Hoodie" dyed rgb (46, 139, 139)
     And Nelim's Pickle Tools: "Soren" wears "VAE_Apparel_Shorts" dyed rgb (58, 58, 66)
     And Nelim's Pickle Tools: "Soren" wears "VAE_Footwear_Shoes"
@@ -90,7 +90,7 @@ Feature: gallery: an afternoon on the board
     And Nelim's Pickle Tools: "Soren" facial expression is "normal+blink"
     And Nelim's Pickle Tools: "Nelim" face kit is "neutral"
     And Nelim's Pickle Tools: "Nelim" brows are "BrowNormal"
-    And Nelim's Pickle Tools: "Nelim" mouth is "MouthSmile"
+    And Nelim's Pickle Tools: "Nelim" mouth is "MouthLipsSimpleSmile"
     And Nelim's Pickle Tools: "Nelim" lids are "LidCheerful"
     And Nelim's Pickle Tools: "Nelim" facial expression is "normal+blink"
     And Nelim's Pickle Tools: time is paused for the capture
@@ -123,7 +123,7 @@ Feature: gallery: an afternoon on the board
     And Nelim's Pickle Tools: "Soren" facial expression is "normal+blink"
     And Nelim's Pickle Tools: "Nelim" face kit is "neutral"
     And Nelim's Pickle Tools: "Nelim" brows are "BrowNormal"
-    And Nelim's Pickle Tools: "Nelim" mouth is "MouthSmile"
+    And Nelim's Pickle Tools: "Nelim" mouth is "MouthLipsSimpleSmile"
     And Nelim's Pickle Tools: "Nelim" lids are "LidCheerful"
     And Nelim's Pickle Tools: "Nelim" facial expression is "normal+blink"
     And Nelim's Pickle Tools: time is paused for the capture
@@ -153,7 +153,7 @@ Feature: gallery: an afternoon on the board
     And Nelim's Pickle Tools: "Soren" facial expression is "normal+blink"
     And Nelim's Pickle Tools: "Nelim" face kit is "neutral"
     And Nelim's Pickle Tools: "Nelim" brows are "BrowNormal"
-    And Nelim's Pickle Tools: "Nelim" mouth is "MouthSmile"
+    And Nelim's Pickle Tools: "Nelim" mouth is "MouthLipsSimpleSmile"
     And Nelim's Pickle Tools: "Nelim" lids are "LidCheerful"
     And Nelim's Pickle Tools: "Nelim" facial expression is "normal+blink"
     And Nelim's Pickle Tools: time is paused for the capture
@@ -181,7 +181,7 @@ Feature: gallery: an afternoon on the board
     And Nelim's Pickle Tools: "Soren" facial expression is "normal+blink"
     And Nelim's Pickle Tools: "Nelim" face kit is "neutral"
     And Nelim's Pickle Tools: "Nelim" brows are "BrowNormal"
-    And Nelim's Pickle Tools: "Nelim" mouth is "MouthSmile"
+    And Nelim's Pickle Tools: "Nelim" mouth is "MouthLipsSimpleSmile"
     And Nelim's Pickle Tools: "Nelim" lids are "LidCheerful"
     And Nelim's Pickle Tools: "Nelim" facial expression is "normal+blink"
     And Nelim's Pickle Tools: time is paused for the capture
@@ -218,7 +218,7 @@ Feature: gallery: an afternoon on the board
     And Nelim's Pickle Tools: "Soren" facial expression is "normal+blink"
     And Nelim's Pickle Tools: "Nelim" face kit is "neutral"
     And Nelim's Pickle Tools: "Nelim" brows are "BrowNormal"
-    And Nelim's Pickle Tools: "Nelim" mouth is "MouthSmile"
+    And Nelim's Pickle Tools: "Nelim" mouth is "MouthLipsSimpleSmile"
     And Nelim's Pickle Tools: "Nelim" lids are "LidCheerful"
     And Nelim's Pickle Tools: "Nelim" facial expression is "normal+blink"
     And Nelim's Pickle Tools: time is paused for the capture

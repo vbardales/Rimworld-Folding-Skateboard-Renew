@@ -135,7 +135,7 @@ Places read: 2026-11-07 (calm-zone entries of SANCTUAIRE-LIEUX.md and EMBELLISSE
 
 NSB changed since 2026-11-03 only for other mods' pawns, animals and places (pediatrics, play-area, ACG animals, 1.7 body hair of Nelim, Blue, Jiro). Nothing moved for calm-zone, Nelim's outfit, Soren's outfit or Shogun. The mod adds no animal (rule 5: nothing to show, no gap). Used and kept: calm-zone (free zone, concrete and decor removed after each shot), Nelim, Soren, Shogun (saved in the NSB file, collar validated 2026-11-06), all outfits (free, rule 4).
 
-**Rule 3 gap found (PENDING, owner question):** the played captures change four canon properties with no quoted validation. Until Virginie rules, they are not covered.
+**Rule 3, answered 2026-11-07 (Virginie: "Nelim : coiffure : non, sourire : oui MouthLipsSimpleSmile. Il y a un casque sur ShortCut ? Passe en DarkGreen pour les yeux"):** Nelim hairstyle refused, back to canon `Roo_HD_Hair_Highpony`; Nelim mouth `MouthLipsSimpleSmile` validated; Soren eyes back to canon `Eyes_DarkGreen`; Soren hairstyle not ruled (she asked whether the cap works with `ShortCut`: yes, VAE baseball cap over short hair, no hat-hair issue; both `ShortCut` and `Roo_HD_Hair_Tidy` are short), so canon `Roo_HD_Hair_Tidy` is used until she says otherwise. Feature 08 edited, captures 1 to 5 to replay.
 
 | Place | Shots | Changes for the gallery | Last read |
 | --- | --- | --- | --- |
@@ -143,8 +143,8 @@ NSB changed since 2026-11-03 only for other mods' pawns, animals and places (ped
 
 | Colonist | Shots | Outfit per shot | Last read | Exceptions |
 | --- | --- | --- | --- | --- |
-| Nelim | S1 to S5 | ochre shirt, dark blue trousers, VAE shoes, bare head, all day (free) | 2026-11-07 | PENDING: hairstyle `Ponytails` (canon `Roo_HD_Hair_Highpony`); mouth `MouthSmile` set as a part (canon `MouthLipsSmirk`; the face kit "smile" alone is scene freedom) |
-| Soren | S1 to S5 | VAE red cap, teal hoodie, grey shorts, VAE shoes, all day (free) | 2026-11-07 | PENDING: hairstyle `ShortCut` (canon `Roo_HD_Hair_Tidy`); eyes `Eyes_SkyBlue` (canon `Eyes_DarkGreen`, swapped by the owner 2026-11-05) |
+| Nelim | S1 to S5 | ochre shirt, dark blue trousers, VAE shoes, bare head, all day (free) | 2026-11-07 | mouth `MouthLipsSimpleSmile`, validated 2026-11-07 (Virginie); hair back to canon `Roo_HD_Hair_Highpony` |
+| Soren | S1 to S5 | VAE red cap, teal hoodie, grey shorts, VAE shoes, all day (free) | 2026-11-07 | none: canon `Roo_HD_Hair_Tidy` and `Eyes_DarkGreen` (ShortCut not validated, question open) |
 
 | Animal | Shots | Outfit | Last read | Exceptions |
 | --- | --- | --- | --- | --- |
