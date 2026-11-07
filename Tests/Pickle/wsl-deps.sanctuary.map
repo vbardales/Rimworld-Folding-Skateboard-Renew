@@ -2,6 +2,7 @@
 # reference list (AncientBuildingsRenew/Tests/Pickle/wsl-deps.sanctuary.map, 2026-10-11). The mod under test and its hard dependency (Harmony)
 # are staged by the runner, they are not listed here.
 #
+# Added 2026-11-07 (ticket 8f7f failed 5 of 5: no hairstyle Roo_HD_Hair_Highpony): rooboid.hdhair.continued 3559870636, Roo HD hairstyles of Nelim and Soren (canon, as in AncientBuildingsRenew map).
 # Run: Submit-PickleRun.ps1 -Mod FoldingSkateboardRenew -DepMap wsl-deps.sanctuary.map -Filter '08-gallery' -EvidenceDir Tests/Pickle/Evidence/<run>
 nelim.sanctuarybacklot path:SanctuaryBacklot/Mod
 nelim.pickletools.screenshotstudio path:PickleTools/ScreenshotStudio/Mod
@@ -27,3 +28,4 @@ astryl.FacialAnimationPerformancePatch 3790129900
 sd.fa.movingvanillaeyes 3753978140
 OskarPotocki.VanillaFactionsExpanded.Core 2023507013
 VanillaExpanded.VAPPE 1814987817
+rooboid.hdhair.continued 3559870636
