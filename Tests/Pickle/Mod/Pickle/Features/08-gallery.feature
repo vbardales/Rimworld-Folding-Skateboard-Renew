@@ -12,31 +12,11 @@
 # VAE shoes, hair Roo_HD_Hair_Tidy and eyes Eyes_DarkGreen (NSB canon; the skater-look hair and eyes of 2026-11-06 were refused); Shogun with the default leather dog collar.
 # Faces: Nelim smiles (face kit neutral, then MouthLipsSimpleSmile (validated by Virginie 2026-11-07) + LidCheerful, normal+blink, set last, no sweat), except where written.
 # Shots (all with a subtitle, no interface window), decor = PlantPot with Plant_Daylily fully grown, TorchLamp lit; removed after each:
-#  S1 workshop-1-three-boards  14:00 WIDE, frame (200,188) zoom 4.5. Boards on concrete: steel (198,187) dark, wood (200,187) brown,
-#     plasteel (202,187) light blue. Nelim starts at (200,191), no board in her pack, and has JUST set off to take the steel board (pick-up
-#     job given, game paused ~20 ticks later, mid-stride facing N); Soren (196,189) faces her, smiling, hands in pockets; Shogun faces the
-#     camera (S) at (203,189). Decor: pot + daylily at (196,184) and (204,184) behind the boards. Instant: she just decided to try one.
-#     Says: three boards, three materials. Subtitle: "Three boards: steel, wood, plasteel."
-#  S2 workshop-2-it-unfolds    14:05 MEDIUM, frame (200,190) zoom 3.5, Nelim off-centre left. Nelim, board in her pack, has JUST finished
-#     taking the board lying on the concrete edge (200,191) (pick-up job from the soil strip; pause 2 ticks after "carrying 1 Paddleboard";
-#     N tuned in the first run, estimate 150), on the concrete facing S, board drawn under her feet, wide smile; trait Shredder asserted
-#     before the photo. Shogun in front of her facing the camera (S) at (200,192) (animal seen from the front); Soren behind her at
-#     (203,188) facing W, smiling. Decor: pot + daylily (204,185). Instant: the board has just unfolded. Subtitle: "Step onto hard ground
-#     and the board unfolds."
-#  S3 workshop-3-the-race      14:10 WIDE along E-W, frame (199,185) zoom 4, track in the lower third. Nelim on the board (steel in pack,
-#     start (203,187)) and Soren on foot (start (201,187)) both sent West to the finish pot (196,187) with a forced-walk job; game paused when she
-#     draws level with him (I let N ticks pass, then "time is paused for the capture"; N tuned, estimate 25 to 40); Nelim smiling, Soren set face "angry" (effort, planned), Shogun at (199,189)
-#     facing W. Step exists (NPT, 2026-11-03): `Nelim's Pickle Tools: "<name>" is forced to walk to (x, z)`, never `stands at ... facing` on the walker after it starts; written, not played. All on concrete (x 196-204): board stays unfolded.
-#     Decor: pot + daylily (196,185) as the finish. Says: she is faster on the board. Subtitle: "Hers has wheels."
-#  S4 workshop-4-his-turn      14:15 TIGHT, frame (199,187) zoom 3.2. Soren (no board yet) walks to the wood board at (199,187) (pick-up
-#     job, pause ~15 ticks, mid-stride facing W), smug grin (kit smug, planned: he is about to win a board); Nelim rides beside him on the
-#     concrete at (201,187) facing W, smiling, waiting; Shogun faces the camera (S) at (199,189). Decor: pot + daylily (204,185). Instant:
-#     he has just started toward the wood board. Subtitle: "His turn: he takes the wood one."
-#  S5 workshop-5-soft-ground   17:00 MEDIUM, light warm, frame (200,192) zoom 4. Nelim has JUST taken the board lying on soil at (200,193)
-#     (pick-up job from the concrete, pause 2 ticks after "carrying"), on the soil facing S, board folded on her back, smiling; trait
-#     gone (asserted); Soren in the background right on the concrete, riding (wood board in pack), small in
-#     frame (204,188), smile; Shogun follows her, at (199,194) facing S. Decor: TorchLamp lit (198,190) and (202,190). Says: off the
-#     concrete it folds away; closes the day. Subtitle: "Soft ground: it folds onto her back."
+#   1. workshop-1-three-boards 14h WIDE, frame (200, 187) zoom 4.5. Boards on concrete: steel (198, 187) dark, wood (200, 187) brown, plasteel (202, 187) light blue. Nelim starts at (200, 190) facing South (toward the camera, face visible), no board in her pack, and has JUST set off to take the steel board (pick-up job given, game paused 12 ticks later, mid-stride, smiling with MouthLipsSimpleSmile and LidCheerful, no sweat); Soren (197, 189) faces East toward her, smiling, hands in pockets; Shogun (203, 189) faces the camera (South). Decor, a lived-in corner of the tribe: PlantPot with Plant_Daylily fully grown at (196, 184), (204, 184), (196, 190), (204, 190); TorchLamp lit at (196, 187) and (204, 187). Instant: she just decided to try one. Says: three boards, three materials. Subtitle: "Three boards: steel, wood, plasteel."
+#   2. workshop-2-it-unfolds 14h MEDIUM, frame (200, 190) zoom 3.2. Nelim, board in her pack, has JUST taken the wood board lying at (200, 191); she stands at (199, 190) facing South, board drawn under her feet, wide smile; trait Shredder asserted before the photo. Shogun in front of her facing the camera (South) at (200, 192); Soren at (203, 188) facing West, smiling. Decor: PlantPot with Plant_Daylily at (204, 187), (196, 192), (197, 187); TorchLamp lit at (196, 189) and (204, 190). Instant: the board has just unfolded. Subtitle: "Step onto hard ground and the board unfolds."
+#   3. workshop-3-the-race 14h WIDE along East-West, frame (199, 187) zoom 4. Nelim on the board (steel in pack, start (203, 188)) and Soren on foot (start (203, 186)) in two lanes, both sent West with a forced-walk job to (196, 188) and (196, 186); game paused when she draws level with him (35 ticks of walking after the start, tuned by the first run); Nelim smiling, Soren face kit angry (effort, planned), Shogun at (199, 190) facing West. All on concrete: the board stays unfolded. Decor: PlantPot with Plant_Daylily at (196, 186), (196, 189), (204, 190), (204, 184); TorchLamp lit at (200, 184) and (200, 190). Says: she is faster on the board. Subtitle: "Hers has wheels."
+#   4. workshop-4-his-turn 14h TIGHT, frame (200, 188) zoom 3.2. Soren (no board yet), starting at (202, 187), walks to the wood board at (199, 187) (pick-up job, game paused 12 ticks later, mid-stride facing West), smug grin (face kit smug, planned: he is about to win a board); Nelim rides beside him at (201, 189) facing South toward the camera, smiling, waiting; Shogun faces the camera (South) at (199, 189). Decor: PlantPot with Plant_Daylily at (204, 185), (196, 190), (197, 184); TorchLamp lit at (196, 187) and (204, 188). Instant: he has just started toward the wood board. Subtitle: "His turn: he takes the wood one."
+#   5. workshop-5-soft-ground 17h MEDIUM, light warm, frame (201, 191) zoom 3.5. Nelim has JUST taken the wood board lying on soil at (200, 193) (pick-up job from the concrete), she stands at (200, 193) facing North, board folded on her back, smiling (face turned away, board is the subject); trait gone (asserted); Soren in the background right on the concrete at (204, 189) facing West, riding (wood board in pack), small in frame, smile; Shogun follows her at (199, 194) facing South. Decor: TorchLamp lit at (198, 190) and (202, 190). Says: off the concrete it folds away; closes the day. Subtitle: "Soft ground: it folds onto her back."
 # DepMap: the SanctuaryBacklot map as base, nothing challenged, plus screenshotstudio, camerazoom, colonistrace, stagedecor, vappe.
 # Steps: Nelim's Sanctuary (frame, animals kept out, own face), NPT (studio mode, frame at zoom, face kit/parts, facing, decor, apparel,
 # apparel policy 4ca133c for the VAE garments, animal spawn), this mod's "takes the pick-up option" (pick-up job, never to completion in S1
@@ -79,13 +59,19 @@ Feature: gallery: an afternoon on the board
     And Folding Skateboard Renew: a folding skateboard made of "Plasteel" lies on the cell (202, 187)
     And Nelim's Pickle Tools: I place the decor "PlantPot" holding "Plant_Daylily" fully grown at (196, 184)
     And Nelim's Pickle Tools: I place the decor "PlantPot" holding "Plant_Daylily" fully grown at (204, 184)
-    And Nelim's Pickle Tools: "Soren" stands at (196, 189) facing East
+    And Nelim's Pickle Tools: I place the decor "PlantPot" holding "Plant_Daylily" fully grown at (196, 190)
+    And Nelim's Pickle Tools: I place the decor "PlantPot" holding "Plant_Daylily" fully grown at (204, 190)
+    And Nelim's Pickle Tools: I place the decor "TorchLamp" at (196, 187)
+    And Nelim's Pickle Tools: I place the decor "TorchLamp" at (204, 187)
+    And Nelim's Pickle Tools: the decor "TorchLamp" at (196, 187) is lit
+    And Nelim's Pickle Tools: the decor "TorchLamp" at (204, 187) is lit
+    And Nelim's Pickle Tools: "Soren" stands at (197, 189) facing East
     And Nelim's Pickle Tools: the animal "Shogun" stands at (203, 189) facing South
-    And Nelim's Pickle Tools: "Nelim" stands at (200, 191) facing North
+    And Nelim's Pickle Tools: "Nelim" stands at (200, 190) facing South
     When Folding Skateboard Renew: "Nelim" takes the pick-up option for the board on the cell (198, 187)
-    And Nelim's Pickle Tools: I let 20 ticks pass
+    And Nelim's Pickle Tools: I let 12 ticks pass
     And Nelim's Pickle Tools: studio presentation mode is enabled
-    And Nelim's Pickle Tools: I frame the cell (200, 188) at zoom 4.5
+    And Nelim's Pickle Tools: I frame the cell (200, 187) at zoom 4.5
     And Nelim's Pickle Tools: "Soren" face kit is "smile"
     And Nelim's Pickle Tools: "Soren" facial expression is "normal+blink"
     And Nelim's Pickle Tools: "Nelim" face kit is "neutral"
@@ -104,6 +90,12 @@ Feature: gallery: an afternoon on the board
     Given I set the hour to 14
     And Folding Skateboard Renew: a folding skateboard made of "WoodLog" lies on the cell (200, 191)
     And Nelim's Pickle Tools: I place the decor "PlantPot" holding "Plant_Daylily" fully grown at (204, 187)
+    And Nelim's Pickle Tools: I place the decor "PlantPot" holding "Plant_Daylily" fully grown at (196, 192)
+    And Nelim's Pickle Tools: I place the decor "PlantPot" holding "Plant_Daylily" fully grown at (197, 187)
+    And Nelim's Pickle Tools: I place the decor "TorchLamp" at (196, 189)
+    And Nelim's Pickle Tools: I place the decor "TorchLamp" at (204, 190)
+    And Nelim's Pickle Tools: the decor "TorchLamp" at (196, 189) is lit
+    And Nelim's Pickle Tools: the decor "TorchLamp" at (204, 190) is lit
     And Nelim's Pickle Tools: the animal "Shogun" stands at (202, 192) facing South
     And Nelim's Pickle Tools: "Soren" stands at (203, 188) facing West
     And Nelim's Pickle Tools: "Nelim" stands at (200, 194) facing North
@@ -118,7 +110,7 @@ Feature: gallery: an afternoon on the board
     And Nelim's Pickle Tools: I let 10 ticks pass
     Then "Nelim" has trait "Shredder"
     When Nelim's Pickle Tools: studio presentation mode is enabled
-    And Nelim's Pickle Tools: I frame the cell (201, 190) at zoom 3.0
+    And Nelim's Pickle Tools: I frame the cell (200, 190) at zoom 3.2
     And Nelim's Pickle Tools: "Soren" face kit is "smile"
     And Nelim's Pickle Tools: "Soren" facial expression is "normal+blink"
     And Nelim's Pickle Tools: "Nelim" face kit is "neutral"
@@ -136,19 +128,26 @@ Feature: gallery: an afternoon on the board
     Given I set the hour to 14
     And Folding Skateboard Renew: "Nelim" carries a folding skateboard made of "Steel"
     And Nelim's Pickle Tools: I place the decor "PlantPot" holding "Plant_Daylily" fully grown at (196, 186)
+    And Nelim's Pickle Tools: I place the decor "PlantPot" holding "Plant_Daylily" fully grown at (196, 189)
+    And Nelim's Pickle Tools: I place the decor "PlantPot" holding "Plant_Daylily" fully grown at (204, 190)
+    And Nelim's Pickle Tools: I place the decor "PlantPot" holding "Plant_Daylily" fully grown at (204, 184)
+    And Nelim's Pickle Tools: I place the decor "TorchLamp" at (200, 184)
+    And Nelim's Pickle Tools: I place the decor "TorchLamp" at (200, 190)
+    And Nelim's Pickle Tools: the decor "TorchLamp" at (200, 184) is lit
+    And Nelim's Pickle Tools: the decor "TorchLamp" at (200, 190) is lit
     And Nelim's Pickle Tools: the animal "Shogun" stands at (199, 190) facing West
-    And Nelim's Pickle Tools: "Nelim" stands at (203, 187) facing West
-    And Nelim's Pickle Tools: "Soren" stands at (201, 187) facing West
+    And Nelim's Pickle Tools: "Nelim" stands at (203, 188) facing West
+    And Nelim's Pickle Tools: "Soren" stands at (203, 186) facing West
     When Nelim's Pickle Tools: I let 417 ticks pass
-    And Nelim's Pickle Tools: "Nelim" stands at (203, 187) facing West
-    And Nelim's Pickle Tools: "Soren" stands at (201, 187) facing West
-    And Nelim's Pickle Tools: "Nelim" is forced to walk to (196, 187)
-    And Nelim's Pickle Tools: "Soren" is forced to walk to (196, 187)
-    And Nelim's Pickle Tools: I let 45 ticks pass
+    And Nelim's Pickle Tools: "Nelim" stands at (203, 188) facing West
+    And Nelim's Pickle Tools: "Soren" stands at (203, 186) facing West
+    And Nelim's Pickle Tools: "Nelim" is forced to walk to (196, 188)
+    And Nelim's Pickle Tools: "Soren" is forced to walk to (196, 186)
+    And Nelim's Pickle Tools: I let 35 ticks pass
     Then "Nelim" has trait "Shredder"
     And Folding Skateboard Renew: "Soren" does not have the trait "Shredder"
     When Nelim's Pickle Tools: studio presentation mode is enabled
-    And Nelim's Pickle Tools: I frame the cell (199, 188) at zoom 4
+    And Nelim's Pickle Tools: I frame the cell (199, 187) at zoom 4
     And Nelim's Pickle Tools: "Soren" face kit is "angry"
     And Nelim's Pickle Tools: "Soren" facial expression is "normal+blink"
     And Nelim's Pickle Tools: "Nelim" face kit is "neutral"
@@ -167,16 +166,22 @@ Feature: gallery: an afternoon on the board
     And Folding Skateboard Renew: a folding skateboard made of "WoodLog" lies on the cell (199, 187)
     And Folding Skateboard Renew: "Nelim" carries a folding skateboard made of "Steel"
     And Nelim's Pickle Tools: I place the decor "PlantPot" holding "Plant_Daylily" fully grown at (204, 185)
+    And Nelim's Pickle Tools: I place the decor "PlantPot" holding "Plant_Daylily" fully grown at (196, 190)
+    And Nelim's Pickle Tools: I place the decor "PlantPot" holding "Plant_Daylily" fully grown at (197, 184)
+    And Nelim's Pickle Tools: I place the decor "TorchLamp" at (196, 187)
+    And Nelim's Pickle Tools: I place the decor "TorchLamp" at (204, 188)
+    And Nelim's Pickle Tools: the decor "TorchLamp" at (196, 187) is lit
+    And Nelim's Pickle Tools: the decor "TorchLamp" at (204, 188) is lit
     And Nelim's Pickle Tools: the animal "Shogun" stands at (199, 189) facing South
-    And Nelim's Pickle Tools: "Nelim" stands at (201, 189) facing West
+    And Nelim's Pickle Tools: "Nelim" stands at (201, 189) facing South
     And Nelim's Pickle Tools: "Soren" stands at (202, 187) facing West
     When Nelim's Pickle Tools: I let 625 ticks pass
-    And Nelim's Pickle Tools: "Nelim" stands at (201, 189) facing West
+    And Nelim's Pickle Tools: "Nelim" stands at (201, 189) facing South
     And Nelim's Pickle Tools: "Soren" stands at (202, 187) facing West
     And Folding Skateboard Renew: "Soren" takes the pick-up option for the board on the cell (199, 187)
-    And Nelim's Pickle Tools: I let 25 ticks pass
+    And Nelim's Pickle Tools: I let 12 ticks pass
     And Nelim's Pickle Tools: studio presentation mode is enabled
-    And Nelim's Pickle Tools: I frame the cell (199, 187) at zoom 3.2
+    And Nelim's Pickle Tools: I frame the cell (200, 188) at zoom 3.2
     And Nelim's Pickle Tools: "Soren" face kit is "smug"
     And Nelim's Pickle Tools: "Soren" facial expression is "normal+blink"
     And Nelim's Pickle Tools: "Nelim" face kit is "neutral"
