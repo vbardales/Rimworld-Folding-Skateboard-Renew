@@ -119,8 +119,8 @@ A replacement for [url=https://steamcommunity.com/sharedfiles/filedetails/?id=34
 ## Gallery plan (shootGallery, five scenes, 2026-11-06)
 
 The gallery is one staged story, "an afternoon on the board", played on Nelim's Sanctuary (`SanctuaryBacklot`, the calm-zone
-square: a patch of concrete with a soil strip on its north side). Cast: Nelim, her friend Soren (a second colonist made for the
-scene) and Shogun, her labrador, who is saved in the Sanctuary file and is never spawned. The shotlist (place, time, subject,
+square: a patch of concrete with a soil strip on its north side). Cast: Nelim, her friend Soren (an NSB colonist, played with
+the hair and eyes of the 2026-11-06 captures until the owner rules on them, see `STATUS.md`, "NSB") and Shogun, her labrador, who is saved in the Sanctuary file and is never spawned. The shotlist (place, time, subject,
 composition, scores) is in the header of `Tests/Pickle/Mod/Pickle/Features/08-gallery.feature` and in `STATUS.md`; the scenarios
 follow it, one scenario per image. Clear weather, 20 degrees so that no face shows sweat, 14:00 then five game minutes between
 images, 17:00 for the last. Outfits: Nelim ochre shirt, dark blue trousers, VAE shoes, `Ponytails`; Soren red cap, teal hoodie,

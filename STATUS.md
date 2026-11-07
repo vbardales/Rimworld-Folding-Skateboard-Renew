@@ -128,3 +128,28 @@ Story "an afternoon on the board" at `calm-zone` (concrete patch, soil strip), N
 | S5 soft ground 17:00 medium | 17:00 warm | 2 TorchLamp lit | Shogun follows | smile | board just folded on back | z4 | fold | small | 4.5 | pause tick; light |
 
 k (series): ok, one story, wide S1/S3, medium S2/S5, tight S4, opening S1, closing S5 at 17:00. Series mean 4.5. NPT answered 2026-11-03: the walk step `"<name>" is forced to walk to (x, z)` exists (written, not played), so S3 is 4.5. Weak points: j (the board is small at 268 px in all shots), pause ticks tuned by the first run. S1, S2, S4, S5 reach 4 or more: scenarios to rewrite from the header, then one small ticket per scene (not a full pass). Unplayed dependency: apparel policy steps (PickleTools 4ca133c) for the VAE garments that vanished on 2026-10-16.
+
+## NSB (sync 2026-11-07)
+
+Places read: 2026-11-07 (calm-zone entries of SANCTUAIRE-LIEUX.md and EMBELLISSEMENT-LIEUX.md, targeted). Tribe read: 2026-11-07 (SOREN-PROFIL, SHOGUN-PROFIL, CATALOGUE-ANIMAUX in full; NELIM-PROFIL, VALIDE.md and AVANCEMENT.md for the pawns used).
+
+NSB changed since 2026-11-03 only for other mods' pawns, animals and places (pediatrics, play-area, ACG animals, 1.7 body hair of Nelim, Blue, Jiro). Nothing moved for calm-zone, Nelim's outfit, Soren's outfit or Shogun. The mod adds no animal (rule 5: nothing to show, no gap). Used and kept: calm-zone (free zone, concrete and decor removed after each shot), Nelim, Soren, Shogun (saved in the NSB file, collar validated 2026-11-06), all outfits (free, rule 4).
+
+**Rule 3 gap found (PENDING, owner question):** the played captures change four canon properties with no quoted validation. Until Virginie rules, they are not covered.
+
+| Place | Shots | Changes for the gallery | Last read |
+| --- | --- | --- | --- |
+| calm-zone (200,187) | S1 to S5 | concrete patch and soil strip laid, pots with daylily, TorchLamp (S5), all removed after each shot | 2026-11-07 |
+
+| Colonist | Shots | Outfit per shot | Last read | Exceptions |
+| --- | --- | --- | --- | --- |
+| Nelim | S1 to S5 | ochre shirt, dark blue trousers, VAE shoes, bare head, all day (free) | 2026-11-07 | PENDING: hairstyle `Ponytails` (canon `Roo_HD_Hair_Highpony`); mouth `MouthSmile` set as a part (canon `MouthLipsSmirk`; the face kit "smile" alone is scene freedom) |
+| Soren | S1 to S5 | VAE red cap, teal hoodie, grey shorts, VAE shoes, all day (free) | 2026-11-07 | PENDING: hairstyle `ShortCut` (canon `Roo_HD_Hair_Tidy`); eyes `Eyes_SkyBlue` (canon `Eyes_DarkGreen`, swapped by the owner 2026-11-05) |
+
+| Animal | Shots | Outfit | Last read | Exceptions |
+| --- | --- | --- | --- | --- |
+| Shogun (in NSB) | S1 to S5 | default `Apparel_leatherdogcollar` (validated 2026-11-06) | 2026-11-07 | none |
+
+| Included animal | Shots |
+| --- | --- |
+| none (the mod adds no animal) | n/a |
