@@ -1,26 +1,13 @@
 {
   "panel": {
     "title": "Folding Skateboard Renew (unofficial)",
-    "titleSize": 48,
     "titleParts": [
-      { "text": "Folding" },
-      {
-        "text": "Skateboard",
-        "breakBefore": true
-      },
-      {
-        "text": "Renew (unofficial)",
-        "scale": 0.65,
-        "font": "ui",
-        "color": "secondary",
-        "breakBefore": true
-      }
+      { "text": "Folding Skateboard" },
+      { "text": "Renew (unofficial)", "suffix": true }
     ],
-    "copyLines": [
-      "Unfolds on hard ground outdoors, folds onto their back indoors."
-    ]
+    "description": "Unfolds on hard ground outdoors, folds onto their back indoors."
   },
-  "backgroundFile": "Preview-source.png",
+  "background": { "file": "Preview-source.png" },
   "echo": { "file": "echo-preview.png" },
   "icon": { "file": "ModIcon-source.png" },
   "palette": {
