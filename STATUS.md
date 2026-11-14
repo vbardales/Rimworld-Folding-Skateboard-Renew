@@ -114,6 +114,10 @@ Echo: kept as new line-art `Art/echo-preview.png` (replaces `echo.png` and `echo
 
 Owner rewrote `Art/Preview.config.json` (new schema: `panel`, `icon`; engine defaults for echo placement and badge corner, now bottom-right) and validated the render of `Mod/About/Preview.png` (sha256 `e3491d6dfd0096961c1b2f542137d254f437240f410788b2a661bfb412c996cc`, 591 KB); `Art/Gallery/0-preview.png` is its byte copy. GitHub social preview re-uploaded through Chrome 2026-10-25 and the served image downloaded, byte-identical (`social_preview_sha256` updated); the Steam page keeps the old image until the 1.0.0 publish.
 
+## Ecosystem (PiI, 2026-11-14)
+
+Source: `docs/inventory/ecosystem-steam/FoldingSkateboardRenew.md` (protocols repo, 23d84ac). Original 3414678101 (1.5), shares our 3 defNames, covered by `incompatibleWith`. No other fork. Companions of the original only: RUS translation 3425565732, SilkCircuit zh pack 3408513010. Overlap: Bicycles and more! (Seti.Transportation 3503779097, alive on 1.6, installed) also has a skateboard. Combat Extended has a def named `Shredder`: clash with our TraitDef `Shredder` not checked yet. Nothing subscribed.
+
 ## Folded history
 
 Superseded 2026-09-13 decisions, sweep notes and 2026-09-13 to 2026-10-03 dated sections moved to [docs/STATUS-HISTORY.md](docs/STATUS-HISTORY.md) on 2026-10-13 (rule: STATUS.md keeps current state only).
