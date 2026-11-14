@@ -121,7 +121,8 @@ Source: `docs/inventory/ecosystem-steam/FoldingSkateboardRenew.md` (protocols re
 Comparison and checks, 2026-11-14 (read on disk, 1.6 folders only):
 - Bicycles and more! `Seti_Skate`: apparel worn (not an inventory item) plus hediff `Seti_Skate`, MoveSpeed x1.6 and CaravanBonusSpeedFactor x1.6 factors, described as "slower than a bike". Ours: inventory item, trait `Shredder` +2.0 MoveSpeed offset on hard floors only. Different defNames (`Paddleboard`, `AddPaddleboardToInventory`, `Shredder` vs `Seti_Skate`), no clash; the two stack if both are used (factor and offset), no incompatibility declared. Not played together.
 - Combat Extended (2890901044): its `Shredder` is a `CombatExtended.AmmoCategoryDef` (Defs/Ammo/Modded/Halo/Ammo_UNSC_Misc.xml), ours a `TraitDef`: defNames are unique per def type, our code reads it as `TraitDef` (`FoldingSkateboardDefOf`), so no def clash. Translation keys differ by def type too. Behaviour with CE (pawn speed handling) not played: no CE run exists.
-- Open: integrate RUS 3425565732 and zh pack 3408513010 (asked PiI to subscribe, not on disk yet); ask NPT whether a CE map exists to play one scenario; licence of those two translations is third-party, credit in ATTRIBUTION.md when integrated.
+- Done 2026-11-14 (Virginie chose option 1): Chinese (Simplified and Traditional, 3 DefInjected files each) taken from zh pack 3408513010 (Akiu, CC BY-NC-SA 4.0, notice in each file and in ATTRIBUTION.md, one wording adapted), Keyed has no Chinese text (falls back to English), Check-Translations only checks French so Chinese is unchecked and not played. RUS 3425565732 (no licence, label and description only): nothing taken, no Russian written (Virginie). Both ids released to PiI.
+- Open: ask NPT whether a CE map exists to play one scenario.
 
 ## Folded history
 
