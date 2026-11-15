@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
-  <!-- Source: Akiu, "SilkCircuit合集-简繁汉化包" (Workshop 3408513010), licence CC BY-NC-SA 4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/). Adapted by Nelim, 2026-11-14: "reaches 2.0" changed to "raised by 2.0" in the description. This file stays under CC BY-NC-SA 4.0; the rest of the mod is MIT. -->
+  <!-- Source: Akiu, "SilkCircuit合集-简繁汉化包" (Workshop 3408513010), licence CC BY-NC-SA 4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/). Adapted by Nelim, 2026-11-14 and 2026-11-15 (ChatGPT review): "reaches 2.0" changed to "raised by 2.0" in the description; job report, and trait description rewritten. To be checked by a Chinese reader. This file stays under CC BY-NC-SA 4.0; the rest of the mod is MIT. -->
   <Shredder.degreeDatas.Shredder.label>滑板达人</Shredder.degreeDatas.Shredder.label>
-  <Shredder.degreeDatas.Shredder.description>[PAWN_nameDef]无论去何处都踩着[PAWN_pronoun]心爱的滑板。</Shredder.degreeDatas.Shredder.description>
+  <Shredder.degreeDatas.Shredder.description>[PAWN_nameDef]无论[PAWN_pronoun]去哪里，总在板上狂飙。</Shredder.degreeDatas.Shredder.description>
 </LanguageData>

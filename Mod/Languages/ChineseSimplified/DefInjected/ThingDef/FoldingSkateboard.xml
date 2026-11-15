@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
-  <!-- Source: Akiu, "SilkCircuit合集-简繁汉化包" (Workshop 3408513010), licence CC BY-NC-SA 4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/). Adapted by Nelim, 2026-11-14: "reaches 2.0" changed to "raised by 2.0" in the description. This file stays under CC BY-NC-SA 4.0; the rest of the mod is MIT. -->
+  <!-- Source: Akiu, "SilkCircuit合集-简繁汉化包" (Workshop 3408513010), licence CC BY-NC-SA 4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/). Adapted by Nelim, 2026-11-14 and 2026-11-15 (ChatGPT review): "reaches 2.0" changed to "raised by 2.0" in the description; job report, and trait description rewritten. To be checked by a Chinese reader. This file stays under CC BY-NC-SA 4.0; the rest of the mod is MIT. -->
   <Paddleboard.label>折叠滑板</Paddleboard.label>
   <Paddleboard.description>一种可折叠的滑板，可以提升角色的移动速度，未使用时可固定在背上。滑行时，角色会获得「滑板达人」特性，移动速度提高2.0。只有在户外的硬质地面上才能进行炫酷滑行。</Paddleboard.description>
 </LanguageData>

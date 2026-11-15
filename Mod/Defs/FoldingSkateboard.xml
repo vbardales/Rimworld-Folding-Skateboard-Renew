@@ -10,7 +10,7 @@
   <ThingDef ParentName="ResourceBase">
     <defName>Paddleboard</defName>
     <label>folding skateboard</label>
-    <description>A folding skateboard that boosts pawn movement speed and conveniently straps onto their back when not in use. While skating, pawns gain the "Shredder" trait, ripping around at +2.0 movement speed. Shredding the gnar is only allowed on outdoor hard surfaces.</description>
+    <description>A folding skateboard that boosts pawn movement speed and can be conveniently strapped to their back when not in use. While skating, pawns gain the "Shredder" trait, ripping around at +2.0 movement speed. Shredding the gnar is only allowed on outdoor hard surfaces.</description>
     <possessionCount Inherit="False">1</possessionCount>
     <techLevel>Neolithic</techLevel>
     <graphicData>

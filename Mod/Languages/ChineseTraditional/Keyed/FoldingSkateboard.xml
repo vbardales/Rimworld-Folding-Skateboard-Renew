@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <FoldingSkateboard.TakeToInventory>拿起 {0}</FoldingSkateboard.TakeToInventory>
+  <FoldingSkateboard.TakeAlreadyCarrying>無法拿起 {0}：已攜帶一塊滑板。</FoldingSkateboard.TakeAlreadyCarrying>
+  <FoldingSkateboard.TakeForbidden>無法拿起 {0}：該物品已被禁止。</FoldingSkateboard.TakeForbidden>
+  <FoldingSkateboard.TakeNoPath>無法拿起 {0}：無路徑可達。</FoldingSkateboard.TakeNoPath>
+</LanguageData>

@@ -2,5 +2,5 @@
 <LanguageData>
   <!-- Label and description adapted from "Folding Skateboard [RUS]" by SilkCircuit and KenneR_ (Workshop 3425565732, no licence stated), 2026-11-15: trait name and speed wording changed to match this port. -->
   <Paddleboard.label>складной скейтборд</Paddleboard.label>
-  <Paddleboard.description>Складной скейтборд, который существенно ускоряет пешку и одевается на спину, пока не используется. Находясь на скейтборде, пешка получает черту «Ас скейта» и +2,0 к скорости передвижения. Кататься можно лишь на твёрдой поверхности на улице.</Paddleboard.description>
+  <Paddleboard.description>Складной скейтборд, который ускоряет пешку и крепится к спине, пока не используется. Находясь на скейтборде, пешка получает черту «Ас скейта» и +2,0 к скорости передвижения. Кататься можно лишь на твёрдой поверхности на улице.</Paddleboard.description>
 </LanguageData>
