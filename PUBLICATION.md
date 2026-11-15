@@ -2,7 +2,7 @@
 
 What the Workshop page asks for and this repository holds nowhere else. Item `3806761118` exists:
 it was created privately by the `0.1.0` pre-publication of 2026-09-23 (see `CHANGELOG.md`). The mod
-has passed its automated and Pickle test runs (`tested_on` in `STATUS.md`), but nothing was played by a person
+has passed its automated checks and Pickle test runs (`tested_on` in `STATUS.md`), but nothing was played by a person
 and `1.0.0` is not published yet; `STATUS.md` says what remains.
 
 ## Steam description
