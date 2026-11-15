@@ -2,12 +2,14 @@
 localization: complete
 translation_en: complete
 translation_fr: complete
+translation_zh: complete
+translation_ru: partial
 mod:          Folding Skateboard Renew (unofficial)
 packageId:    nelim.foldingskateboard
 repo:         Rimworld-Folding-Skateboard-Renew
 visibility:   public
 detached:     yes
-workflow_stage: shootGallery[1.0.0]
+workflow_stage: localize[1.0.0]
 settings_audit: not_applicable
 automated_tests: scripts/Check-HarmonyContract.ps1 (shared) 11 of 11 passed on 2026-10-31 on the delivered DLL SHA-256 E829298B8F3A298380B4E0942D2534DE9C8760F7D342FB2F465234DDBA27551D, full command with -Provider in TESTING.md; it replaces the former local Run-Functional-Tests.ps1 (deleted in b5d4d96, 15 tests: 1 to 12 covered by the shared script, floor names, definition values and the {0}/vanilla-key part of the key test written not applicable, see TESTING.md)
 xml_tests:    passed on 2026-09-28 (Check-XmlFields, Check-DefRefs, Check-TypeRefs, Check-DefInjected); Check-XmlClasses not applicable
@@ -61,7 +63,7 @@ remaining:
   - resolved 2026-09-28 (preTest to done): the Pickle suite is written in Tests/Pickle/ (6 features, 23 step patterns, a README that justifies the scope, two pass maps), and Check-Steps.ps1 resolves every step line to exactly one step. Written, not run: done does not ask for a run
 session:      local_b01ccdc3-6c60-4c47-bf84-550369df5630
 updated:      2026-11-03, 8.n: stage moved to shootGallery[1.0.0] after ticket 22ce (avec-lts 4 of 4); 2026-11-03, resume: Preview re-rendered, Preview.png byte-identical (nothing to commit), protocols re-read; 2026-10-31, playTests: tested_on refreshed, no @wip in features 01 to 07 and the head of 08, scenario 2 (recipe in game) written not applicable in TESTING.md, open 8.f (avec-lts) and the 1.7 pass; 7.b met by the shared Check-HarmonyContract 11 of 11, stage writeTests back to playTests (replay-audit had moved it back); 2026-10-31, resume: 173e, 4d45 and d2c1 all passed, Inbox triaged into Evidence/, offline tests gap still open; 2026-10-30, replay-audit: stage kept playTests[1.0.0], first unfulfilled 8.c/8.f (173e pending), offline tests gap noted in remaining; 2026-10-11, full audit of transitions 1 to 7 against AUDIT.md ad0347e: retained writeTests[1.0.0] (7.g fails: translation_fr partial, Virginie review pending; target version 1.0.0 per CHANGELOG, not 0.1.0); the table-only mapping to playTests was wrong (stage field removed, protocols_read_sha written), capture-facing replay ticket bfee filed; 2026-10-02, audit re-applied against AUDIT.md d1fdbe1 (stage kept, workflow_stage added, evidence trimmed, protocols re-read); 2026-09-30, translation_fr set to partial (FRENCH_REVIEW.md generated, awaiting Virginie's review); fourth capture replay's cause found (undrafted colonist picks up a real haul job that overrides Rotation) and fixed (StopAll + StopDead in the facing step), fifth replay to file
-protocols_read_sha: e3b147bf0eeae8ecb5961d0b758f9537ccc9e451
+protocols_read_sha: 066e26ff20122ce138ec6b78dffe86278423e8ad
 ---
 # Folding Skateboard Renew — status
 
@@ -122,6 +124,7 @@ Comparison and checks, 2026-11-14 (read on disk, 1.6 folders only):
 - Bicycles and more! `Seti_Skate`: apparel worn (not an inventory item) plus hediff `Seti_Skate`, MoveSpeed x1.6 and CaravanBonusSpeedFactor x1.6 factors, described as "slower than a bike". Ours: inventory item, trait `Shredder` +2.0 MoveSpeed offset on hard floors only. Different defNames (`Paddleboard`, `AddPaddleboardToInventory`, `Shredder` vs `Seti_Skate`), no clash; the two stack if both are used (factor and offset), no incompatibility declared. Not played together.
 - Combat Extended (2890901044): its `Shredder` is a `CombatExtended.AmmoCategoryDef` (Defs/Ammo/Modded/Halo/Ammo_UNSC_Misc.xml), ours a `TraitDef`: defNames are unique per def type, our code reads it as `TraitDef` (`FoldingSkateboardDefOf`), so no def clash. Translation keys differ by def type too. Behaviour with CE (pawn speed handling) not played: no CE run exists.
 - Done 2026-11-14 (Virginie chose option 1): Chinese (Simplified and Traditional, 3 DefInjected files each) taken from zh pack 3408513010 (Akiu, CC BY-NC-SA 4.0, notice in each file and in ATTRIBUTION.md, one wording adapted), Keyed has no Chinese text (falls back to English), Check-Translations only checks French so Chinese is unchecked and not played. RUS 3425565732 (no licence, label and description only): nothing taken, no Russian written (Virginie). Both ids released to PiI.
+- 2026-11-15 (Virginie: "on intègre RUS et ZH, retourne en translate"): stage back to localize[1.0.0]. ZH integrated (above). RUS: the KenneR_ pack has no licence, so nothing copied; Russian written by this session from the English (Mod/Languages/Russian: label and description of the board, trait, job report, 4 Keyed keys; trait "Ас скейта"). translation_ru partial: no native review, Check-Translations does not check Russian or Chinese, nothing played. Open to leave localize: review of the Russian by a reader (or KenneR_'s permission if his wording is wanted), Check-Translations coverage of zh and ru, one scenario in each language; gallery (9536 capture in Tests/Pickle/Evidence/gallery-16, unopened) resumes after.
 - Open: ask NPT whether a CE map exists to play one scenario.
 
 ## Folded history
