@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
-  <FoldingSkateboard.TakeToInventory>Взять: {0}</FoldingSkateboard.TakeToInventory>
-  <FoldingSkateboard.TakeAlreadyCarrying>Нельзя взять {0}: колонист уже несёт скейтборд.</FoldingSkateboard.TakeAlreadyCarrying>
+  <FoldingSkateboard.TakeToInventory>Подобрать {0}</FoldingSkateboard.TakeToInventory>
+  <FoldingSkateboard.TakeAlreadyCarrying>Нельзя взять {0}: поселенец уже несёт скейтборд.</FoldingSkateboard.TakeAlreadyCarrying>
   <FoldingSkateboard.TakeForbidden>Нельзя взять {0}: предмет запрещён.</FoldingSkateboard.TakeForbidden>
   <FoldingSkateboard.TakeNoPath>Нельзя взять {0}: нет пути.</FoldingSkateboard.TakeNoPath>
 </LanguageData>
