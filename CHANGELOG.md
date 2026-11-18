@@ -11,6 +11,15 @@ and whose page says "RimWorld 1.5+", neither naming 1.6.
   label as an argument, allowing translators to control the whole sentence.
 - Resource checks validate nonempty, unique keys and item format arguments.
 
+### Translations added, 2026-11-14 and 2026-11-15
+
+- Simplified and Traditional Chinese for the board, the trait and the pick-up job, taken from
+  Akiu's SilkCircuit pack (CC BY-NC-SA 4.0, credited in `ATTRIBUTION.md`), plus the four pick-up
+  messages written for this port.
+- Russian for the same texts, written for this port from the English; the board label and
+  description are adapted from KenneR_'s pack (credited in `ATTRIBUTION.md`). Not yet read by a
+  native speaker.
+
 ### Fixed for 1.6
 
 - The right-click "pick up" option. `FloatMenuMakerMap.ChoicesAtFor`, which the 1.5 mod patched,
