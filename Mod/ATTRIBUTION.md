@@ -213,3 +213,11 @@ board beside it. An earlier one, removed on 2026-09-11, had been the mod's own i
 cropped square: an icon cut from the source mod's art makes the upstream author's work carry the
 port's identity, and the icon is the one file of a port that is supposed to speak for the port
 rather than for the mod it carries. That objection does not apply to a mascot.
+
+## Chinese translations
+
+The Simplified and Traditional Chinese texts (`Mod/Languages/ChineseSimplified` and `Mod/Languages/ChineseTraditional`, DefInjected for the board, the trait and the pick-up job) are taken from **SilkCircuit合集-简繁汉化包** by **Akiu** ([3408513010](https://steamcommunity.com/sharedfiles/filedetails/?id=3408513010)), licensed [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/). One change was made on 2026-11-14: in the board description, "reaches 2.0" became "raised by 2.0", to match the English text of this port. These Chinese files stay under CC BY-NC-SA 4.0 (the notice is repeated at the top of each file); the rest of the mod is MIT. The four pick-up messages (`Keyed`) and the rewritten job report and trait description were written for this port on 2026-11-15 after the ChatGPT review; they have not been read by a Chinese speaker.
+
+The Russian translation [3425565732](https://steamcommunity.com/sharedfiles/filedetails/?id=3425565732) by KenneR_ has no licence and translates only the board's label and description; those two texts are used in adapted form (see below).
+
+The Russian files in `Mod/Languages/Russian` were written for this port from the English text (2026-11-15), except the label and description of the board, adapted on the owner's order from the KenneR_ pack (no licence stated; credit here and in the file; the trait name and the speed wording were changed to match this port). They have had no review by a native reader.
