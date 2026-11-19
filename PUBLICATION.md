@@ -130,7 +130,7 @@ Expanded (`VanillaExpanded.VAPPE`, Workshop 1814987817).
 
 | # | Scene | What the image says |
 | --- | --- | --- |
-| 1 | Three boards on the concrete, Nelim sets off to take the steel one, Soren and Shogun watch. | Three materials. |
+| 1 | Three boards on the concrete, Soren sets off to take the plasteel one, Nelim and Shogun watch. | Three materials. |
 | 2 | Nelim has just picked up a board and it unfolds under her feet on the concrete. | Hard ground unfolds the board. |
 | 3 | The race: Nelim on the board draws level with Soren on foot. | The board is faster (Shredder). |
 | 4 | Soren sets off to take the wood board while Nelim rides beside him. | His turn. |
@@ -147,7 +147,7 @@ the final ones of the 2026-11-06 captures.
 
 | Index | File | Subtitle |
 | --- | --- | --- |
-| 1 | `1-three-boards.jpg` | Three boards: steel, wood, plasteel. |
+| 1 | `1-three-boards.jpg` | Three boards: jade, wood, plasteel. |
 | 2 | `2-it-unfolds.jpg` | Step onto hard ground and the board unfolds. |
 | 3 | `3-the-race.jpg` | Hers has wheels. |
 | 4 | `4-his-turn.jpg` | His turn: he takes the wood one. |

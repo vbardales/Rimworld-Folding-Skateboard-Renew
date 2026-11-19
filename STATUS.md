@@ -104,7 +104,7 @@ Story "an afternoon on the board" at `calm-zone` (concrete patch, soil strip), N
 
 | shot | a | b | c | d | e | f | g | j | plan | risk |
 |---|---|---|---|---|---|---|---|---|---|---|
-| S1 three boards 14:00 wide | calm-zone, 14:00, Clear | pots+daylily | Shogun front | ochre/blue, smile | Soren has just set off to the plasteel board (pick-up paused 12 ticks), Nelim behind the boards | z2.6 close-wide | 3 materials | blue/brown/dark boards, ~20 px wide at 268 px | 5 | steel vs plasteel alike at 268 px |
+| S1 three boards 14:00 wide | calm-zone, 14:00, Clear | pots+daylily | Shogun front | ochre/blue, smile | Soren has just set off to the plasteel board (pick-up paused 12 ticks), Nelim behind the boards | z2.6 close-wide | 3 materials (jade replaces steel 2026-11-19: steel read like the concrete) | green/brown/pale boards, ~20 px wide at 268 px | 5 | Soren starts (204, 187) so the 12-tick walk is West, lateral, readable; jade colour to check |
 | S2 it unfolds 14:05 medium | ok | pot+daylily | Shogun front | smile | board just unfolded | z2.4 | unfold | board under feet small | 5 | pause tick after the pick-up (tuned) |
 | S3 race 14:10 wide | ok | finish pot | Shogun W | smile / angry kit (planned) | gliding, level | z2.8 | +2 speed | small | 5 | forced-walk step written, not played by NPT: stride and tick N to tune |
 | S4 his turn 14:15 tight | ok | pot+daylily | Shogun front | smug (planned) | mid-stride to board | z2.4 | pick-up | wood board small | 5 | pause tick |
