@@ -1,11 +1,11 @@
 # Folding Skateboard Renew — in-game test scenarios
 
-Mod never seen running. Port built by reading 1.6 assembly. Build clean, functional tests pass, but none exercise a single game tick.
+Mod has run in game under Pickle (English and French full runs, 2026-10-31, see `STATUS.md` `tested_on`); no person has played it. Offline contract check and XML checks pass, but they exercise no game tick.
 This file = list of what must be watched, and what counts as pass.
 
 Not shipped: lives beside `Mod/`, never inside, so Steam never receives it.
 
-Run the shared `scripts/Check-HarmonyContract.ps1` first (protocols repository, no colony, seconds): patch targets, draw-phase call, provider sweep, access grant, PatchAll. Command, from the protocols root (11 of 11 passed on 2026-10-31):
+Run the shared `scripts/Check-HarmonyContract.ps1` first (protocols repository, no colony, seconds): patch targets, draw-phase call, provider sweep, access grant, PatchAll. Command, from the protocols root (12 of 12 passed on 2026-11-19):
 `powershell -NoProfile -ExecutionPolicy Bypass -File scripts/Check-HarmonyContract.ps1 -ModRoot FoldingSkateboardRenew -Hooks 'PawnRenderer.RenderPawnAt:Vector3,Pawn.Tick:,Pawn.DeSpawn:DestroyMode' -Calls 'PawnRenderer.DynamicDrawPhaseAt>RenderPawnAt,FloatMenuMakerMap.*>AllSubclassesNonAbstract' -MinPatches 3 -CompileProbe -ExpectedNonPublic 'PawnRenderer.pawn' -Provider 'FloatMenuOptionProvider:Drafted=false;Undrafted=true;Multiselect=false;RequiresManipulation=true'`
 Red line there explains a scenario below that would have failed anyway. Proves nothing about what appears on screen, so the seventeen below stand unchanged. The former local script `Run-Functional-Tests.ps1` (deleted in b5d4d96) held three more tests, written not applicable with Audit's agreement (2026-10-31): floor names against the game's TerrainDefs (a list of 20+ names, Pickle feature 03 plays seven floors, a drifted name would disable one floor only); exact values of the board, trait and job (the values are the shipped XML itself, shape and references are covered by Check-XmlFields, Check-DefRefs, Check-TypeRefs); exactly one `{0}` per key template and borrowed vanilla keys still shipped (no second mod asked for it; this mod borrows none).
 
@@ -35,7 +35,7 @@ Seventeen scenarios below = acceptance list. None played by hand at end: `AUDIT.
 
 Not applicable, with reason: forming real caravan or sending shuttle (scenario 13, engine's mechanism); game's refusal of bill below Crafting 4 (scenario 2, engine's rule); game's honouring of provider's four flags (scenario 6, engine's menu builder); removing mod from running colony (scenario 15, engine's handling of removed mod, limitation README now states); switching language inside session (scenario 16, game restart, done by pass per language).
 
-Where Pickle scenarios live, in `Tests/Pickle/Mod/Pickle/Features/` (suite written, never run; its README lists what first run must confirm):
+Where Pickle scenarios live, in `Tests/Pickle/Mod/Pickle/Features/` (suite played green on 2026-10-31, English and French; its README lists the assumptions):
 
 | Scenario | Feature |
 | --- | --- |
@@ -64,7 +64,7 @@ Pass `avec-lts`: the 141 LTS floors come from LimeTreeSnake's [LTS]Furnishing (W
 
 ## What has to be true before `tested`
 
-`AUDIT.md` rules for `done -> tested`, applied to this mod. None true today.
+`AUDIT.md` rules for `done -> tested`, applied to this mod. Which are met is in `STATUS.md` (`tested_on`, `pickle_scenarios`); the 1.7 pass is separate.
 
 - **No scenario left `@wip`.** Scenario put aside either repaired and replayed, or deleted with reason written here. Remaining `@wip` = scenario waiting, not scenario passed.
 - **Every conditional scenario has run.** Each `@requires:<packageId>` had its pass, on map mounting that mod, report read: suite name and scenario names checked before cited, because report folder shared by whole machine. Scenario skipped for want of condition not scenario passed.
