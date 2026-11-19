@@ -17,7 +17,7 @@ UNOFFICIAL. This mod is published without the original author's explicit consent
 
 A skateboard that boosts pawn movement speed while in use and conveniently folds up and straps to their back when they aren't shredding the gnar.
 
-I am not the author of this mod. The idea, the artwork, the trait and the balance are SilkCircuit's; all I did was bring it forward to the latest RimWorld version, fix what the port turned up, and write the French. Credit goes to them; mistakes in the port are mine.
+I am not the author of this mod. The idea, the artwork, the trait and the balance are SilkCircuit's; all I did was bring it forward to the latest RimWorld version, fix what the port turned up, and write the French and Russian texts. The Chinese texts are Akiu's. Credit goes to them; mistakes in the port are mine.
 
 Original mod: [Folding Skateboard](https://steamcommunity.com/sharedfiles/filedetails/?id=3414678101) by SilkCircuit. Its About.xml declares 1.5 only and its page says 1.5+; neither names the latest RimWorld version.
 
@@ -55,11 +55,11 @@ If I do not answer within a reasonable time after being contacted, anyone may fr
 
 **AI-GENERATED**
 
-The port work - the code, the tests, the documentation and the French translation - was done with Claude Code (Anthropic), under human direction and review. The showcase picture and the mod icon were generated with OpenAI's gpt-image, under human direction; the lettering on the showcase was composed separately. Stated openly: designing with these tools is my job.
+The port work - the code, the tests, the documentation and the French and Russian translations - was done with Claude Code (Anthropic), under human direction and review. The showcase picture and the mod icon were generated with OpenAI's gpt-image, under human direction; the lettering on the showcase was composed separately. Stated openly: designing with these tools is my job.
 
 **THANKS**
 
-SilkCircuit for the mod. Andreas Pardeike for [Harmony](https://steamcommunity.com/sharedfiles/filedetails/?id=2009463077).
+SilkCircuit for the mod. Andreas Pardeike for [Harmony](https://steamcommunity.com/sharedfiles/filedetails/?id=2009463077). Akiu for the Simplified and Traditional Chinese texts ([SilkCircuit collection zh pack](https://steamcommunity.com/sharedfiles/filedetails/?id=3408513010), CC BY-NC-SA 4.0). KenneR_ for the [Russian label and description](https://steamcommunity.com/sharedfiles/filedetails/?id=3425565732) of the board.
 
 [Pickle](https://steamcommunity.com/sharedfiles/filedetails/?id=3791648678) (RimWorks) and [PickleTools](https://steamcommunity.com/sharedfiles/filedetails/?id=3806142401) were used to test this mod in the game: development tools only, never a dependency of the mod.
 
@@ -106,7 +106,7 @@ release instead.
 
 ```
 [b]1.0.0[/b]
-First public release. Brings SilkCircuit's Folding Skateboard forward to the latest RimWorld version: the "pick up" right-click option is rebuilt (the old one would have stopped the game from loading), every patch now applies once instead of twice, the board is no longer drawn twice on LTS floors, and a colonist who leaves the map mid-ride gets their speed trait back. Full French coverage is added. Requires Harmony. Incompatible with the original mod.
+First public release. Brings SilkCircuit's Folding Skateboard forward to the latest RimWorld version: the "pick up" right-click option is rebuilt (the old one would have stopped the game from loading), every patch now applies once instead of twice, the board is no longer drawn twice on LTS floors, and a colonist who leaves the map mid-ride gets their speed trait back. Full French, Russian and Chinese (Simplified and Traditional) coverage is added. Requires Harmony. Incompatible with the original mod.
 ```
 
 ## Use This Instead comment (not posted)

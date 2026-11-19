@@ -52,7 +52,7 @@ installed game's assembly, not the NuGet reference copy.
 ## Requirements
 
 RimWorld 1.6 and [Harmony](https://steamcommunity.com/sharedfiles/filedetails/?id=2009463077). No
-DLC.
+DLC. Available in English, French, Russian, Simplified Chinese and Traditional Chinese (see [ATTRIBUTION.md](ATTRIBUTION.md) for the sources of the Russian and Chinese texts).
 
 Incompatible with SilkCircuit's original mod: both define the same defNames. Run one or the other.
 
