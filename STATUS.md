@@ -164,26 +164,26 @@ Story "an afternoon on the board" at `calm-zone` (concrete patch, soil strip), N
 
 k (series): ok, one story, wide S1/S3, medium S2/S5, tight S4, opening S1, closing S5 at 17:00. Series mean 4.5. NPT answered 2026-11-03: the walk step `"<name>" is forced to walk to (x, z)` exists (written, not played), so S3 is 4.5. Weak points: j (the board is small at 268 px in all shots), pause ticks tuned by the first run. S1, S2, S4, S5 reach 4 or more: scenarios to rewrite from the header, then one small ticket per scene (not a full pass). Unplayed dependency: apparel policy steps (PickleTools 4ca133c) for the VAE garments that vanished on 2026-10-16.
 
-## NSB (sync 2026-11-09)
+## NSB (sync 2026-11-19)
 
-Places read: 2026-11-09 (git diffs of NSB docs since 2026-11-07: only other places and batch orders moved, calm-zone untouched; entries of 2026-11-07 kept). Tribe read: 2026-11-09 (diffs: no change for Nelim, Soren or Shogun; profiles of 2026-11-07 stand). Steps read: 2026-11-09 (NPT diffs since 2026-11-03: light dimming, put-out, holds, stage-decor steps, none serves the five shots).
+Places read: 2026-11-19 (git diffs of NSB docs since 2026-11-09: SANCTUAIRE-LIEUX only the fixture note, the decor copy Nelims-tribe-decor-mods-z3.rws made 2026-11-09; calm-zone untouched). Tribe read: 2026-11-19 (NELIM-PROFIL, SOREN-PROFIL, SHOGUN-PROFIL unchanged since 2026-11-09 but for a path rename of 2026-11-12; VALIDE.md: Soren validated 2026-11-17 including Chaleur, Nelim already validated, Shogun validated 2026-11-06; CATALOGUE-ANIMAUX read for Shogun). Steps read: 2026-11-19 (NPT diffs since 2026-11-09: StageDecor step `the decor {string} at ({int}, {int}) burns` fills the fuel and switches a torch on (no light in daylight, the capture shows glow only when dark), ScreenshotStudio step hiding the main tab bar, speed controls and mouse-over readout, StageDecor `pot holding a fully grown plant`, floor build step; none changes a shot, the burns step is worth checking for the TorchLamp of S1 to S4 and S5).
 
-NSB changed since 2026-11-03 only for other mods' pawns, animals and places (pediatrics, play-area, ACG animals, 1.7 body hair of Nelim, Blue, Jiro). Nothing moved for calm-zone, Nelim's outfit, Soren's outfit or Shogun. The mod adds no animal (rule 5: nothing to show, no gap). Used and kept: calm-zone (free zone, concrete and decor removed after each shot), Nelim, Soren, Shogun (saved in the NSB file, collar validated 2026-11-06), all outfits (free, rule 4).
+NSB changed since 2026-11-09 only for other pawns (Iori, Celeste, Miel, Quo, Quaren, Daichi, Dalia validated, six WDI bodies, BiB gene renames) and a plan to rebuild the Sanctuary save (`Nelims-tribe-v2`, docs/RECONSTRUCTION-SAUVEGARDE.md of 2026-11-18, not built, gates open: BiB 1.1.0, VTW bodies, NPT agreement); the current fixture stays until then. Nothing moved for calm-zone, Nelim's outfit, Soren's outfit or Shogun. The mod adds no animal (rule 5: nothing to show, no gap). Used and kept: calm-zone, Nelim, Soren, Shogun (saved in the NSB file), all outfits (free, rule 4; Soren's red cap, teal hoodie, grey shorts is not a validated NSB outfit, the Sport outfit is the NSB neighbour, free to use anyway).
 
 **Rule 3, answered 2026-11-07 (Virginie: "Nelim : coiffure : non, sourire : oui MouthLipsSimpleSmile. Il y a un casque sur ShortCut ? Passe en DarkGreen pour les yeux"):** Nelim hairstyle refused, back to canon `Roo_HD_Hair_Highpony`; Nelim mouth `MouthLipsSimpleSmile` validated; Soren eyes back to canon `Eyes_DarkGreen`; Soren hairstyle not ruled (she asked whether the cap works with `ShortCut`: yes, VAE baseball cap over short hair, no hat-hair issue; both `ShortCut` and `Roo_HD_Hair_Tidy` are short), so canon `Roo_HD_Hair_Tidy` is used until she says otherwise. Feature 08 edited, captures 1 to 5 to replay.
 
 | Place | Shots | Changes for the gallery | Last read |
 | --- | --- | --- | --- |
-| calm-zone (200,187) | S1 to S5 | concrete patch and soil strip laid, pots with daylily, TorchLamp (S5), all removed after each shot | 2026-11-07 |
+| calm-zone (200,187) | S1 to S5 | concrete patch and soil strip laid, pots with daylily, TorchLamp (S5), all removed after each shot | 2026-11-19 |
 
 | Colonist | Shots | Outfit per shot | Last read | Exceptions |
 | --- | --- | --- | --- | --- |
-| Nelim | S1 to S5 | ochre shirt, dark blue trousers, VAE shoes, bare head, all day (free) | 2026-11-07 | mouth `MouthLipsSimpleSmile`, validated 2026-11-07 (Virginie); hair back to canon `Roo_HD_Hair_Highpony` |
-| Soren | S1 to S5 | VAE red cap, teal hoodie, grey shorts, VAE shoes, all day (free) | 2026-11-07 | none: canon `Roo_HD_Hair_Tidy` and `Eyes_DarkGreen` (ShortCut not validated, question open) |
+| Nelim | S1 to S5 | ochre shirt, dark blue trousers, VAE shoes, bare head, all day (free) | 2026-11-19 | mouth `MouthLipsSimpleSmile`, validated 2026-11-07 (Virginie); hair back to canon `Roo_HD_Hair_Highpony` |
+| Soren | S1 to S5 | VAE red cap, teal hoodie, grey shorts, VAE shoes, all day (free) | 2026-11-19 | none: canon `Roo_HD_Hair_Tidy` and `Eyes_DarkGreen` (ShortCut not validated, question open) |
 
 | Animal | Shots | Outfit | Last read | Exceptions |
 | --- | --- | --- | --- | --- |
-| Shogun (in NSB) | S1 to S5 | default `Apparel_leatherdogcollar` (validated 2026-11-06) | 2026-11-07 | none |
+| Shogun (in NSB) | S1 to S5 | default `Apparel_leatherdogcollar` (validated 2026-11-06) | 2026-11-19 | none |
 
 | Included animal | Shots |
 | --- | --- |
